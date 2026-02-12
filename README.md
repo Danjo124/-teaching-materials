@@ -8,8 +8,8 @@ A curated collection of educational worksheets, games, and exercises organized b
 teaching-materials/
 ├── english/
 │   ├── year-1/    (Simple Present series - 5 worksheets)
-│   ├── year-5/    (Coming soon)
-│   └── year-7/    (Word formation, open gap fill, crosswords)
+│   ├── year-5/    (Nutrition & Sports - 4 worksheets)
+│   └── year-7/    (Word formation, open gap fill, crosswords - 5 worksheets)
 └── geography/
     ├── year-1/    (Coming soon)
     ├── year-5/    (Coming soon)
@@ -29,6 +29,12 @@ teaching-materials/
 - **Simple Present Mixed:** 20 mixed practice exercises
 - **Question Quest Game:** Interactive game for practicing questions & negations
 
+#### Year 5 - Nutrition & Sports
+- **Word Formation - Nutrition:** 20-word exercise on healthy eating
+- **Word Formation - Sports:** 20-word exercise on physical activity
+- **Open Gap Fill - Healthy Lifestyle:** 15-gap text (B1 level)
+- **Open Gap Fill - Sports & Exercise:** 15-gap text (B1 level)
+
 #### Year 7
 - **Fashion Industry Word Formation:** 20-word exercise (Grade 7 level)
 - **Nutrition and Sports Word Formation:** 20-word exercise (Grade 7 level)
@@ -45,10 +51,18 @@ teaching-materials/
 - Professional PDF formatting
 - Answer keys included
 - Organized by subject and year level
-- Multiple difficulty levels (Grade 7, B2)
-- Thematic content
+- Multiple difficulty levels (B1, B2, Grade 7)
+- Thematic content (Nutrition, Sports, Fashion, Technology, Environment)
 - Color-coded by topic
 - Learning tips included
+
+---
+
+## 📊 Statistics
+- **Total materials:** 14 worksheets
+- **Subjects:** English (14), Geography (coming soon)
+- **Year levels:** 1, 5, 7
+- **Languages:** English
 
 ---
 
