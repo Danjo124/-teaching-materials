@@ -1,44 +1,48 @@
 # Teaching Materials Collection
 
-A curated collection of educational worksheets, games, and exercises organized by year level.
+A curated collection of educational worksheets, games, and exercises organized by subject and year level.
 
 ## 📚 Structure
 
-### Year 1
-- **Simple Present Series:** Complete set of 5 worksheets covering basics, questions, negatives, mixed practice, and interactive game
-- Grammar exercises with answer keys
-- Color-coded materials
-
-### Year 5
-*Materials coming soon*
-
-### Year 7
-- Word Formation exercises
-- Crossword puzzles
-- Advanced grammar materials
+```
+teaching-materials/
+├── english/
+│   ├── year-1/    (Simple Present series - 5 worksheets)
+│   ├── year-5/    (Coming soon)
+│   └── year-7/    (Word formation, crosswords)
+└── geography/
+    ├── year-1/    (Coming soon)
+    ├── year-5/    (Coming soon)
+    └── year-7/    (Coming soon)
+```
 
 ---
 
 ## 📝 Current Materials
 
-### Year 1 - English (Simple Present)
+### English
+
+#### Year 1 - Simple Present
 - **Simple Present Basics:** 20 positive sentence exercises
 - **Simple Present Questions:** 20 question formation exercises
 - **Simple Present Negatives:** 20 negative sentence exercises
 - **Simple Present Mixed:** 20 mixed practice exercises
 - **Question Quest Game:** Interactive game for practicing questions & negations
 
-### Year 7 - English
+#### Year 7
 - **Fashion Industry Word Formation:** 20-word exercise with answer key
 - **Nutrition and Sports Word Formation:** 20-word exercise with answer key
 - **Fashion Industry Crossword:** Thematic vocabulary puzzle with solutions
+
+### Geography
+*Materials coming soon*
 
 ---
 
 ## 🎯 Features
 - Professional PDF formatting
 - Answer keys included
-- Organized by year level
+- Organized by subject and year level
 - Multiple difficulty levels
 - Thematic content
 - Color-coded by topic
