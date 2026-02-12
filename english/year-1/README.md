@@ -1,5 +1,13 @@
 # Year 1 - English
 
+## Present Progressive Series
+
+### Merkblatt (Grammar Reference)
+- **present_progressive_merkblatt.pdf** - Complete grammar reference with rules, examples, and signal words
+
+### Introduction Worksheet
+- **present_progressive_introduction.pdf** - Guided introduction with 4 exercises (40+ tasks)
+
 ## Simple Present Series
 
 Complete collection of Simple Present exercises and activities.
