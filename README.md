@@ -7,7 +7,7 @@ A curated collection of educational worksheets, games, and exercises organized b
 ```
 teaching-materials/
 ├── english/
-│   ├── year-1/    (Simple Present series - 5 worksheets)
+│   ├── year-1/    (Simple Present + Present Progressive - 7 worksheets)
 │   ├── year-5/    (Nutrition & Sports - 4 worksheets)
 │   └── year-7/    (Word formation, open gap fill, crosswords - 5 worksheets)
 └── geography/
@@ -22,7 +22,12 @@ teaching-materials/
 
 ### English
 
-#### Year 1 - Simple Present
+#### Year 1 - Grammar Basics
+**Present Progressive**
+- **Merkblatt (Reference Sheet):** Complete grammar guide with rules, examples, signal words, and comparisons
+- **Introduction Worksheet:** Guided introduction with 40+ exercises
+
+**Simple Present**
 - **Simple Present Basics:** 20 positive sentence exercises
 - **Simple Present Questions:** 20 question formation exercises
 - **Simple Present Negatives:** 20 negative sentence exercises
@@ -55,12 +60,13 @@ teaching-materials/
 - Thematic content (Nutrition, Sports, Fashion, Technology, Environment)
 - Color-coded by topic
 - Learning tips included
+- Grammar reference sheets (Merkblätter)
 
 ---
 
 ## 📊 Statistics
-- **Total materials:** 14 worksheets
-- **Subjects:** English (14), Geography (coming soon)
+- **Total materials:** 16 worksheets
+- **Subjects:** English (16), Geography (coming soon)
 - **Year levels:** 1, 5, 7
 - **Languages:** English
 
