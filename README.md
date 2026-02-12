@@ -9,7 +9,7 @@ teaching-materials/
 ├── english/
 │   ├── year-1/    (Simple Present series - 5 worksheets)
 │   ├── year-5/    (Coming soon)
-│   └── year-7/    (Word formation, crosswords)
+│   └── year-7/    (Word formation, open gap fill, crosswords)
 └── geography/
     ├── year-1/    (Coming soon)
     ├── year-5/    (Coming soon)
@@ -30,9 +30,11 @@ teaching-materials/
 - **Question Quest Game:** Interactive game for practicing questions & negations
 
 #### Year 7
-- **Fashion Industry Word Formation:** 20-word exercise with answer key
-- **Nutrition and Sports Word Formation:** 20-word exercise with answer key
-- **Fashion Industry Crossword:** Thematic vocabulary puzzle with solutions
+- **Fashion Industry Word Formation:** 20-word exercise (Grade 7 level)
+- **Nutrition and Sports Word Formation:** 20-word exercise (Grade 7 level)
+- **Fashion Industry Crossword:** Thematic vocabulary puzzle
+- **Open Gap Fill - Social Media & Technology:** 16-gap text (B2 level)
+- **Open Gap Fill - Climate Change & Environment:** 16-gap text (B2 level)
 
 ### Geography
 *Materials coming soon*
@@ -43,9 +45,10 @@ teaching-materials/
 - Professional PDF formatting
 - Answer keys included
 - Organized by subject and year level
-- Multiple difficulty levels
+- Multiple difficulty levels (Grade 7, B2)
 - Thematic content
 - Color-coded by topic
+- Learning tips included
 
 ---
 
