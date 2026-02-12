@@ -8,9 +8,10 @@
 4. **04_simple_present_mixed.pdf** - All forms combined (20 exercises)
 5. **05_simple_present_game.pdf** - Interactive grammar game
 
-## Present Progressive Series (06-07)
+## Present Progressive Series (06-08)
 
 6. **06_present_progressive_merkblatt.pdf** - Complete grammar reference (Merkblatt)
 7. **07_present_progressive_introduction.pdf** - Guided introduction with 40+ exercises
+8. **08_present_progressive_practice.pdf** - Practice worksheet with 4 exercises (34 tasks)
 
 All materials include full answer keys! ✅
