@@ -1,43 +1,41 @@
 # Teaching Materials Collection
 
-A curated collection of educational worksheets, games, and exercises for various subjects and grade levels.
+A curated collection of educational worksheets, games, and exercises organized by year level.
 
 ## 📚 Structure
 
-### English
-- **Grade 5**: Grammar exercises, games, and activities
-- **Grade 7**: Advanced worksheets and word formation exercises
-- **Word Formation**: Thematic word formation worksheets
-- **Crosswords**: Subject-specific crossword puzzles
-- **Games**: Interactive grammar games
-
-### Geography
+### Year 1
 *Coming soon*
 
-### Economics
-*Coming soon*
+### Year 5
+- Simple Present Grammar Games
+- Interactive exercises
+
+### Year 7
+- Word Formation exercises
+- Crossword puzzles
+- Advanced grammar materials
 
 ---
 
 ## 📝 Current Materials
 
-### English - Word Formation
-- Fashion Industry Word Formation (20 words, Grade 7)
-- Nutrition and Sports Word Formation (20 words)
+### Year 5 - English
+- **Simple Present Game:** "Question Quest!" - Interactive game for practicing questions and negations
 
-### English - Crosswords
-- Fashion Industry Crossword Puzzle
-
-### English - Grade 5
-- Simple Present Game: "Question Quest!" (Questions & Negations)
+### Year 7 - English
+- **Fashion Industry Word Formation:** 20-word exercise with answer key
+- **Nutrition and Sports Word Formation:** 20-word exercise with answer key
+- **Fashion Industry Crossword:** Thematic vocabulary puzzle with solutions
 
 ---
 
 ## 🎯 Features
 - Professional PDF formatting
 - Answer keys included
-- Thematic organization
+- Organized by year level
 - Multiple difficulty levels
+- Thematic content
 
 ---
 
