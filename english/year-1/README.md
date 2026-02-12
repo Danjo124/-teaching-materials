@@ -1,22 +1,16 @@
 # Year 1 - English
 
-## Present Progressive Series
+## Simple Present Series (01-05)
 
-### Merkblatt (Grammar Reference)
-- **present_progressive_merkblatt.pdf** - Complete grammar reference with rules, examples, and signal words
+1. **01_simple_present_basics.pdf** - Positive sentences (20 exercises)
+2. **02_simple_present_questions.pdf** - Forming questions with Do/Does (20 exercises)
+3. **03_simple_present_negatives.pdf** - Negative sentences with don't/doesn't (20 exercises)
+4. **04_simple_present_mixed.pdf** - All forms combined (20 exercises)
+5. **05_simple_present_game.pdf** - Interactive grammar game
 
-### Introduction Worksheet
-- **present_progressive_introduction.pdf** - Guided introduction with 4 exercises (40+ tasks)
+## Present Progressive Series (06-07)
 
-## Simple Present Series
-
-Complete collection of Simple Present exercises and activities.
-
-### Materials
-1. **simple_present_basics.pdf** - Positive sentences (20 exercises)
-2. **simple_present_questions.pdf** - Forming questions with Do/Does (20 exercises)
-3. **simple_present_negatives.pdf** - Negative sentences with don't/doesn't (20 exercises)
-4. **simple_present_mixed.pdf** - All forms combined (20 exercises)
-5. **simple_present_game_5th_grade.pdf** - Interactive grammar game
+6. **06_present_progressive_merkblatt.pdf** - Complete grammar reference (Merkblatt)
+7. **07_present_progressive_introduction.pdf** - Guided introduction with 40+ exercises
 
 All materials include full answer keys! ✅
