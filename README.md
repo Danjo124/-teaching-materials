@@ -5,11 +5,12 @@ A curated collection of educational worksheets, games, and exercises organized b
 ## 📚 Structure
 
 ### Year 1
-*Coming soon*
+- **Simple Present Series:** Complete set of 5 worksheets covering basics, questions, negatives, mixed practice, and interactive game
+- Grammar exercises with answer keys
+- Color-coded materials
 
 ### Year 5
-- Simple Present Grammar Games
-- Interactive exercises
+*Materials coming soon*
 
 ### Year 7
 - Word Formation exercises
@@ -20,8 +21,12 @@ A curated collection of educational worksheets, games, and exercises organized b
 
 ## 📝 Current Materials
 
-### Year 5 - English
-- **Simple Present Game:** "Question Quest!" - Interactive game for practicing questions and negations
+### Year 1 - English (Simple Present)
+- **Simple Present Basics:** 20 positive sentence exercises
+- **Simple Present Questions:** 20 question formation exercises
+- **Simple Present Negatives:** 20 negative sentence exercises
+- **Simple Present Mixed:** 20 mixed practice exercises
+- **Question Quest Game:** Interactive game for practicing questions & negations
 
 ### Year 7 - English
 - **Fashion Industry Word Formation:** 20-word exercise with answer key
@@ -36,6 +41,7 @@ A curated collection of educational worksheets, games, and exercises organized b
 - Organized by year level
 - Multiple difficulty levels
 - Thematic content
+- Color-coded by topic
 
 ---
 
