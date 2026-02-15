@@ -3,58 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Quiz: Simple Present (20 Questions)</title>
+    <title>Simple Present: 20-Sentence Challenge</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .correct { border-color: #10b981; background-color: #ecfdf5; }
         .incorrect { border-color: #ef4444; background-color: #fef2f2; }
+        @media print { .no-print { display: none; } }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen p-4 md:p-8 font-sans text-slate-800">
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-slate-200">
         <header class="text-center mb-10">
-            <h1 class="text-3xl font-extrabold">Simple Present: 20 Challenges</h1>
-            <p class="text-slate-500 mt-2 italic text-lg">Kannst du alle lösen?</p>
+            <h1 class="text-3xl font-extrabold text-slate-800">Simple Present: 20-Sentence Challenge</h1>
+            <p class="text-slate-500 mt-2 italic">Fülle das Quiz aus und lade dein Ergebnis als PDF herunter.</p>
         </header>
 
-        <div id="quiz-container" class="space-y-6">
-            <!-- Questions will be inserted here -->
+        <div class="mb-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
+            <label class="block text-sm font-bold text-blue-700 mb-1">Dein Name:</label>
+            <input type="text" id="student-name" class="w-full p-2 rounded-lg border border-blue-200 outline-none focus:ring-2 focus:ring-blue-400" placeholder="Vorname Nachname...">
         </div>
 
-        <button onclick="check()" class="w-full mt-10 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg">Ergebnisse prüfen</button>
+        <div id="quiz-container" class="space-y-6"></div>
+
+        <div class="flex flex-col gap-4 mt-10 no-print">
+            <button onclick="check()" class="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg text-xl uppercase tracking-wider">
+                <i class="fas fa-check-circle mr-2"></i> Ergebnisse prüfen
+            </button>
+            
+            <div id="export-section" class="hidden flex gap-2">
+                <button onclick="exportAsPDF()" class="flex-1 py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-900 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-file-pdf"></i> Als PDF speichern
+                </button>
+            </div>
+        </div>
+
         <div id="res" class="mt-8 p-6 rounded-xl text-center font-bold text-xl hidden"></div>
     </div>
 
     <script>
-        const data = [
-            {q: "1. He ________ (play) tennis every Monday.", a: "plays"},
-            {q: "2. They ________ (not / live) in London.", a: "don't live", alt: "do not live"},
-            {q: "3. Do you ________ (speak) English?", a: "speak"},
-            {q: "4. My cat ________ (sleep) on the sofa.", a: "sleeps"},
-            {q: "5. We ________ (go) to the cinema on Fridays.", a: "go"},
-            {q: "6. She ________ (not / like) apples.", a: "doesn't like", alt: "does not like"},
-            {q: "7. Does he ________ (watch) TV every day?", a: "watch"},
-            {q: "8. I ________ (be) a teacher.", a: "am"},
-            {q: "9. It ________ (rain) a lot in autumn.", a: "rains"},
-            {q: "10. My parents ________ (work) in a bank.", a: "work"},
-            {q: "11. Do they ________ (have) any pets?", a: "have"},
-            {q: "12. Sarah ________ (wash) her car every Saturday.", a: "washes"},
-            {q: "13. We ________ (not / understand) the question.", a: "don't understand", alt: "do not understand"},
-            {q: "14. Do you ________ (want) some water?", a: "want"},
-            {q: "15. The sun ________ (rise) in the east.", a: "rises"},
-            {q: "16. I ________ (never / eat) meat.", a: "never eat"},
-            {q: "17. Does she ________ (go) to your school?", a: "go"},
-            {q: "18. Dogs ________ (bark) at night.", a: "bark"},
-            {q: "19. He ________ (not / do) his homework.", a: "doesn't do", alt: "does not do"},
-            {q: "20. My friend ________ (live) in Berlin.", a: "lives"}
-        ];
+        const data = [{'q': '1. He ________ (play) tennis every Monday.', 'a': 'plays'}, {'q': '2. They ________ (not / live) in London.', 'a': "don't live", 'alt': 'do not live'}, {'q': '3. Do you ________ (speak) English?', 'a': 'speak'}, {'q': '4. My cat ________ (sleep) on the sofa.', 'a': 'sleeps'}, {'q': '5. We ________ (go) to the cinema on Fridays.', 'a': 'go'}, {'q': '6. She ________ (not / like) apples.', 'a': "doesn't like", 'alt': 'does not like'}, {'q': '7. Does he ________ (watch) TV every day?', 'a': 'watch'}, {'q': '8. I ________ (be) a teacher.', 'a': 'am'}, {'q': '9. It ________ (rain) a lot in autumn.', 'a': 'rains'}, {'q': '10. My parents ________ (work) in a bank.', 'a': 'work'}, {'q': '11. Do they ________ (have) any pets?', 'a': 'have'}, {'q': '12. Sarah ________ (wash) her car every Saturday.', 'a': 'washes'}, {'q': '13. We ________ (not / understand) the question.', 'a': "don't understand", 'alt': 'do not understand'}, {'q': '14. Do you ________ (want) some water?', 'a': 'want'}, {'q': '15. The sun ________ (rise) in the east.', 'a': 'rises'}, {'q': '16. I ________ (never / eat) meat.', 'a': 'never eat'}, {'q': '17. Does she ________ (go) to your school?', 'a': 'go'}, {'q': '18. Dogs ________ (bark) at night.', 'a': 'bark'}, {'q': '19. He ________ (not / do) his homework.', 'a': "doesn't do", 'alt': 'does not do'}, {'q': '20. My friend ________ (live) in Berlin.', 'a': 'lives'}];
 
         const container = document.getElementById('quiz-container');
         data.forEach((item, index) => {
             container.innerHTML += `
-                <div>
-                    <p class="mb-2 font-medium">${item.q}</p>
-                    <input type="text" id="q${index}" class="quiz-input w-full p-3 border-2 border-slate-200 rounded-xl outline-none transition focus:border-blue-500" placeholder="Antwort...">
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <p class="mb-2 font-semibold text-slate-700">${item.q}</p>
+                    <input type="text" id="q${index}" class="quiz-input w-full p-3 border-2 border-slate-300 rounded-xl outline-none transition focus:border-blue-500" placeholder="Antwort...">
                 </div>
             `;
         });
@@ -64,18 +60,52 @@
             data.forEach((item, index) => {
                 const input = document.getElementById(`q${index}`);
                 const val = input.value.trim().toLowerCase();
-                if(val === item.a || (item.alt && val === item.alt)) {
-                    input.className = 'quiz-input w-full p-3 border-2 rounded-xl outline-none transition correct';
+                const isCorrect = val === item.a.toLowerCase() || (item.alt && val === item.alt.toLowerCase());
+                if(isCorrect) {
+                    input.className = 'quiz-input w-full p-3 border-2 rounded-xl outline-none transition correct font-bold';
                     s++;
                 } else {
-                    input.className = 'quiz-input w-full p-3 border-2 rounded-xl outline-none transition incorrect';
+                    input.className = 'quiz-input w-full p-3 border-2 rounded-xl outline-none transition incorrect font-bold';
                 }
             });
             const r = document.getElementById('res');
             r.classList.remove('hidden');
-            r.innerText = `Ergebnis: ${s} von 20 richtig!`;
-            r.className = s === 20 ? 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-green-100 text-green-700' : 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-blue-100 text-blue-700';
-            window.scrollTo(0, document.body.scrollHeight);
+            r.innerText = `Ergebnis: ${s} von ${data.length} richtig!`;
+            r.className = s === data.length ? 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-green-100 text-green-700' : 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-blue-100 text-blue-700';
+            document.getElementById('export-section').classList.remove('hidden');
+            window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+        }
+
+        async function exportAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const name = document.getElementById('student-name').value || 'Unbekannter Schueler';
+            const score = document.getElementById('res').innerText;
+
+            doc.setFontSize(20);
+            doc.text("Simple Present: 20-Sentence Challenge - Ergebnisse", 20, 20);
+            doc.setFontSize(12);
+            doc.text(`Name: ${name}`, 20, 35);
+            doc.text(`Datum: ${new Date().toLocaleDateString()}`, 20, 42);
+            doc.text(`Ergebnis: ${score}`, 20, 49);
+            doc.text("--------------------------------------------------", 20, 56);
+
+            let y = 65;
+            data.forEach((item, index) => {
+                const val = document.getElementById(`q${index}`).value;
+                const isCorrect = val.trim().toLowerCase() === item.a.toLowerCase() || (item.alt && val.trim().toLowerCase() === item.alt.toLowerCase());
+                
+                doc.setFontSize(10);
+                doc.setTextColor(0, 0, 0);
+                doc.text(`${item.q}`, 20, y);
+                y += 7;
+                doc.setTextColor(isCorrect ? 0 : 200, isCorrect ? 150 : 0, 0);
+                doc.text(`Antwort: ${val || '(leer)'} ${isCorrect ? '[RICHTIG]' : '[FALSCH - Korrekt: ' + item.a + ']'}`, 25, y);
+                y += 10;
+                if(y > 275) { doc.addPage(); y = 20; }
+            });
+
+            doc.save(`Ergebnis_${name.replace(/ /g, '_')}.pdf`);
         }
     </script>
 </body>
