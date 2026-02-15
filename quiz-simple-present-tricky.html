@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Quiz: Simple Present (TRICKY)</title>
+    <title>Online Quiz: Simple Present (TRICKY) + Export</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .correct { border-color: #10b981; background-color: #ecfdf5; }
         .incorrect { border-color: #ef4444; background-color: #fef2f2; }
+        @media print { .no-print { display: none; } }
     </style>
 </head>
 <body class="bg-slate-100 min-h-screen p-4 md:p-8 font-sans text-slate-800">
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-6 md:p-10 border-t-8 border-orange-500">
         <header class="text-center mb-10">
             <span class="bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">Level: Tricky</span>
-            <h1 class="text-3xl font-black mt-4">Simple Present Challenge</h1>
+            <h1 class="text-3xl font-black mt-4 text-slate-900">Simple Present Challenge</h1>
             <p class="text-slate-500 mt-2 italic">Achtung: Sonderformen & knifflige Verben!</p>
         </header>
 
+        <div class="mb-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
+            <label class="block text-sm font-bold text-blue-700 mb-1">Dein Name:</label>
+            <input type="text" id="student-name" class="w-full p-2 rounded-lg border border-blue-200 outline-none focus:ring-2 focus:ring-blue-400" placeholder="Vorname Nachname...">
+        </div>
+
         <div id="quiz-container" class="space-y-6"></div>
 
-        <button onclick="check()" class="w-full mt-10 py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition shadow-lg text-xl uppercase tracking-wider">Ergebnisse prüfen</button>
+        <div class="flex flex-col gap-4 mt-10 no-print">
+            <button onclick="check()" class="w-full py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition shadow-lg text-xl uppercase tracking-wider">
+                <i class="fas fa-check-circle mr-2"></i> Ergebnisse prüfen
+            </button>
+            
+            <div id="export-section" class="hidden flex gap-2">
+                <button onclick="exportAsPDF()" class="flex-1 py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-900 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-file-pdf"></i> Als PDF speichern
+                </button>
+                <button onclick="window.print()" class="px-6 py-3 bg-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-300 transition">
+                    <i class="fas fa-print"></i> Drucken
+                </button>
+            </div>
+        </div>
+
         <div id="res" class="mt-8 p-6 rounded-xl text-center font-bold text-xl hidden"></div>
     </div>
 
@@ -34,7 +56,7 @@
             {q: "6. Do your parents ________ (go) to work by train?", a: "go"},
             {q: "7. Water ________ (freeze) at 0 degrees Celsius.", a: "freezes"},
             {q: "8. The teacher ________ (teach) us new things.", a: "teaches"},
-            {q: "9. He ________ (not / study) on weekends.", a: "doesn't study", alt: "does not study"},
+            {q: "9. He ________ (not / study) on weekends.", a: "doesn't study", alt: "do not study"},
             {q: "10. My dog ________ (catch) the ball very well.", a: "catches"},
             {q: "11. Does Sarah ________ (buy) her clothes online?", a: "buy"},
             {q: "12. The plane ________ (fly) over the mountains.", a: "flies"},
@@ -69,7 +91,41 @@
             r.classList.remove('hidden');
             r.innerText = `Ergebnis: ${s} von ${data.length} richtig!`;
             r.className = s === data.length ? 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-green-100 text-green-700' : 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-orange-100 text-orange-700';
+            
+            document.getElementById('export-section').classList.remove('hidden');
             window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+        }
+
+        async function exportAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const name = document.getElementById('student-name').value || 'Unbekannter Schüler';
+            const score = document.getElementById('res').innerText;
+
+            doc.setFontSize(20);
+            doc.text("Simple Present Quiz - Ergebnisse", 20, 20);
+            doc.setFontSize(12);
+            doc.text(`Name: ${name}`, 20, 35);
+            doc.text(`Datum: ${new Date().toLocaleDateString()}`, 20, 42);
+            doc.text(`Ergebnis: ${score}`, 20, 49);
+            doc.text("--------------------------------------------------", 20, 56);
+
+            let y = 65;
+            data.forEach((item, index) => {
+                const val = document.getElementById(`q${index}`).value;
+                const isCorrect = val.trim().toLowerCase() === item.a || (item.alt && val.trim().toLowerCase() === item.alt);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(0, 0, 0);
+                doc.text(`${item.q}`, 20, y);
+                y += 7;
+                doc.setTextColor(isCorrect ? 0 : 200, isCorrect ? 150 : 0, 0);
+                doc.text(`Deine Antwort: ${val || '(leer)'} ${isCorrect ? '[RICHTIG]' : '[FALSCH - Korrekt: ' + item.a + ']'}`, 25, y);
+                y += 10;
+                if(y > 270) { doc.addPage(); y = 20; }
+            });
+
+            doc.save(`Ergebnis_${name.replace(/ /g, '_')}.pdf`);
         }
     </script>
 </body>
