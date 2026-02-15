@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz: Word Formation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .correct { border-color: #10b981; background-color: #ecfdf5; }
+        .incorrect { border-color: #ef4444; background-color: #fef2f2; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen p-4 md:p-8">
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl font-bold text-slate-800">Word Formation Quiz</h1>
+            <p class="text-slate-500 mt-2">Thema: Travel & Tourism (Year 5)</p>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Question 1 -->
+            <div>
+                <p class="text-lg text-slate-700 mb-2">1. The island is a very popular tourist ________. (DESTINE)</p>
+                <input type="text" id="q1" data-answer="destination" class="quiz-input w-full p-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition" placeholder="Deine Antwort...">
+            </div>
+
+            <!-- Question 2 -->
+            <div>
+                <p class="text-lg text-slate-700 mb-2">2. Traveling by plane is often more ________ than train. (CONVENIENCE)</p>
+                <input type="text" id="q2" data-answer="convenient" class="quiz-input w-full p-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition" placeholder="Deine Antwort...">
+            </div>
+
+            <!-- Question 3 -->
+            <div>
+                <p class="text-lg text-slate-700 mb-2">3. The local people were very ________ and helpful. (FRIEND)</p>
+                <input type="text" id="q3" data-answer="friendly" class="quiz-input w-full p-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition" placeholder="Deine Antwort...">
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <button onclick="checkAnswers()" class="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg">
+                Ergebnisse prüfen
+            </button>
+        </div>
+
+        <div id="result-box" class="mt-8 p-4 rounded-xl text-center font-bold hidden"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.quiz-input');
+            let score = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.getAttribute('data-answer');
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.remove('incorrect');
+                    input.classList.add('correct');
+                    score++;
+                } else {
+                    input.classList.remove('correct');
+                    input.classList.add('incorrect');
+                }
+            });
+
+            const resultBox = document.getElementById('result-box');
+            resultBox.classList.remove('hidden');
+            resultBox.innerHTML = `Du hast ${score} von ${inputs.length} richtig!`;
+            resultBox.className = score === inputs.length ? 'mt-8 p-4 rounded-xl text-center font-bold bg-green-100 text-green-700' : 'mt-8 p-4 rounded-xl text-center font-bold bg-blue-100 text-blue-700';
+        }
+    </script>
+</body>
+</html>
