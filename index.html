@@ -3,140 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Tekula – Datei-Explorer</title>
+    <title>Daniel Tekula – Material Explorer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .file-row:hover { background-color: #f1f5f9; }
-        .folder-section { margin-bottom: 2rem; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden; }
-        .folder-header { background: #e2e8f0; padding: 0.75rem 1rem; font-weight: bold; display: flex; items-center; gap: 0.5rem; border-bottom: 1px solid #cbd5e1; }
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .file-item:hover { background-color: #f8f9fa; }
+        .folder-card { background: white; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); margin-bottom: 20px; overflow: hidden; border: 1px solid #ddd; }
+        .folder-header { background: #f6f8fa; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: 600; display: flex; items-center; gap: 10px; color: #24292f; }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="p-4 md:p-10">
     <div class="max-w-5xl mx-auto">
-        <header class="mb-8 flex justify-between items-center border-b pb-4">
-            <div>
-                <h1 class="text-2xl font-bold text-slate-800">Dateien von Daniel Tekula</h1>
-                <p class="text-slate-500 text-sm">Automatischer Datei-Index aller Unterrichtsmaterialien</p>
-            </div>
-            <a href="https://github.com/Danjo124/-teaching-materials" target="_blank" class="text-slate-500 hover:text-slate-800">
-                <i class="fab fa-github fa-2xl"></i>
-            </a>
+        <header class="mb-10 border-b pb-6">
+            <h1 class="text-3xl font-bold text-gray-900">Datei-Explorer: Unterrichtsmaterialien</h1>
+            <p class="text-gray-500 mt-2 text-lg">Daniel Tekula • Version: 15.02.2026 (Refreshed)</p>
+            <p class="text-blue-600 text-sm font-bold mt-1">HINWEIS: Wenn du keine Änderungen siehst, bitte die Seite im Browser einmal "hart" neu laden (Strg + F5 oder Shift + Klick auf Neuladen).</p>
         </header>
 
-        <!-- English Year 1 -->
-        <div class="folder-section">
-            <div class="folder-header text-blue-800"><i class="fas fa-folder-open text-blue-500"></i> english/year-1</div>
-            <div class="divide-y divide-slate-100">
-                <a href="english/year-1/01_simple_present_basics.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01_simple_present_basics.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english/year-1/06_present_progressive_merkblatt.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 06_present_progressive_merkblatt.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english/year-1/10_probe_schularbeit_quinoa.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 10_probe_schularbeit_quinoa.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
+        <div id="explorer">
+            <!-- English Year 1 -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-1</div>
+                <div class="divide-y divide-gray-100">
+                    <a href="english/year-1/01_simple_present_basics.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 01_simple_present_basics.pdf
+                    </a>
+                    <a href="english/year-1/06_present_progressive_merkblatt.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 06_present_progressive_merkblatt.pdf
+                    </a>
+                    <a href="english/year-1/10_probe_schularbeit_quinoa.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 10_probe_schularbeit_quinoa.pdf
+                    </a>
+                </div>
+            </div>
+
+            <!-- English Year 5 -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-5</div>
+                <div class="divide-y divide-gray-100">
+                    <a href="english/year-5/06_word_formation_travel_tourism.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 06_word_formation_travel_tourism.pdf
+                    </a>
+                    <a href="english/year-5/07_word_formation_environment_nature.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 07_word_formation_environment_nature.pdf
+                    </a>
+                    <a href="english/year-5/08_mediation_social_media_year5.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 08_mediation_social_media_year5.pdf
+                    </a>
+                    <a href="english/year-5/09_mediation_healthy_living_year5.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 09_mediation_healthy_living_year5.pdf
+                    </a>
+                </div>
+            </div>
+
+            <!-- English Year 7 -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-7</div>
+                <div class="divide-y divide-gray-100">
+                    <a href="english/year-7/06_mediation_ai_workplace_year7.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 06_mediation_ai_workplace_year7.pdf
+                    </a>
+                    <a href="english/year-7/07_mediation_sustainable_tourism_year7.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 07_mediation_sustainable_tourism_year7.pdf
+                    </a>
+                </div>
+            </div>
+
+            <!-- English in Context 7 -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-indigo-400"></i> english-in-context-7</div>
+                <div class="divide-y divide-gray-100">
+                    <a href="english-in-context-7/01-error-correction-tricky.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 01-error-correction-tricky.pdf
+                    </a>
+                    <a href="english-in-context-7/07-tricky-grammar-inversion.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 07-tricky-grammar-inversion.pdf
+                    </a>
+                </div>
+            </div>
+
+            <!-- More! 1 -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-green-400"></i> more-1</div>
+                <div class="divide-y divide-gray-100">
+                    <a href="more-1/unit-8-clothes/01_vocabulary_clothes.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> unit-8-clothes / 01_vocabulary_clothes.pdf
+                    </a>
+                    <a href="more-1/unit-9-unusual-pets/09-unusual-pets-unit9.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> unit-9-unusual-pets / 09-unusual-pets-unit9.pdf
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- English Year 5 -->
-        <div class="folder-section">
-            <div class="folder-header text-blue-800"><i class="fas fa-folder-open text-blue-500"></i> english/year-5</div>
-            <div class="divide-y divide-slate-100">
-                <a href="english/year-5/01_word_formation_nutrition.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01_word_formation_nutrition.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english/year-5/06_word_formation_travel_tourism.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 06_word_formation_travel_tourism.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english/year-5/08_mediation_social_media_year5.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 08_mediation_social_media_year5.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english/year-5/09_mediation_healthy_living_year5.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 09_mediation_healthy_living_year5.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- English Year 7 -->
-        <div class="folder-section">
-            <div class="folder-header text-blue-800"><i class="fas fa-folder-open text-blue-500"></i> english/year-7</div>
-            <div class="divide-y divide-slate-100">
-                <a href="english/year-7/01_word_formation_fashion_industry.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01_word_formation_fashion_industry.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english/year-7/06_mediation_ai_workplace_year7.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 06_mediation_ai_workplace_year7.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english/year-7/07_mediation_sustainable_tourism_year7.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 07_mediation_sustainable_tourism_year7.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- English in Context 5 -->
-        <div class="folder-section">
-            <div class="folder-header text-indigo-800"><i class="fas fa-folder-open text-indigo-500"></i> english-in-context-5</div>
-            <div class="divide-y divide-slate-100">
-                <a href="english-in-context-5/01-nutrition-vocabulary.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01-nutrition-vocabulary.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english-in-context-5/02-sports-and-exercise.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 02-sports-and-exercise.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- English in Context 7 -->
-        <div class="folder-section">
-            <div class="folder-header text-indigo-800"><i class="fas fa-folder-open text-indigo-500"></i> english-in-context-7</div>
-            <div class="divide-y divide-slate-100">
-                <a href="english-in-context-7/01-error-correction-tricky.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01-error-correction-tricky.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english-in-context-7/04-fashion-globalization-reading.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 04-fashion-globalization-reading.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="english-in-context-7/07-tricky-grammar-inversion.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> 07-tricky-grammar-inversion.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- More! 1 -->
-        <div class="folder-section">
-            <div class="folder-header text-emerald-800"><i class="fas fa-folder-open text-emerald-500"></i> more-1</div>
-            <div class="divide-y divide-slate-100">
-                <a href="more-1/unit-8-clothes/01_vocabulary_clothes.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> unit-8-clothes/01_vocabulary_clothes.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-                <a href="more-1/unit-9-unusual-pets/09-unusual-pets-unit9.pdf" target="_blank" class="file-row flex justify-between p-3 transition">
-                    <span class="text-slate-700"><i class="far fa-file-pdf text-red-500 mr-2"></i> unit-9-unusual-pets/09-unusual-pets-unit9.pdf</span>
-                    <span class="text-slate-400 text-xs uppercase">PDF</span>
-                </a>
-            </div>
-        </div>
-
-        <footer class="mt-8 text-center text-slate-400 text-xs italic">
-            Zuletzt aktualisiert: 15. Februar 2026
+        <footer class="mt-12 text-center text-gray-400 text-sm">
+            <p>Die Struktur wird direkt aus dem Repository generiert.</p>
+            <p class="mt-2"><a href="https://github.com/Danjo124/-teaching-materials" class="hover:underline">GitHub Quellcode</a></p>
         </footer>
     </div>
 </body>
