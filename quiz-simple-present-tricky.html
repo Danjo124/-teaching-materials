@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz: Simple Present (TRICKY)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .correct { border-color: #10b981; background-color: #ecfdf5; }
+        .incorrect { border-color: #ef4444; background-color: #fef2f2; }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen p-4 md:p-8 font-sans text-slate-800">
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-6 md:p-10 border-t-8 border-orange-500">
+        <header class="text-center mb-10">
+            <span class="bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">Level: Tricky</span>
+            <h1 class="text-3xl font-black mt-4">Simple Present Challenge</h1>
+            <p class="text-slate-500 mt-2 italic">Achtung: Sonderformen & knifflige Verben!</p>
+        </header>
+
+        <div id="quiz-container" class="space-y-6"></div>
+
+        <button onclick="check()" class="w-full mt-10 py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition shadow-lg text-xl uppercase tracking-wider">Ergebnisse prüfen</button>
+        <div id="res" class="mt-8 p-6 rounded-xl text-center font-bold text-xl hidden"></div>
+    </div>
+
+    <script>
+        const data = [
+            {q: "1. My sister ________ (watch) action movies.", a: "watches"},
+            {q: "2. The baby ________ (cry) when he is hungry.", a: "cries"},
+            {q: "3. Does your friend ________ (do) his homework?", a: "do"},
+            {q: "4. A bus ________ (pass) our house every ten minutes.", a: "passes"},
+            {q: "5. My father ________ (fix) the car in the garage.", a: "fixes"},
+            {q: "6. Do your parents ________ (go) to work by train?", a: "go"},
+            {q: "7. Water ________ (freeze) at 0 degrees Celsius.", a: "freezes"},
+            {q: "8. The teacher ________ (teach) us new things.", a: "teaches"},
+            {q: "9. He ________ (not / study) on weekends.", a: "doesn't study", alt: "does not study"},
+            {q: "10. My dog ________ (catch) the ball very well.", a: "catches"},
+            {q: "11. Does Sarah ________ (buy) her clothes online?", a: "buy"},
+            {q: "12. The plane ________ (fly) over the mountains.", a: "flies"},
+            {q: "13. We ________ (not / have) any milk.", a: "don't have", alt: "do not have"},
+            {q: "14. Why does the moon ________ (shine) at night?", a: "shine"},
+            {q: "15. My brother ________ (mix) the ingredients.", a: "mixes"}
+        ];
+
+        const container = document.getElementById('quiz-container');
+        data.forEach((item, index) => {
+            container.innerHTML += `
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <p class="mb-2 font-semibold text-slate-700">${item.q}</p>
+                    <input type="text" id="q${index}" class="quiz-input w-full p-3 border-2 border-slate-300 rounded-xl outline-none transition focus:border-orange-500" placeholder="Deine Antwort...">
+                </div>
+            `;
+        });
+
+        function check() {
+            let s = 0;
+            data.forEach((item, index) => {
+                const input = document.getElementById(`q${index}`);
+                const val = input.value.trim().toLowerCase();
+                if(val === item.a || (item.alt && val === item.alt)) {
+                    input.className = 'quiz-input w-full p-3 border-2 rounded-xl outline-none transition correct font-bold';
+                    s++;
+                } else {
+                    input.className = 'quiz-input w-full p-3 border-2 rounded-xl outline-none transition incorrect font-bold';
+                }
+            });
+            const r = document.getElementById('res');
+            r.classList.remove('hidden');
+            r.innerText = `Ergebnis: ${s} von ${data.length} richtig!`;
+            r.className = s === data.length ? 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-green-100 text-green-700' : 'mt-8 p-6 rounded-xl text-center font-bold text-xl bg-orange-100 text-orange-700';
+            window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
