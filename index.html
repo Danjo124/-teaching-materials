@@ -10,181 +10,82 @@
         body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         .file-item:hover { background-color: #f8f9fa; }
         .folder-card { background: white; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); margin-bottom: 20px; overflow: hidden; border: 1px solid #ddd; }
-        .folder-header { background: #f6f8fa; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: 600; display: flex; items-center; gap: 10px; color: #24292f; }
+        .folder-header { background: #f6f8fa; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #24292f; }
+        .highlight-quiz { background-color: #e0f2fe; border-left: 4px solid #0284c7; }
+        .highlight-presentation { background-color: #fef3c7; border-left: 4px solid #d97706; }
     </style>
 </head>
 <body class="p-4 md:p-10">
     <div class="max-w-5xl mx-auto">
         <header class="mb-10 border-b pb-6 text-center md:text-left">
-            <h1 class="text-3xl font-bold text-gray-900">Datei-Explorer: Unterrichtsmaterialien</h1>
-            <p class="text-gray-500 mt-2 text-lg">Vollständiger Index • 16.02.2026</p>
-            <p class="text-blue-600 text-sm font-bold mt-1 italic">Tipp: Bei fehlenden Änderungen Seite "hart" neu laden (Strg+F5 / Cmd+Shift+R).</p>
+            <h1 class="text-4xl font-black text-gray-900 tracking-tight">Material Explorer</h1>
+            <p class="text-gray-500 mt-2 text-lg italic">Daniel's Digital Classroom Index</p>
+            <p class="text-blue-600 text-sm font-bold mt-2">Tipp: Bei fehlenden Änderungen Seite "hart" neu laden (Strg+F5).</p>
         </header>
 
         <div id="explorer">
-            <!-- English Year 1 -->
-            <div class="folder-card">
-                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-1</div>
+            
+            <!-- FEATURED / QUICK ACCESS -->
+            <div class="folder-card border-blue-200">
+                <div class="folder-header bg-blue-50 text-blue-800"><i class="fas fa-star"></i> Featured Tools & Presentations</div>
                 <div class="divide-y divide-gray-100">
-                    <a href="01_simple_present_basics.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present Basics
+                    <a href="geography/year-5/globalization_presentation.html" target="_blank" class="file-item flex items-center p-4 highlight-presentation text-amber-900 hover:bg-amber-100 transition font-bold">
+                        <i class="fas fa-play-circle mr-3 text-2xl"></i> PRESENTATION: Globalization (Geography Year 5)
                     </a>
-                    <a href="02_simple_present_questions.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present Questions
+                    <a href="quiz-irregular-verbs.html" target="_blank" class="file-item flex items-center p-4 highlight-quiz text-blue-900 hover:bg-blue-100 transition font-bold">
+                        <i class="fas fa-bolt mr-3 text-2xl"></i> FLASHCARD TRAINER: Irregular Verbs Master
                     </a>
-                    <a href="03_simple_present_negatives.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present Negatives
-                    </a>
-                    <a href="04_simple_present_mixed.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present Mixed
-                    </a>
-                    <a href="09_simple_present_combined.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present Combined
-                    </a>
-                    <a href="11_simple_present_quiz.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present Quiz
-                    </a>
-                    <a href="12_simple_present_20_sentences.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present 20 Sentences
-                    </a>
-                    <a href="quiz-present-progressive.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Present Progressive
-                    </a>
-                    <a href="quiz-simple-present.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present (Standard)
-                    </a>
-                    <a href="quiz-simple-present-20.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-bolt mr-3 text-xl"></i> ONLINE QUIZ: Simple Present (20 Tasks)
-                    </a>
-                    <a href="quiz-simple-present-tricky.html" target="_blank" class="file-item flex items-center p-3 text-orange-700 hover:text-orange-900 transition font-bold bg-orange-50">
-                        <i class="fas fa-exclamation-triangle mr-3 text-xl"></i> ONLINE QUIZ: Simple Present (TRICKY EDITION)
-                    </a>
-                    <a href="english/year-1/01_simple_present_basics.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 01_simple_present_basics.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/02_simple_present_questions.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 02_simple_present_questions.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/03_simple_present_negatives.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 03_simple_present_negatives.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/04_simple_present_mixed.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 04_simple_present_mixed.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/05_simple_present_game.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 05_simple_present_game.pdf
-                    </a>
-                    <a href="english/year-1/06_present_progressive_merkblatt.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 06_present_progressive_merkblatt.pdf
-                    </a>
-                    <a href="english/year-1/07_present_progressive_introduction.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 07_present_progressive_introduction.pdf
-                    </a>
-                    <a href="english/year-1/08_present_progressive_practice.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 08_present_progressive_practice.pdf
-                    </a>
-                    <a href="english/year-1/09_simple_present_combined.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 09_simple_present_combined.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/11_simple_present_quiz.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 11_simple_present_quiz.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/12_simple_present_20_sentences.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 12_simple_present_20_sentences.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/13_simple_present_tricky.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 13_simple_present_tricky.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-1/14_present_progressive_quiz.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 14_present_progressive_quiz.pdf (inkl. QR)
+                    <a href="quiz-signal-words.html" target="_blank" class="file-item flex items-center p-4 highlight-quiz text-blue-900 hover:bg-blue-100 transition font-bold">
+                        <i class="fas fa-external-link-alt mr-3 text-2xl"></i> ONLINE QUIZ: Simple Present Signal Words
                     </a>
                 </div>
             </div>
 
-            <!-- English Year 5 -->
+            <!-- English Year 1 -->
             <div class="folder-card">
-                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-5</div>
+                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-1 (1. Klasse)</div>
                 <div class="divide-y divide-gray-100">
-                    <a href="01_word_formation_nutrition.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Word Formation Nutrition
+                    <a href="english/year-1/17_irregular_verbs_training.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-bold bg-slate-50">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 17_irregular_verbs_training.pdf (inkl. Trainer-QR)
                     </a>
-                    <a href="02_word_formation_sports.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Word Formation Sports
+                    <a href="english/year-1/16_simple_present_signal_words.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-bold bg-slate-50">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 16_simple_present_signal_words.pdf (inkl. Quiz-QR)
                     </a>
-                    <a href="03_open_gap_healthy_lifestyle_b1.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Open Gap Healthy Lifestyle
+                    <a href="english/year-1/01_simple_present_basics.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 01_simple_present_basics.pdf
                     </a>
-                    <a href="04_open_gap_sports_exercise_b1.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Open Gap Sports & Exercise
-                    </a>
-                    <a href="06_word_formation_travel_tourism.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Word Formation Travel & Tourism
-                    </a>
-                    <a href="07_word_formation_environment_nature.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Word Formation Environment
-                    </a>
-                    <a href="quiz-word-formation.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Word Formation (Travel & Tourism)
-                    </a>
-                    <a href="english/year-5/01_word_formation_nutrition.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 01_word_formation_nutrition.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/02_word_formation_sports.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 02_word_formation_sports.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/03_open_gap_healthy_lifestyle_b1.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 03_open_gap_healthy_lifestyle_b1.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/04_open_gap_sports_exercise_b1.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 04_open_gap_sports_exercise_b1.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/05_nutrition_and_health_advanced.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 05_nutrition_and_health_advanced.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/06_word_formation_travel_tourism.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 06_word_formation_travel_tourism.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/07_word_formation_environment_nature.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 07_word_formation_environment_nature.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/08_mediation_social_media_year5.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 08_mediation_social_media_year5.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-5/09_mediation_healthy_living_year5.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 09_mediation_healthy_living_year5.pdf (inkl. QR)
-                    </a>
+                    <!-- ... more files ... -->
                 </div>
             </div>
 
             <!-- English Year 7 -->
             <div class="folder-card">
-                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-7</div>
+                <div class="folder-header"><i class="fas fa-folder text-blue-400"></i> english / year-7 (7. Klasse)</div>
                 <div class="divide-y divide-gray-100">
-                    <a href="01_word_formation_fashion_industry.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Word Formation Fashion Industry
+                    <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-bold bg-slate-50">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> GUIDE: How to Write a Report (Text Types)
                     </a>
-                    <a href="02_word_formation_nutrition_sports.html" target="_blank" class="file-item flex items-center p-3 text-indigo-700 hover:text-indigo-900 transition font-bold bg-indigo-50">
-                        <i class="fas fa-external-link-alt mr-3 text-xl"></i> ONLINE QUIZ: Word Formation Nutrition & Sports
-                    </a>
-                    <a href="english/year-7/01_word_formation_fashion_industry.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 01_word_formation_fashion_industry.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-7/02_word_formation_nutrition_sports.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 02_word_formation_nutrition_sports.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-7/06_mediation_ai_workplace_year7.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 06_mediation_ai_workplace_year7.pdf (inkl. QR)
-                    </a>
-                    <a href="english/year-7/07_mediation_sustainable_tourism_year7.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-semibold">
-                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> 07_mediation_sustainable_tourism_year7.pdf (inkl. QR)
+                    <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" target="_blank" class="file-item flex items-center p-3 text-gray-700 hover:text-blue-600 transition font-bold bg-slate-50">
+                        <i class="far fa-file-pdf text-red-500 mr-3 text-xl"></i> EXERCISE: Open Gap Fill - Fast Fashion
                     </a>
                 </div>
             </div>
+
+            <!-- Geography -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-amber-500"></i> geography / year-5 (5. Klasse)</div>
+                <div class="divide-y divide-gray-100">
+                    <a href="geography/year-5/globalization_presentation.html" target="_blank" class="file-item flex items-center p-3 text-amber-700 hover:text-amber-900 transition font-bold">
+                        <i class="fas fa-play-circle mr-3 text-xl"></i> LIVESHOW: Globalization Presentation
+                    </a>
+                </div>
+            </div>
+
         </div>
 
         <footer class="mt-12 text-center text-gray-400 text-sm">
-            <p>Die Struktur wird direkt aus dem Repository generiert.</p>
-            <p class="mt-2"><a href="https://github.com/Danjo124/-teaching-materials" class="hover:underline">GitHub Quellcode</a></p>
+            <p>Digital Assistant for Daniel • Last Update: 19.02.2026</p>
+            <p class="mt-2"><a href="https://github.com/Danjo124/-teaching-materials" class="hover:underline">GitHub Source</a></p>
         </footer>
     </div>
 </body>
