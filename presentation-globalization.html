@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globalization - Interactive Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .slide { display: none; height: 100vh; }
+        .slide.active { display: flex; animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="gradient-bg text-slate-100 overflow-hidden font-sans">
+
+    <!-- Slide 1: Title -->
+    <section class="slide active flex-col items-center justify-center p-10 text-center" id="slide-1">
+        <div class="mb-6 p-4 bg-blue-500/20 rounded-full animate-bounce">
+            <i class="fas fa-globe-americas text-6xl text-blue-400"></i>
+        </div>
+        <h1 class="text-7xl font-black uppercase tracking-tighter mb-4">Globalization</h1>
+        <p class="text-2xl text-slate-400 max-w-2xl font-light">Understanding our interconnected world. Challenges, Opportunities, and the Future.</p>
+        <div class="mt-12 flex gap-4">
+            <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-bold border border-slate-700">English B2/C1</span>
+            <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-bold border border-slate-700">Digital Presentation</span>
+        </div>
+    </section>
+
+    <!-- Slide 2: Definition -->
+    <section class="slide flex-col items-center justify-center p-10" id="slide-2">
+        <h2 class="text-4xl font-black mb-12 text-blue-400 uppercase">What is it?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+            <div class="p-8 bg-slate-800/50 rounded-3xl border border-slate-700 hover:border-blue-500 transition-all">
+                <i class="fas fa-ship text-3xl mb-4 text-blue-400"></i>
+                <h3 class="text-xl font-bold mb-2">Trade</h3>
+                <p class="text-slate-400">Global flow of goods and services across borders.</p>
+            </div>
+            <div class="p-8 bg-slate-800/50 rounded-3xl border border-slate-700 hover:border-blue-500 transition-all">
+                <i class="fas fa-network-wired text-3xl mb-4 text-blue-400"></i>
+                <h3 class="text-xl font-bold mb-2">Communication</h3>
+                <p class="text-slate-400">Instant connection via the internet and digital media.</p>
+            </div>
+            <div class="p-8 bg-slate-800/50 rounded-3xl border border-slate-700 hover:border-blue-500 transition-all">
+                <i class="fas fa-users text-3xl mb-4 text-blue-400"></i>
+                <h3 class="text-xl font-bold mb-2">Culture</h3>
+                <p class="text-slate-400">The spread of ideas, food, fashion, and lifestyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Pros & Cons -->
+    <section class="slide flex-col items-center justify-center p-10" id="slide-3">
+        <h2 class="text-4xl font-black mb-12 text-blue-400 uppercase">Two Sides of the Coin</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl w-full">
+            <div class="space-y-4">
+                <h3 class="text-2xl font-bold text-green-400"><i class="fas fa-plus-circle mr-2"></i> Opportunities</h3>
+                <ul class="space-y-2 text-lg text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-sm"></i> Economic growth</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-sm"></i> Access to information</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-sm"></i> Cultural exchange</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-2xl font-bold text-red-400"><i class="fas fa-minus-circle mr-2"></i> Challenges</h3>
+                <ul class="space-y-2 text-lg text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fas fa-exclamation-triangle text-red-500 text-sm"></i> Inequality</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-exclamation-triangle text-red-500 text-sm"></i> Environmental impact</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-exclamation-triangle text-red-500 text-sm"></i> Loss of local identity</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Discussion -->
+    <section class="slide flex-col items-center justify-center p-10 text-center" id="slide-4">
+        <h2 class="text-5xl font-black mb-8 text-yellow-400 uppercase italic">Time to Talk!</h2>
+        <div class="p-10 bg-white/5 rounded-full border-2 border-dashed border-slate-700 max-w-3xl">
+            <p class="text-3xl font-light italic">"Does Globalization make the world a better place, or is it just making us all the same?"</p>
+        </div>
+        <p class="mt-8 text-slate-500 font-bold uppercase tracking-widest">Discuss in pairs for 5 minutes</p>
+    </section>
+
+    <!-- Navigation -->
+    <div class="fixed bottom-10 left-0 right-0 flex justify-center items-center gap-8 no-print">
+        <button onclick="prevSlide()" class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-slate-700 transition">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div id="slide-indicator" class="text-sm font-bold text-slate-500 uppercase tracking-widest">Slide 1 / 4</div>
+        <button onclick="nextSlide()" class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-slate-700 transition">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Controls Label -->
+    <div class="fixed bottom-4 left-0 right-0 text-center text-[10px] text-slate-600 uppercase tracking-widest font-bold">
+        Use Arrow Keys or Buttons to Navigate
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 4;
+
+        function updateSlides() {
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', i + 1 === currentSlide);
+            });
+            document.getElementById('slide-indicator').innerText = `Slide ${currentSlide} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlides();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlides();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>
