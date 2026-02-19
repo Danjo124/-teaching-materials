@@ -10,32 +10,27 @@
         body { background-color: #f0f2f5; font-family: sans-serif; }
         .folder-card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); margin-bottom: 24px; overflow: hidden; border: 1px solid #e5e7eb; }
         .folder-header { background: #f9fafb; padding: 12px 20px; border-bottom: 1px solid #e5e7eb; font-weight: 800; display: flex; align-items: center; gap: 12px; color: #111827; text-transform: uppercase; letter-spacing: 0.05em; }
-        .file-item { display: flex; align-items: center; padding: 12px 20px; transition: all 0.2s; border-bottom: 1px solid #f3f4f6; }
+        .file-item { display: flex; align-items: center; padding: 10px 20px; transition: all 0.2s; border-bottom: 1px solid #f3f4f6; }
         .file-item:hover { background-color: #f8fafc; transform: translateX(4px); }
         .quiz-link { background-color: #f0f9ff; color: #0369a1; font-weight: 700; }
-        .pdf-link { color: #374151; }
-        .featured { border-left: 4px solid #3b82f6; }
+        .pdf-link { color: #374151; font-size: 0.9rem; }
+        .section-label { padding: 8px 20px; text-xs font-black text-slate-400 uppercase bg-slate-50 tracking-widest border-b border-gray-100; }
     </style>
 </head>
-<body class="p-4 md:p-10">
-    <div class="max-w-5xl mx-auto">
+<body class="p-4 md:p-10 text-slate-800">
+    <div class="max-w-6xl mx-auto">
         <header class="mb-12 text-center md:text-left">
             <h1 class="text-5xl font-black text-slate-900 tracking-tight mb-2">Material Explorer</h1>
-            <p class="text-slate-500 text-xl font-medium">Digital Learning Hub • Daniel Tekula</p>
-            <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-widest">Biondekgasse</span>
-                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase tracking-widest">Interactive</span>
-                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-widest">PDF Materials</span>
-            </div>
+            <p class="text-slate-500 text-xl font-medium italic">Digital Learning Hub • Daniel Tekula</p>
         </header>
 
         <!-- FEATURED TOOLS -->
         <div class="folder-card border-blue-500 border-2">
             <div class="folder-header bg-blue-600 text-white"><i class="fas fa-star"></i> Featured Tools</div>
-            <a href="geography/year-5/globalization_presentation.html" target="_blank" class="file-item quiz-link">
-                <i class="fas fa-play-circle text-2xl mr-4 text-amber-500"></i> Globalization Presentation (Geography)
+            <a href="geography/year-5/globalization_presentation.html" target="_blank" class="file-item quiz-link py-4">
+                <i class="fas fa-play-circle text-2xl mr-4 text-amber-500"></i> Globalization Live Presentation (Geography Year 5)
             </a>
-            <a href="quiz-irregular-verbs.html" target="_blank" class="file-item quiz-link">
+            <a href="quiz-irregular-verbs.html" target="_blank" class="file-item quiz-link py-4">
                 <i class="fas fa-bolt text-2xl mr-4 text-yellow-500"></i> Irregular Verbs Flashcard Trainer
             </a>
         </div>
@@ -44,21 +39,31 @@
         <div class="folder-card">
             <div class="folder-header"><i class="fas fa-folder text-blue-500"></i> English - Year 1 (1. Klasse)</div>
             <div class="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-100">
-                <div class="divide-y divide-gray-100">
-                    <p class="p-3 text-xs font-black text-slate-400 uppercase bg-slate-50">Interactive Quizzes</p>
+                <div class="flex flex-col">
+                    <div class="section-label">Interactive Quizzes</div>
                     <a href="quiz-signal-words.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Simple Present Signal Words</a>
                     <a href="quiz-simple-present-tricky.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Simple Present (Tricky)</a>
                     <a href="quiz-simple-present-20.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Simple Present (20 Tasks)</a>
                     <a href="quiz-present-progressive.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Present Progressive Basics</a>
                 </div>
-                <div class="divide-y divide-gray-100 border-t md:border-t-0">
-                    <p class="p-3 text-xs font-black text-slate-400 uppercase bg-slate-50">PDF Worksheets</p>
+                <div class="flex flex-col">
+                    <div class="section-label">PDF Worksheets</div>
                     <a href="english/year-1/17_irregular_verbs_training.pdf" target="_blank" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-500 mr-3"></i> 17_irregular_verbs_training.pdf</a>
                     <a href="english/year-1/16_simple_present_signal_words.pdf" target="_blank" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-500 mr-3"></i> 16_simple_present_signal_words.pdf</a>
                     <a href="english/year-1/01_simple_present_basics.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01_simple_present_basics.pdf</a>
                     <a href="english/year-1/02_simple_present_questions.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02_simple_present_questions.pdf</a>
-                    <a href="english/year-1/12_simple_present_20_sentences.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 12_simple_present_20_sentences.pdf</a>
+                    <a href="english/year-1/03_simple_present_negatives.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03_simple_present_negatives.pdf</a>
+                    <a href="english/year-1/04_simple_present_mixed.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04_simple_present_mixed.pdf</a>
+                    <a href="english/year-1/06_present_progressive_merkblatt.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06_present_progressive_merkblatt.pdf</a>
+                    <a href="english/year-1/11_simple_present_quiz.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 11_simple_present_quiz.pdf</a>
+                    <a href="english/year-1/15_present_progressive_combined.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 15_present_progressive_combined.pdf</a>
                 </div>
+            </div>
+            <div class="section-label bg-gray-100 text-gray-500">More! Unit Folders (Archives)</div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <a href="more-1/unit-8-clothes/01_vocabulary_clothes.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-400 mr-3"></i> Unit 8: Vocabulary Clothes</a>
+                <a href="more-1/unit-8-clothes/05_unit_test.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-400 mr-3"></i> Unit 8: Unit Test</a>
+                <a href="more-1/unit-9-unusual-pets/09-unusual-pets-unit9.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-400 mr-3"></i> Unit 9: Unusual Pets</a>
             </div>
         </div>
 
@@ -66,17 +71,20 @@
         <div class="folder-card">
             <div class="folder-header"><i class="fas fa-folder text-blue-500"></i> English - Year 5 (5. Klasse)</div>
             <div class="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-100">
-                <div class="divide-y divide-gray-100">
-                    <p class="p-3 text-xs font-black text-slate-400 uppercase bg-slate-50">Interactive Quizzes</p>
+                <div class="flex flex-col">
+                    <div class="section-label">Interactive Quizzes</div>
                     <a href="01_word_formation_nutrition.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Word Formation: Nutrition</a>
                     <a href="02_word_formation_sports.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Word Formation: Sports</a>
                     <a href="03_open_gap_healthy_lifestyle_b1.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Open Gap: Healthy Lifestyle</a>
+                    <a href="04_open_gap_sports_exercise_b1.html" target="_blank" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Open Gap: Sports & Exercise</a>
                 </div>
-                <div class="divide-y divide-gray-100 border-t md:border-t-0">
-                    <p class="p-3 text-xs font-black text-slate-400 uppercase bg-slate-50">PDF Worksheets</p>
+                <div class="flex flex-col">
+                    <div class="section-label">PDF Worksheets</div>
                     <a href="english/year-5/05_nutrition_and_health_advanced.pdf" target="_blank" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05_nutrition_and_health_advanced.pdf</a>
                     <a href="english/year-5/01_word_formation_nutrition.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01_word_formation_nutrition.pdf</a>
+                    <a href="english/year-5/02_word_formation_sports.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02_word_formation_sports.pdf</a>
                     <a href="english/year-5/08_mediation_social_media_year5.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 08_mediation_social_media.pdf</a>
+                    <a href="english/year-5/09_mediation_healthy_living_year5.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 09_mediation_healthy_living.pdf</a>
                 </div>
             </div>
         </div>
@@ -85,16 +93,18 @@
         <div class="folder-card">
             <div class="folder-header"><i class="fas fa-folder text-blue-500"></i> English - Year 7 (7. Klasse)</div>
             <div class="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-100">
-                <div class="divide-y divide-gray-100">
-                    <p class="p-3 text-xs font-black text-slate-400 uppercase bg-slate-50">Writing & Grammar</p>
+                <div class="flex flex-col">
+                    <div class="section-label">Grammar & Text Types</div>
                     <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" target="_blank" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-500 mr-3"></i> Guide: How to Write a Report</a>
                     <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" target="_blank" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-500 mr-3"></i> Gap Fill: Fast Fashion</a>
                 </div>
-                <div class="divide-y divide-gray-100 border-t md:border-t-0">
-                    <p class="p-3 text-xs font-black text-slate-400 uppercase bg-slate-50">Topic: Fashion & Social Media</p>
+                <div class="flex flex-col">
+                    <div class="section-label">Topics: Fashion, AI & Media</div>
                     <a href="english/year-7/01_word_formation_fashion_industry.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01_word_formation_fashion.pdf</a>
-                    <a href="english/year-7/04_open_gap_social_media_b2.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04_open_gap_social_media.pdf</a>
                     <a href="english/year-7/03_crossword_fashion_industry.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03_crossword_fashion.pdf</a>
+                    <a href="english/year-7/04_open_gap_social_media_b2.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04_open_gap_social_media.pdf</a>
+                    <a href="english/year-7/05_open_gap_climate_change_b2.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05_open_gap_climate_change.pdf</a>
+                    <a href="english/year-7/06_mediation_ai_workplace_year7.pdf" target="_blank" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06_mediation_ai_workplace.pdf</a>
                 </div>
             </div>
         </div>
@@ -102,9 +112,9 @@
         <!-- GEOGRAPHY -->
         <div class="folder-card">
             <div class="folder-header"><i class="fas fa-globe-europe text-amber-600"></i> Geography (Geografie)</div>
-            <div class="divide-y divide-gray-100">
-                <a href="geography/year-5/globalization_presentation.html" target="_blank" class="file-item quiz-link"><i class="fas fa-play-circle mr-3"></i> Globalization Live Presentation (Year 5)</a>
-            </div>
+            <a href="geography/year-5/globalization_presentation.html" target="_blank" class="file-item quiz-link py-4">
+                <i class="fas fa-play-circle mr-3"></i> Globalization Live Presentation (Year 5)
+            </a>
         </div>
 
         <footer class="mt-16 text-center text-slate-400 text-sm font-medium">
