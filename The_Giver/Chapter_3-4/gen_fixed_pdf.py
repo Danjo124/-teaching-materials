@@ -6,9 +6,6 @@ class CleanWorksheet(FPDF):
         self.set_font('Helvetica', 'B', 16)
         self.set_text_color(0, 0, 0)
         self.cell(0, 10, self.worksheet_title, ln=True, align='L')
-        self.set_font('Helvetica', '', 10)
-        self.set_text_color(100, 100, 100)
-        self.cell(0, 5, 'Subject: English 5C | Teacher: Daniel', ln=True, align='L')
         self.ln(10)
 
     def section_header(self, title):
