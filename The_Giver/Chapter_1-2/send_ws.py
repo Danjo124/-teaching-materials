@@ -5,7 +5,7 @@ import os
 sys.path.append('/data/.openclaw/workspace')
 from send_email_with_attachments import send_email
 
-recipient = "danieltekula@gmail.com"
+recipient = "tek@biondekgasse.at"
 subject = "Arbeitsblatt: The Giver - Chapters 1 & 2"
 body = """Hallo Daniel,
 
