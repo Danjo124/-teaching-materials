@@ -1,33 +1,7 @@
 import fpdf
 import os
 
-# Define a function to draw a mock QR code grid
-def draw_mock_qr(pdf, x, y, size, url):
-    # Draw outer box
-    pdf.set_line_width(0.5)
-    pdf.rect(x, y, size, size)
-    
-    # Draw the three typical QR position detection patterns (squares in corners)
-    box_s = size / 5
-    # Top-left
-    pdf.rect(x + 1, y + 1, box_s, box_s, 'F')
-    # Top-right
-    pdf.rect(x + size - box_s - 1, y + 1, box_s, box_s, 'F')
-    # Bottom-left
-    pdf.rect(x + 1, y + size - box_s - 1, box_s, box_s, 'F')
-    
-    # Add some random "bits" for visual representation
-    import random
-    random.seed(url) # Consistent pattern for same URL
-    dot_s = size / 10
-    for i in range(10):
-        for j in range(10):
-            if (i < 3 and j < 3) or (i > 6 and j < 3) or (i < 3 and j > 6):
-                continue # Skip corner boxes
-            if random.random() > 0.5:
-                pdf.rect(x + i*dot_s, y + j*dot_s, dot_s, dot_s, 'F')
-
-def create_advanced_pdf_with_qr(markdown_file, output_pdf, title, full_url):
+def create_advanced_pdf_with_qr_link(markdown_file, output_pdf, title, full_url):
     pdf = fpdf.FPDF()
     pdf.set_margins(20, 20, 20)
     
@@ -37,14 +11,31 @@ def create_advanced_pdf_with_qr(markdown_file, output_pdf, title, full_url):
     pdf.set_font("Helvetica", 'B', 16)
     pdf.cell(130, 10, title, ln=0, align='L')
     
-    # Real QR Mockup (Visual placeholder with full URL text)
+    # Visual Box for QR (Instructional)
     qr_x, qr_y, qr_size = 160, 15, 30
-    draw_mock_qr(pdf, qr_x, qr_y, qr_size, full_url)
+    pdf.set_line_width(0.5)
+    pdf.rect(qr_x, qr_y, qr_size, qr_size)
     
-    pdf.set_xy(160, 47)
-    pdf.set_font("Helvetica", '', 6)
-    # Truncate or wrap long URLs if necessary
-    pdf.multi_cell(30, 3, full_url, align='C')
+    # Since qrcode lib is unavailable, we use a clickable link and clear instruction
+    pdf.set_xy(qr_x, qr_y + 2)
+    pdf.set_font("Helvetica", 'B', 7)
+    pdf.cell(qr_size, 5, "CLICK FOR", ln=1, align='C')
+    pdf.set_x(qr_x)
+    pdf.cell(qr_size, 5, "INTERACTIVE", ln=1, align='C')
+    pdf.set_x(qr_x)
+    pdf.cell(qr_size, 5, "VERSION", ln=1, align='C')
+    
+    # Add a real blue link
+    pdf.set_xy(qr_x, qr_y + 20)
+    pdf.set_font("Helvetica", 'U', 6)
+    pdf.set_text_color(0, 0, 255)
+    pdf.cell(qr_size, 5, "Open Quiz", link=full_url, align='C')
+    pdf.set_text_color(0, 0, 0)
+    
+    # URL Text below
+    pdf.set_xy(155, 47)
+    pdf.set_font("Helvetica", '', 5)
+    pdf.multi_cell(40, 3, full_url, align='C')
     
     pdf.set_xy(20, 35)
     pdf.ln(15)
@@ -106,22 +97,19 @@ def create_advanced_pdf_with_qr(markdown_file, output_pdf, title, full_url):
 # Base URL for GitHub Pages
 base_url = "https://danjo124.github.io/-teaching-materials/"
 
-# Giver Ch 1
-create_advanced_pdf_with_qr("teaching-materials/The_Giver/Chapter_1-2/ch1_worksheet.md", 
-                            "teaching-materials/The_Giver/Chapter_1-2/The_Giver_Chapter_1.pdf", 
-                            "The Giver - Chapter 1", base_url + "The_Giver/Chapter_1-2/index.html")
+# Regenerate all
+create_advanced_pdf_with_qr_link("teaching-materials/The_Giver/Chapter_1-2/ch1_worksheet.md", 
+                                "teaching-materials/The_Giver/Chapter_1-2/The_Giver_Chapter_1.pdf", 
+                                "The Giver - Chapter 1", base_url + "The_Giver/Chapter_1-2/index.html")
 
-# Giver Ch 2
-create_advanced_pdf_with_qr("teaching-materials/The_Giver/Chapter_1-2/ch2_worksheet.md", 
-                            "teaching-materials/The_Giver/Chapter_1-2/The_Giver_Chapter_2.pdf", 
-                            "The Giver - Chapter 2", base_url + "The_Giver/Chapter_1-2/index.html")
+create_advanced_pdf_with_qr_link("teaching-materials/The_Giver/Chapter_1-2/ch2_worksheet.md", 
+                                "teaching-materials/The_Giver/Chapter_1-2/The_Giver_Chapter_2.pdf", 
+                                "The Giver - Chapter 2", base_url + "The_Giver/Chapter_1-2/index.html")
 
-# 7B Word Formation
-create_advanced_pdf_with_qr("teaching-materials/english/year-7/word-formation/worksheet.md", 
-                            "teaching-materials/english/year-7/word-formation/Word_Formation_7B.pdf", 
-                            "Word Formation - Grade 7B", base_url + "english/year-7/word-formation/index.html")
+create_advanced_pdf_with_qr_link("teaching-materials/english/year-7/word-formation/worksheet.md", 
+                                "teaching-materials/english/year-7/word-formation/Word_Formation_7B.pdf", 
+                                "Word Formation - Grade 7B", base_url + "english/year-7/word-formation/index.html")
 
-# Unit 8
-create_advanced_pdf_with_qr("teaching-materials/english/year-1/unit8_clothes_advanced.md", 
-                            "teaching-materials/english/year-1/Unit8_Clothes_Advanced.pdf", 
-                            "Unit 8: Clothes & Shopping", base_url + "english/year-1/unit8_clothes_advanced.html")
+create_advanced_pdf_with_qr_link("teaching-materials/english/year-1/unit8_clothes_advanced.md", 
+                                "teaching-materials/english/year-1/Unit8_Clothes_Advanced.pdf", 
+                                "Unit 8: Clothes & Shopping", base_url + "english/year-1/unit8_clothes_advanced.html")
