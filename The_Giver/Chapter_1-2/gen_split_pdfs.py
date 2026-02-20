@@ -36,7 +36,19 @@ def create_single_page_pdf(markdown_file, output_pdf, title):
             pdf.line(pdf.get_x(), pdf.get_y(), pdf.get_x() + 170, pdf.get_y())
             pdf.ln(2)
         else:
-            pdf.multi_cell(0, 6, line)
+            # Handle Bold Text in Lückentext / Markdown
+            if "**" in line:
+                parts = line.split("**")
+                for i, part in enumerate(parts):
+                    if i % 2 == 1: # Bold part
+                        pdf.set_font("Helvetica", 'B', 11)
+                        pdf.write(6, part)
+                        pdf.set_font("Helvetica", size=11)
+                    else:
+                        pdf.write(6, part)
+                pdf.ln(6)
+            else:
+                pdf.multi_cell(0, 6, line)
 
     # Solutions on a second page
     pdf.add_page()

@@ -2,10 +2,10 @@
 
 ## Part 1: Vocabulary & Context
 Match the terms with their subtle meanings in the Community.
-1. **Apprehensive** (adj.)  A. The strict following of established community rules.
-2. **Nurturer** (n.)       B. A natural capacity or suitability for a specific task.
-3. **Adherence** (n.)      C. Anxious anticipation of a life-changing event.
-4. **Aptitude** (n.)       D. A specialist responsible for the physical development of infants.
+1. **Apprehensive** (adj.)  C. Anxious anticipation of a life-changing event.
+2. **Nurturer** (n.)       D. A specialist responsible for the physical development of infants.
+3. **Adherence** (n.)      A. The strict following of established community rules.
+4. **Aptitude** (n.)       B. A natural capacity or suitability for a specific task.
 5. **Release** (n.)        E. A euphemism for final expulsion or termination.
 6. **Distraught** (adj.)   F. Deeply upset and agitated (often corrected in the book).
 
