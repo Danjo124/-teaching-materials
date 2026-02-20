@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz: Signal Words</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .card { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .question { margin-bottom: 15px; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 120px; }
+        .btn { width: 100%; padding: 12px; background: #2ecc71; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
+        .correct { border: 2px solid green; background-color: #eaffea; }
+        .incorrect { border: 2px solid red; background-color: #ffeaea; }
+        #score { text-align: center; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>⏰ Signal Words Quiz</h2>
+    <p>Type the correct signal word in English:</p>
+    <div class="question">1. Immer: <input type="text" id="s1" data-ans="always"></div>
+    <div class="question">2. Oft: <input type="text" id="s2" data-ans="often"></div>
+    <div class="question">3. Nie: <input type="text" id="s3" data-ans="never"></div>
+    <div class="question">4. Manchmal: <input type="text" id="s4" data-ans="sometimes"></div>
+    <div class="question">5. Jeden Tag: <input type="text" id="s5" data-ans="every day"></div>
+    <button class="btn" onclick="check()">Check ✅</button>
+    <div id="score"></div>
+</div>
+<script>
+    function check() {
+        let s = 0;
+        for(let i=1; i<=5; i++) {
+            let el = document.getElementById('s' + i);
+            if(el.value.toLowerCase().trim() === el.getAttribute('data-ans')) {
+                el.className = 'correct'; s++;
+            } else { el.className = 'incorrect'; }
+        }
+        document.getElementById('score').innerText = "Score: " + s + "/5";
+    }
+</script>
+</body>
+</html>
