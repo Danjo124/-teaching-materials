@@ -28,5 +28,23 @@ In this chapter, Jonas's father recalls his own (1) __________ of Twelve. He rev
 
 ---
 
-# Solutions - Chapter 2 (Advanced)
-**Cloze:** (1) Ceremony, (2) Elders, (3) volunteer, (4) Assignment, (5) Nurturer, (6) aptitude/talent, (7) family units, (8) child, (9) apprehension, (10) Assignment, (11) age, (12) career/role.
+# Solutions - Chapter 2 (Detailed)
+
+## Part 1: Vocabulary & Concepts
+1. **Chastisement** - Severe criticism or a verbal/physical reprimand used to correct behavior in the Community (e.g., speakers announcing rules).
+2. **Petulant** - Childishly sulky or bad-tempered. Lily is described this way when she is impatient about her own turn to speak or grow up.
+3. **Remorse** - A deep sense of guilt. Citizens are expected to feel remorse immediately after a transgression to facilitate their "correction."
+4. **Assignment** - The permanent professional role given to a citizen at the age of twelve, determining their entire adult life.
+5. **Elder** - A senior leader and decision-maker in the Community who observes children and governs all societal rules.
+
+## Part 2: Detailed Summary Cloze
+(1) **Ceremony**, (2) **Elders**, (3) **volunteer**, (4) **Assignment**, (5) **Nurturer**, (6) **aptitude**, (7) **family units**, (8) **child**, (9) **apprehension**, (10) **Assignment**, (11) **age**, (12) **career/role**.
+
+## Part 3: Comprehension & Analysis
+1. **Process of Assignment:** The Elders observe children for years during school and volunteer hours to see where they naturally fit. This long observation ensures that the "choice" is not a random guess but a data-driven decision, emphasizing the community's belief that they know the individual better than the individual knows themselves.
+2. **Jonas's Father:** His decision to look up Gabriel's name is a rare act of "individualism." It reveals that he values the survival and well-being of the infant over the strict anonymity rules of the state. It shows he has a gentle, albeit slightly subversive, nature.
+3. **Family Unit:** Family units are created by application, not biology. One male and one female parent are matched by Elders, and they are granted two children (one of each gender). This removes biological "messiness" (love, possessiveness) and turns parenting into a structured service.
+4. **Jonas's Anxiety:** The lack of choice is a comfort because he doesn't have to fear making a "wrong" decision. However, it is a source of stress because it represents a total loss of agency—once the Elders speak, his path is set in stone until he enters the House of the Old.
+
+## Part 4: Discussion
+5. **Aptitude vs. Interest:** (Student-specific answer). *Sample argument:* An aptitude-based system (like the Community) creates a highly efficient and stable society because everyone is good at what they do. However, a passion-based system (like ours) allows for innovation and personal fulfillment. Without "passion," a job becomes a mechanical chore rather than a calling.
