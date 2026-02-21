@@ -1,0 +1,83 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Worksheet 04 - Multiple Choice</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 250px; font-size: 1em; }
+            select { padding: 8px; border: 2px solid #ccc; border-radius: 5px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; display: none; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 Worksheet 04 - Multiple Choice</h1>
+            <p class="task-instr">Check the correct answers!</p>
+            <div id="quiz">
+    <div class="question">1. She ____ to school. <select id="q0" data-ans="goes"><option value="">-- Choose --</option><option value="go">go</option><option value="goes">goes</option><option value="going">going</option></select></div>
+<div class="question">2. We ____ not like cats. <select id="q1" data-ans="do"><option value="">-- Choose --</option><option value="do">do</option><option value="does">does</option><option value="are">are</option></select></div>
+<div class="question">3. ____ they play football? <select id="q2" data-ans="Do"><option value="">-- Choose --</option><option value="Do">Do</option><option value="Does">Does</option><option value="Is">Is</option></select></div>
+<div class="question">4. I ____ a sandwich. <select id="q3" data-ans="eat"><option value="">-- Choose --</option><option value="eats">eats</option><option value="eat">eat</option><option value="eating">eating</option></select></div>
+<div class="question">5. The cat ____. <select id="q4" data-ans="sleeps"><option value="">-- Choose --</option><option value="sleep">sleep</option><option value="sleeps">sleeps</option><option value="sleeping">sleeping</option></select></div>
+<div class="question">6. Tom ____ English. <select id="q5" data-ans="speaks"><option value="">-- Choose --</option><option value="speak">speak</option><option value="speaks">speaks</option><option value="speaking">speaking</option></select></div>
+<div class="question">7. You ____ happy. <select id="q6" data-ans="are"><option value="">-- Choose --</option><option value="be">be</option><option value="are">are</option><option value="is">is</option></select></div>
+<div class="question">8. ____ he have a bike? <select id="q7" data-ans="Does"><option value="">-- Choose --</option><option value="Do">Do</option><option value="Does">Does</option><option value="Has">Has</option></select></div>
+<div class="question">9. They ____ dance. <select id="q8" data-ans="don't"><option value="">-- Choose --</option><option value="not">not</option><option value="doesn't">doesn't</option><option value="don't">don't</option></select></div>
+<div class="question">10. It ____ often. <select id="q9" data-ans="rains"><option value="">-- Choose --</option><option value="rain">rain</option><option value="rains">rains</option><option value="raining">raining</option></select></div>
+<div class="question">11. I ____ to music. <select id="q10" data-ans="listen"><option value="">-- Choose --</option><option value="listens">listens</option><option value="listening">listening</option><option value="listen">listen</option></select></div>
+<div class="question">12. Sarah ____ a car. <select id="q11" data-ans="drives"><option value="">-- Choose --</option><option value="drive">drive</option><option value="drives">drives</option><option value="driving">driving</option></select></div>
+<div class="question">13. ____ you thirsty? <select id="q12" data-ans="Are"><option value="">-- Choose --</option><option value="Are">Are</option><option value="Is">Is</option><option value="Do">Do</option></select></div>
+<div class="question">14. We ____ here. <select id="q13" data-ans="live"><option value="">-- Choose --</option><option value="lives">lives</option><option value="living">living</option><option value="live">live</option></select></div>
+<div class="question">15. He ____ not help. <select id="q14" data-ans="does"><option value="">-- Choose --</option><option value="do">do</option><option value="does">does</option><option value="is">is</option></select></div>
+<div class="question">16. The dogs ____. <select id="q15" data-ans="bark"><option value="">-- Choose --</option><option value="bark">bark</option><option value="barks">barks</option><option value="barking">barking</option></select></div>
+<div class="question">17. ____ she like pizza? <select id="q16" data-ans="Does"><option value="">-- Choose --</option><option value="Do">Do</option><option value="Does">Does</option><option value="Is">Is</option></select></div>
+<div class="question">18. I ____ a book. <select id="q17" data-ans="read"><option value="">-- Choose --</option><option value="read">read</option><option value="reads">reads</option><option value="reading">reading</option></select></div>
+<div class="question">19. They ____ at 8:00. <select id="q18" data-ans="start"><option value="">-- Choose --</option><option value="starts">starts</option><option value="starting">starting</option><option value="start">start</option></select></div>
+<div class="question">20. You ____ well. <select id="q19" data-ans="sing"><option value="">-- Choose --</option><option value="sings">sings</option><option value="sing">sing</option><option value="singing">singing</option></select></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button id="solBtn" class="sol-btn" onclick="show()">Show Solutions</button>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+                document.getElementById('solBtn').style.display = 'inline-block';
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
