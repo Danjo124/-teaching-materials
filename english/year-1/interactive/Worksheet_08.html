@@ -3,96 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worksheet 08 - Tom and Sarah's Day (Simple Present Context)</title>
-    <!-- Cache-Buster: 20260221165346 -->
+    <title>Worksheet 08 - Tom and Sarah's Day</title>
+    <!-- V5 - Build: 20260221165647 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        :root { --primary: #00519e; --success: #28a745; --error: #dc3545; --bg: #f8fafc; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1e293b; line-height: 1.8; }
-        .card { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #e2e8f0; }
+        :root { --primary: #00519e; --success: #28a745; --error: #dc3545; --bg: #f4f7f9; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 20px; line-height: 1.8; }
+        .card { max-width: 850px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; }
         .header { background: var(--primary); color: white; padding: 30px; text-align: center; }
-        .content { padding: 40px; font-size: 1.25rem; text-align: justify; }
-        .instr { background: #e0f2fe; padding: 15px; border-radius: 12px; border-left: 5px solid var(--primary); margin-bottom: 30px; font-weight: 500; font-size: 1rem; text-align: left; }
-        .gap-input { border: none; border-bottom: 2px solid #cbd5e1; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 1.1rem; color: var(--primary); font-weight: 600; min-width: 120px; text-align: center; transition: all 0.2s; }
+        .content { padding: 40px; font-size: 1.2rem; text-align: justify; }
+        .instr { background: #e0f2fe; padding: 15px; border-radius: 12px; border-left: 6px solid var(--primary); margin-bottom: 30px; font-size: 1rem; color: #003d7a; }
+        .gap-input { border: none; border-bottom: 2px solid #cbd5e1; background: #f8fafc; padding: 2px 10px; border-radius: 4px; font-size: 1.1rem; color: var(--primary); font-weight: 700; min-width: 130px; text-align: center; transition: all 0.2s; }
         .gap-input:focus { outline: none; border-bottom-color: var(--primary); background: white; }
         .correct { background: #dcfce7 !important; border-bottom-color: var(--success) !important; color: #166534; }
         .wrong { background: #fee2e2 !important; border-bottom-color: var(--error) !important; color: #991b1b; }
-        .sticky-bar { position: sticky; bottom: 20px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px; border-radius: 50px; display: flex; gap: 15px; justify-content: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1); margin-top: 40px; border: 1px solid #e2e8f0; }
-        button { padding: 12px 24px; border-radius: 25px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
+        .sticky-bar { position: sticky; bottom: 20px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); padding: 15px 25px; border-radius: 50px; display: flex; gap: 15px; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-top: 40px; border: 1px solid #e2e8f0; }
+        button { padding: 12px 28px; border-radius: 30px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; transition: 0.3s; font-size: 0.9rem; }
         .btn-check { background: var(--primary); color: white; }
-        .btn-check:disabled { opacity: 0.4; cursor: not-allowed; }
-        .btn-sol { background: #64748b; color: white; display: none; }
-        .btn-pdf { background: var(--error); color: white; }
-        #score-display { text-align: center; margin-bottom: 20px; font-weight: 800; color: var(--primary); font-size: 1.4rem; }
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 1000; }
+        .btn-check:disabled { opacity: 0.3; cursor: not-allowed; }
+        .btn-pdf { background: var(--error); color: white; display: none; }
+        #progress-info { font-size: 0.9rem; font-weight: 700; color: #64748b; }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="header"><h1>🇬🇧 Worksheet 08 - Tom and Sarah's Day (Simple Present Context)</h1></div>
+        <div class="header"><h1 style="margin:0">🇬🇧 Tom and Sarah's Day</h1></div>
         <div class="content">
-            <div class="instr">Read the story of Tom and Sarah. Fill in the correct <b>Simple Present</b> forms. Tip: Watch out for <i>he/she/it</i>!</div>
-            <div id="story-container">
-    Every morning, Tom <input type="text" class="gap-input" id="in-0" data-ans="wakes up" oninput="v()"> (wake up) at 7 o'clock. He <input type="text" class="gap-input" id="in-1" data-ans="goes" oninput="v()"> (go) to the bathroom and <input type="text" class="gap-input" id="in-2" data-ans="washes" oninput="v()"> (wash) his face. His sister Sarah <input type="text" class="gap-input" id="in-3" data-ans="doesn't like" oninput="v()"> (not / like) mornings. She <input type="text" class="gap-input" id="in-4" data-ans="stays" oninput="v()"> (stay) in bed until 7:30. At 8 o'clock, they <input type="text" class="gap-input" id="in-5" data-ans="eat" oninput="v()"> (eat) breakfast together. Tom <input type="text" class="gap-input" id="in-6" data-ans="drinks" oninput="v()"> (drink) orange juice, but Sarah <input type="text" class="gap-input" id="in-7" data-ans="prefers" oninput="v()"> (prefer) milk. Then, they <input type="text" class="gap-input" id="in-8" data-ans="walk" oninput="v()"> (walk) to school. On the way, they <input type="text" class="gap-input" id="in-9" data-ans="meet" oninput="v()"> (meet) their friends. Sarah <input type="text" class="gap-input" id="in-10" data-ans="talks" oninput="v()"> (talk) a lot, but Tom <input type="text" class="gap-input" id="in-11" data-ans="is" oninput="v()"> (be) more quiet. At school, the teacher <input type="text" class="gap-input" id="in-12" data-ans="starts" oninput="v()"> (start) the lesson at 8:30. Tom <input type="text" class="gap-input" id="in-13" data-ans="listens" oninput="v()"> (listen) carefully. Sarah <input type="text" class="gap-input" id="in-14" data-ans="doesn't forget" oninput="v()"> (not / forget) her books today. In the afternoon, they <input type="text" class="gap-input" id="in-15" data-ans="come" oninput="v()"> (come) home. Tom <input type="text" class="gap-input" id="in-16" data-ans="plays" oninput="v()"> (play) football in the garden, while Sarah <input type="text" class="gap-input" id="in-17" data-ans="reads" oninput="v()"> (read) a book. They <input type="text" class="gap-input" id="in-18" data-ans="do" oninput="v()"> (do) their homework before dinner. It <input type="text" class="gap-input" id="in-19" data-ans="is" oninput="v()"> a busy but happy day!</div></div></div>
-    <div id="score-display"></div>
+            <div class="instr">Complete the story using the correct <b>Simple Present</b> forms. Fill all 20 gaps to unlock the check button!</div>
+            <div id="story-box">
+    Every morning, Tom  <input type="text" class="gap-input" id="in-0" data-ans="wakes up" oninput="updateProg()" placeholder="(wake up)"> at 7 o'clock. He  <input type="text" class="gap-input" id="in-1" data-ans="goes" oninput="updateProg()" placeholder="(go)"> to the bathroom and  <input type="text" class="gap-input" id="in-2" data-ans="washes" oninput="updateProg()" placeholder="(wash)"> his face. His sister Sarah  <input type="text" class="gap-input" id="in-3" data-ans="doesn't like" oninput="updateProg()" placeholder="(not / like)"> mornings. She  <input type="text" class="gap-input" id="in-4" data-ans="stays" oninput="updateProg()" placeholder="(stay)"> in bed until 7:30. At 8 o'clock, they  <input type="text" class="gap-input" id="in-5" data-ans="eat" oninput="updateProg()" placeholder="(eat)"> breakfast together. Tom  <input type="text" class="gap-input" id="in-6" data-ans="drinks" oninput="updateProg()" placeholder="(drink)"> orange juice, but Sarah  <input type="text" class="gap-input" id="in-7" data-ans="prefers" oninput="updateProg()" placeholder="(prefer)"> milk. Then, they  <input type="text" class="gap-input" id="in-8" data-ans="walk" oninput="updateProg()" placeholder="(walk)"> to school. On the way, they  <input type="text" class="gap-input" id="in-9" data-ans="meet" oninput="updateProg()" placeholder="(meet)"> their friends. Sarah  <input type="text" class="gap-input" id="in-10" data-ans="talks" oninput="updateProg()" placeholder="(talk)"> a lot, but Tom  <input type="text" class="gap-input" id="in-11" data-ans="is" oninput="updateProg()" placeholder="(be)"> more quiet. At school, the teacher  <input type="text" class="gap-input" id="in-12" data-ans="starts" oninput="updateProg()" placeholder="(start)"> the lesson at 8:30. Tom  <input type="text" class="gap-input" id="in-13" data-ans="listens" oninput="updateProg()" placeholder="(listen)"> carefully. Sarah  <input type="text" class="gap-input" id="in-14" data-ans="doesn't forget" oninput="updateProg()" placeholder="(not / forget)"> her books today. In the afternoon, they  <input type="text" class="gap-input" id="in-15" data-ans="come" oninput="updateProg()" placeholder="(come)"> home. Tom  <input type="text" class="gap-input" id="in-16" data-ans="plays" oninput="updateProg()" placeholder="(play)"> football in the garden, while Sarah  <input type="text" class="gap-input" id="in-17" data-ans="reads" oninput="updateProg()" placeholder="(read)"> a book. They  <input type="text" class="gap-input" id="in-18" data-ans="do" oninput="updateProg()" placeholder="(do)"> their homework before dinner. It  <input type="text" class="gap-input" id="in-19" data-ans="is" oninput="updateProg()" placeholder="(be)"> ... a busy but happy day!</div></div></div>
     <div class="sticky-bar">
-        <button id="check-btn" class="btn-check" onclick="checkWork()" disabled>Check Answers</button>
-        <button id="sol-btn" class="btn-sol" onclick="showSolutions()">Show Solutions</button>
-        <button id="pdf-btn" class="btn-pdf" onclick="openModal()" disabled>PDF Export</button>
+        <span id="progress-info">Gaps filled: 0 / 20</span>
+        <button id="check-btn" class="btn-check" onclick="checkAll()" disabled>Check Answers</button>
+        <button id="pdf-btn" class="btn-pdf" onclick="window.print()">Print / Save as PDF</button>
     </div>
-
-    <div id="exportModal" class="modal" onclick="closeModal()">
-        <div style="background:white;padding:30px;border-radius:15px;text-align:center" onclick="event.stopPropagation()">
-            <h3>Choose Export Version</h3>
-            <button class="btn-check" style="width:100%; margin-bottom:10px" onclick="genPDF(false)">Student Version</button>
-            <button class="btn-check" style="background:#64748b; width:100%" onclick="genPDF(true)">Teacher Version (with Keys)</button>
-        </div>
-    </div>
-
     <script>
-        function v() {
-            const all = document.querySelectorAll('.gap-input');
-            const filled = Array.from(all).filter(x => x.value.trim().length > 0).length;
-            document.getElementById('check-btn').disabled = (filled < all.length);
-        }
-
-        function checkWork() {
-            let score = 0;
+        const sols = ["wakes up", "goes", "washes", "doesn't like", "stays", "eat", "drinks", "prefers", "walk", "meet", "talks", "is", "starts", "listens", "doesn't forget", "come", "plays", "reads", "do", "is"];
+        function updateProg() {
             const inputs = document.querySelectorAll('.gap-input');
-            inputs.forEach(input => {
-                if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
-                    input.className = 'gap-input correct'; score++;
-                } else {
-                    input.className = 'gap-input wrong';
-                }
-            });
-            document.getElementById('score-display').innerText = `Result: ${score} / ${inputs.length}`;
-            document.getElementById('sol-btn').style.display = 'inline-block';
-            document.getElementById('pdf-btn').disabled = false;
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            const filled = Array.from(inputs).filter(i => i.value.trim().length > 0).length;
+            document.getElementById('progress-info').innerText = `Gaps filled: ${filled} / ${inputs.length}`;
+            document.getElementById('check-btn').disabled = (filled < inputs.length);
         }
-
-        function showSolutions() {
-            document.querySelectorAll('.gap-input').forEach(i => {
-                i.value = i.getAttribute('data-ans');
-                i.className = 'gap-input correct';
-            });
-        }
-
-        function openModal() { document.getElementById('exportModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('exportModal').style.display = 'none'; }
-
-        function genPDF(withSols) {
-            const { jsPDF } = window.jspdf; const doc = new jsPDF();
-            doc.setFontSize(18); doc.text('Worksheet 08: Tom and Sarah', 20, 20);
-            let fullText = "Tom and Sarah's Day: ";
+        function checkAll() {
+            let score = 0;
             document.querySelectorAll('.gap-input').forEach((input, i) => {
-                let val = input.value || '_______';
-                fullText += input.previousSibling.textContent + ' [' + val + '] ' + (withSols ? '('+input.getAttribute('data-ans')+')' : '');
+                if(input.value.trim().toLowerCase() === sols[i].toLowerCase()) {
+                    input.className = 'gap-input correct'; score++;
+                } else { input.className = 'gap-input wrong'; }
             });
-            doc.setFontSize(11); doc.text(doc.splitTextToSize(fullText, 170), 20, 40);
-            doc.save('Worksheet_08_Result.pdf');
-            closeModal();
+            alert(`Well done! Your score: ${score} / ${sols.length}`);
+            document.getElementById('pdf-btn').style.display = 'block';
         }
     </script>
 </body>
