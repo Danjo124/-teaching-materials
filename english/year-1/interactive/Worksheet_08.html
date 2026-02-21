@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worksheet 08 - Tom and Sarah's Day</title>
-    <!-- Build: 20260221165810 -->
+    <!-- Build: 20260221170152 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         :root { --primary: #00519e; --success: #28a745; --error: #dc3545; --bg: #f4f7f9; }
@@ -33,13 +33,23 @@
         button { padding: 12px 28px; border-radius: 30px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; transition: 0.3s; font-size: 0.9rem; }
         .btn-check { background: var(--primary); color: white; }
         .btn-check:disabled { background: #cbd5e1; cursor: not-allowed; }
-        .btn-pdf { background: var(--error); color: white; display: none; }
+        .btn-pdf { background: var(--error); color: white; }
         #progress-info { font-size: 0.9rem; font-weight: 700; color: #1e293b; }
+        
+        @media print {
+            .sticky-bar, .header, .instr { display: none; }
+            .card { box-shadow: none; border: none; }
+            body { background: white; padding: 0; }
+            .gap-input { border-bottom: 1px solid black; background: transparent !important; }
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="header"><h1 style="margin:0">🇬🇧 Tom and Sarah's Day</h1></div>
+        <div class="header">
+            <h1 style="margin:0">🇬🇧 Worksheet 08 - Tom and Sarah</h1>
+            <p style="margin:5px 0 0">Name: ____________________ Date: __________</p>
+        </div>
         <div class="content">
             <div class="instr">Complete the story using <b>Simple Present</b>. Fill all 20 gaps to check!</div>
             <div id="story-box">
@@ -47,28 +57,59 @@
     <div class="sticky-bar">
         <span id="progress-info">Filled: 0 / 20</span>
         <button id="check-btn" class="btn-check" onclick="checkAll()" disabled>Check Answers</button>
-        <button id="pdf-btn" class="btn-pdf" onclick="window.print()">Print PDF</button>
+        <button id="pdf-btn" class="btn-pdf" onclick="exportPDF()">Export PDF</button>
     </div>
     <script>
         const sols = ["wakes up", "goes", "washes", "doesn't like", "stays", "eat", "drinks", "prefers", "walk", "meet", "talks", "is", "starts", "listens", "doesn't forget", "come", "plays", "reads", "do", "is"];
-        function updateProg() {
+        const titleText = "{title}";
+
+        function updateProg() {{
             const inputs = document.querySelectorAll('.gap-input');
             const filled = Array.from(inputs).filter(i => i.value.trim().length > 0).length;
-            document.getElementById('progress-info').innerText = `Filled: ${filled} / ${inputs.length}`;
+            document.getElementById('progress-info').innerText = `Filled: ${{filled}} / ${{inputs.length}}`;
             document.getElementById('check-btn').disabled = (filled < inputs.length);
-        }
-        function checkAll() {
+        }}
+
+        function checkAll() {{
             let score = 0;
-            document.querySelectorAll('.gap-input').forEach((input, i) => {
-                if(input.value.trim().toLowerCase() === sols[i].toLowerCase()) {
+            document.querySelectorAll('.gap-input').forEach((input, i) => {{
+                if(input.value.trim().toLowerCase() === sols[i].toLowerCase()) {{
                     input.classList.add('correct'); input.classList.remove('wrong'); score++;
-                } else { 
+                }} else {{ 
                     input.classList.add('wrong'); input.classList.remove('correct');
-                }
-            });
-            alert(`Score: ${score} / ${sols.length}`);
-            document.getElementById('pdf-btn').style.display = 'block';
-        }
+                }}
+            }});
+            alert(`Score: ${{score}} / ${{sols.length}}`);
+        }}
+
+        function exportPDF() {{
+            const {{ jsPDF }} = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFontSize(20);
+            doc.setTextColor(0, 81, 158);
+            doc.text(titleText, 20, 20);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0,0,0);
+            doc.text("Name: ____________________   Date: " + new Date().toLocaleDateString(), 20, 30);
+            
+            let fullText = "";
+            document.getElementById('story-box').childNodes.forEach(node => {{
+                if(node.nodeType === 3) {{
+                    fullText += node.textContent;
+                } else if(node.tagName === 'INPUT') {{
+                    fullText += ' [' + (node.value || '_______') + '] ';
+                }}
+            }});
+            fullText += " ... a busy but happy day!";
+            
+            doc.setFontSize(12);
+            const splitText = doc.splitTextToSize(fullText, 170);
+            doc.text(splitText, 20, 45);
+            
+            doc.save("Worksheet_08_Story.pdf");
+        }}
     </script>
 </body>
 </html>
