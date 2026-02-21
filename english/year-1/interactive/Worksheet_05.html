@@ -1,0 +1,83 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Worksheet 05 - Find the Mistake</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 250px; font-size: 1em; }
+            select { padding: 8px; border: 2px solid #ccc; border-radius: 5px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; display: none; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 Worksheet 05 - Find the Mistake</h1>
+            <p class="task-instr">Check the correct answers!</p>
+            <div id="quiz">
+    <div class="question">1. She go to school. <br><input type="text" id="q0" data-ans="She goes to school"></div>
+<div class="question">2. I likes pizza. <br><input type="text" id="q1" data-ans="I like pizza"></div>
+<div class="question">3. He don't play tennis. <br><input type="text" id="q2" data-ans="He doesn't play tennis"></div>
+<div class="question">4. Do they lives here? <br><input type="text" id="q3" data-ans="Do they live here"></div>
+<div class="question">5. The cat sleep on the sofa. <br><input type="text" id="q4" data-ans="The cat sleeps on the sofa"></div>
+<div class="question">6. We is happy. <br><input type="text" id="q5" data-ans="We are happy"></div>
+<div class="question">7. Does he plays football? <br><input type="text" id="q6" data-ans="Does he play football"></div>
+<div class="question">8. They doesn't like milk. <br><input type="text" id="q7" data-ans="They don't like milk"></div>
+<div class="question">9. You speaks English. <br><input type="text" id="q8" data-ans="You speak English"></div>
+<div class="question">10. It rain every day. <br><input type="text" id="q9" data-ans="It rains every day"></div>
+<div class="question">11. I are a student. <br><input type="text" id="q10" data-ans="I am a student"></div>
+<div class="question">12. She have a big house. <br><input type="text" id="q11" data-ans="She has a big house"></div>
+<div class="question">13. Do you likes music? <br><input type="text" id="q12" data-ans="Do you like music"></div>
+<div class="question">14. The dogs barks loudly. <br><input type="text" id="q13" data-ans="The dogs bark loudly"></div>
+<div class="question">15. We not go to Berlin. <br><input type="text" id="q14" data-ans="We do not go to Berlin"></div>
+<div class="question">16. He swim well. <br><input type="text" id="q15" data-ans="He swims well"></div>
+<div class="question">17. Do she want water? <br><input type="text" id="q16" data-ans="Does she want water"></div>
+<div class="question">18. I reads books. <br><input type="text" id="q17" data-ans="I read books"></div>
+<div class="question">19. They starts at 9:00. <br><input type="text" id="q18" data-ans="They start at 9:00"></div>
+<div class="question">20. Sarah sing beautiful. <br><input type="text" id="q19" data-ans="Sarah sings beautifully"></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button id="solBtn" class="sol-btn" onclick="show()">Show Solutions</button>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+                document.getElementById('solBtn').style.display = 'inline-block';
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
