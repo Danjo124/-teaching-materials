@@ -1,1 +1,203 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Worksheet 08 - Signal Words</title><style>body { font-family: sans-serif; background: #f0f7ff; padding: 20px; } .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; border-top: 8px solid #00519e; } h1 { color: #00519e; } .q { margin-bottom: 15px; } input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 250px; } .correct { border-color: #28a745; background: #d4edda; } .wrong { border-color: #dc3545; background: #f8d7da; } button { padding: 10px 20px; cursor: pointer; border-radius: 5px; border: none; font-weight: bold; } .check { background: #00519e; color: white; } .sol { background: #6c757d; color: white; display: none; } .pdf { background: #dc3545; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; }</style></head><body><div class="container"><h1>Worksheet 08 - Signal Words</h1><div id="quiz"><div class="q">1. I ______ (always) play tennis.<br><input type="text" id="q0" data-ans="always"></div><div class="q">2. She is eating ______ (now).<br><input type="text" id="q1" data-ans="now"></div><div class="q">3. They ______ (never) go late.<br><input type="text" id="q2" data-ans="never"></div><div class="q">4. He watches TV ______ (often).<br><input type="text" id="q3" data-ans="often"></div><div class="q">5. We are dancing ______ (today).<br><input type="text" id="q4" data-ans="today"></div><div class="q">6. Tom ______ (sometimes) helps.<br><input type="text" id="q5" data-ans="sometimes"></div><div class="q">7. Look! The cat is jumping ______.<br><input type="text" id="q6" data-ans="now"></div><div class="q">8. ______ (First) I wash my hands.<br><input type="text" id="q7" data-ans="First"></div><div class="q">9. Then I ______ (eat) my lunch.<br><input type="text" id="q8" data-ans="eat"></div><div class="q">10. She likes pizza ______ (because) it is good.<br><input type="text" id="q9" data-ans="because"></div><div class="q">11. I like apples ______ (but) not pears.<br><input type="text" id="q10" data-ans="but"></div><div class="q">12. He is small ______ (and) fast.<br><input type="text" id="q11" data-ans="and"></div><div class="q">13. ______ (After that) we play.<br><input type="text" id="q12" data-ans="After that"></div><div class="q">14. They go home ______ (then).<br><input type="text" id="q13" data-ans="then"></div><div class="q">15. I am happy ______ (today).<br><input type="text" id="q14" data-ans="today"></div><div class="q">16. She ______ (always) smiles.<br><input type="text" id="q15" data-ans="always"></div><div class="q">17. We are working ______ (now).<br><input type="text" id="q16" data-ans="now"></div><div class="q">18. It ______ (never) rains here.<br><input type="text" id="q17" data-ans="never"></div><div class="q">19. You ______ (often) read books.<br><input type="text" id="q18" data-ans="often"></div><div class="q">20. The bus is coming ______ (now).<br><input type="text" id="q19" data-ans="now"></div></div><div id="res"></div><div style="margin-top:20px"><button class="check" onclick="check()">Check</button> <button id="solB" class="sol" onclick="show()">Solutions</button> <a href="https://github.com/Danjo124/-teaching-materials/raw/main/english/year-1/Worksheet_08.pdf" class="pdf">PDF</a></div></div><script>function check(){let s=0;document.querySelectorAll('input').forEach(i=>{if(i.value.trim().toLowerCase()===i.getAttribute('data-ans').toLowerCase()){i.className='correct';s++;}else{i.className='wrong';}});document.getElementById('res').innerHTML='Score: '+s;document.getElementById('solB').style.display='inline-block';} function show(){document.querySelectorAll('input').forEach(i=>{i.value=i.getAttribute('data-ans');i.className='correct';});}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksheet 08 - Signal Words Mastery</title>
+    <!-- Version: 20260221162616 -->
+    <style>
+        :root {
+            --primary-blue: #00519e;
+            --light-blue: #e6f0ff;
+            --success-green: #28a745;
+            --error-red: #dc3545;
+            --bg-gray: #f4f7f9;
+        }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background-color: var(--bg-gray); 
+            margin: 0; padding: 0; color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #00519e 0%, #003d7a 100%);
+            color: white; padding: 40px 20px; text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .container {
+            max-width: 800px; margin: -30px auto 40px; background: white;
+            padding: 40px; border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .instr {
+            background: var(--light-blue); padding: 20px;
+            border-left: 6px solid var(--primary-blue);
+            margin-bottom: 35px; font-weight: 500; border-radius: 8px;
+            color: #003d7a;
+        }
+        .q-item {
+            margin-bottom: 30px; padding: 20px;
+            background: #fff; border: 1px solid #edf2f7;
+            border-radius: 10px; transition: transform 0.2s;
+        }
+        .q-item:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .q-text { margin-bottom: 12px; display: block; font-size: 1.1rem; font-weight: 500; }
+        input {
+            width: 100%; box-sizing: border-box; padding: 14px;
+            border: 2px solid #e2e8f0; border-radius: 8px;
+            font-size: 1rem; transition: all 0.2s ease; outline: none;
+        }
+        input:focus { border-color: var(--primary-blue); background: #fff; }
+        .correct { border-color: var(--success-green) !important; background-color: #f0fff4 !important; color: #22543d; }
+        .wrong { border-color: var(--error-red) !important; background-color: #fff5f5 !important; color: #822727; }
+        
+        .sticky-controls {
+            position: sticky; bottom: 20px; margin-top: 40px;
+            display: flex; gap: 15px; justify-content: center;
+            z-index: 100;
+        }
+        button, .btn-pdf {
+            padding: 16px 32px; border: none; border-radius: 50px;
+            font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+        .btn-check { background: var(--primary-blue); color: white; }
+        .btn-sol { background: #4a5568; color: white; display: none; }
+        .btn-pdf { background: #e53e3e; color: white; text-decoration: none; display: flex; align-items: center; }
+        
+        #score-banner { 
+            display: none; padding: 20px; border-radius: 10px;
+            text-align: center; font-size: 1.5rem; font-weight: 800;
+            margin-bottom: 30px; animation: slideDown 0.5s ease-out;
+        }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="margin:0; font-size: 2.2rem;">🇬🇧 Worksheet 08 - Signal Words Mastery</h1>
+    </div>
+    <div class="container">
+        <p class="instr">Master the signal words! Fill in every blank, then check your score.</p>
+        <div id="score-banner"></div>
+        <div id="quiz-area">
+    
+            <div class="q-item">
+                <span class="q-text">1. I ______ (always) play tennis.</span>
+                <input type="text" id="q0" data-ans="always" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">2. She is eating ______ (now).</span>
+                <input type="text" id="q1" data-ans="now" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">3. They ______ (never) go late.</span>
+                <input type="text" id="q2" data-ans="never" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">4. He watches TV ______ (often).</span>
+                <input type="text" id="q3" data-ans="often" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">5. We are dancing ______ (today).</span>
+                <input type="text" id="q4" data-ans="today" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">6. Tom ______ (sometimes) helps.</span>
+                <input type="text" id="q5" data-ans="sometimes" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">7. Look! The cat is jumping ______.</span>
+                <input type="text" id="q6" data-ans="now" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">8. ______ (First) I wash my hands.</span>
+                <input type="text" id="q7" data-ans="First" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">9. Then I ______ (eat) my lunch.</span>
+                <input type="text" id="q8" data-ans="eat" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">10. She likes pizza ______ (because) it is good.</span>
+                <input type="text" id="q9" data-ans="because" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">11. I like apples ______ (but) not pears.</span>
+                <input type="text" id="q10" data-ans="but" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">12. He is small ______ (and) fast.</span>
+                <input type="text" id="q11" data-ans="and" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">13. ______ (After that) we play.</span>
+                <input type="text" id="q12" data-ans="After that" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">14. They go home ______ (then).</span>
+                <input type="text" id="q13" data-ans="then" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">15. I am happy ______ (today).</span>
+                <input type="text" id="q14" data-ans="today" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">16. She ______ (always) smiles.</span>
+                <input type="text" id="q15" data-ans="always" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">17. We are working ______ (now).</span>
+                <input type="text" id="q16" data-ans="now" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">18. It ______ (never) rains here.</span>
+                <input type="text" id="q17" data-ans="never" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">19. You ______ (often) read books.</span>
+                <input type="text" id="q18" data-ans="often" placeholder="Your answer..." autocomplete="off">
+            </div>
+            <div class="q-item">
+                <span class="q-text">20. The bus is coming ______ (now).</span>
+                <input type="text" id="q19" data-ans="now" placeholder="Your answer..." autocomplete="off">
+            </div>
+        </div>
+        <div class="sticky-controls">
+            <button class="btn-check" onclick="checkAll()">Check Answers</button>
+            <button id="sol-btn" class="btn-sol" onclick="showSolutions()">Show Solutions</button>
+            <a href="https://github.com/Danjo124/-teaching-materials/raw/main/english/year-1/Worksheet_08.pdf" class="btn-pdf" target="_blank">📥 PDF</a>
+        </div>
+    </div>
+    <script>
+        function checkAll() {
+            let score = 0;
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                const val = input.value.trim().toLowerCase();
+                const ans = input.getAttribute('data-ans').toLowerCase();
+                if(val === ans) {
+                    input.className = 'correct';
+                    score++;
+                } else {
+                    input.className = 'wrong';
+                }
+            });
+            const banner = document.getElementById('score-banner');
+            banner.style.display = 'block';
+            banner.style.background = score === inputs.length ? '#f0fff4' : '#ebf8ff';
+            banner.style.color = score === inputs.length ? '#22543d' : '#2b6cb0';
+            banner.innerText = `Result: ${score} / ${inputs.length}`;
+            document.getElementById('sol-btn').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function showSolutions() {
+            document.querySelectorAll('input').forEach(input => {
+                input.value = input.getAttribute('data-ans');
+                input.className = 'correct';
+            });
+        }
+    </script>
+</body>
+</html>
