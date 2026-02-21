@@ -1,117 +1,145 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .folder-card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 24px; border: 1px solid #e2e8f0; }
-        .folder-header { background: #f1f5f9; padding: 16px 24px; border-bottom: 1px solid #e2e8f0; font-weight: 800; display: flex; align-items: center; gap: 12px; color: #1e293b; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 16px 16px 0 0; }
-        .file-item { display: flex; align-items: center; padding: 10px 24px; transition: all 0.2s; border-bottom: 1px solid #f1f5f9; text-decoration: none; }
-        .file-item:hover { background-color: #f8fafc; transform: translateX(5px); }
-        .quiz-link { background-color: #eff6ff; color: #1d4ed8; font-weight: 700; }
-        .pdf-link { color: #475569; font-weight: 500; font-size: 0.9rem; }
-        .section-title { padding: 10px 24px; background: #f8fafc; font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #f1f5f9; }
-    </style>
-</head>
-<body class="p-4 md:p-10">
-    <div class="max-w-6xl mx-auto">
-        <header class="mb-12">
-            <h1 class="text-6xl font-black text-slate-900 mb-2">Learning Hub</h1>
-            <p class="text-slate-500 text-xl">Digital Materials Hub</p>
-        </header>
 
-        <!-- FEATURED -->
-        <div class="folder-card border-blue-500 border-2">
-            <div class="folder-header bg-blue-600 text-white"><i class="fas fa-star"></i> Quick Access Tools</div>
-            <a href="english/year-1/quiz-irregular-verbs.html" class="file-item quiz-link py-5">
-                <i class="fas fa-bolt text-3xl mr-4 text-yellow-400"></i> Irregular Verbs Flashcard Trainer
-            </a>
+    <!DOCTYPE html>
+    <html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daniel's Learning Hub</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+            body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+            .folder-card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 24px; border: 1px solid #e2e8f0; overflow: hidden; }
+            .folder-header { background: #00519e; padding: 16px 24px; color: white; font-weight: 800; display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: 0.1em; }
+            .file-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; transition: all 0.2s; border-bottom: 1px solid #f1f5f9; text-decoration: none; }
+            .file-item:hover { background-color: #f0f7ff; transform: translateX(5px); }
+            .pdf-link { color: #1e293b; font-weight: 600; font-size: 1rem; flex-grow: 1; }
+            .interactive-tag { background: #dcfce7; color: #166534; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; margin-left: 10px; }
+            .section-title { padding: 10px 24px; background: #f8fafc; font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #f1f5f9; }
+            .btn-interactive { color: #00519e; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+            .btn-interactive:hover { text-decoration: underline; }
+        </style>
+    </head>
+    <body class="p-4 md:p-10">
+        <div class="max-w-6xl mx-auto">
+            <header class="mb-12 border-l-8 border-blue-700 pl-6">
+                <h1 class="text-6xl font-black text-slate-900 mb-2">Learning Hub</h1>
+                <p class="text-slate-500 text-xl font-medium">Digital English Materials • Year 1 Package Live 🚀</p>
+            </header>
+    
+            
+        <!-- ENGLISH YEAR 1 - NEW PACKAGE -->
+        <div class="folder-card border-2 border-blue-600">
+            <div class="folder-header"><i class="fas fa-star text-yellow-400"></i> English - Year 1: Complete Practice Package</div>
+            <div class="section-title">Worksheets (PDF + Interactive Practice)</div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+    
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_01.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Asking Questions</a>
+                    <a href="english/year-1/interactive/Worksheet_01.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_02.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Make it Negative</a>
+                    <a href="english/year-1/interactive/Worksheet_02.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_03.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03 Word Order</a>
+                    <a href="english/year-1/interactive/Worksheet_03.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_04.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04 Multiple Choice</a>
+                    <a href="english/year-1/interactive/Worksheet_04.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_05.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05 Find the Mistake</a>
+                    <a href="english/year-1/interactive/Worksheet_05.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_06.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Match Q & A</a>
+                    <a href="english/year-1/interactive/Worksheet_06.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_07.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Rewrite Sentences</a>
+                    <a href="english/year-1/interactive/Worksheet_07.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_08.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 08 Signal Words Mastery</a>
+                    <a href="english/year-1/interactive/Worksheet_08.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_09.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 09 Mixed Challenge</a>
+                    <a href="english/year-1/interactive/Worksheet_09.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_10.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 10 Short Answers</a>
+                    <a href="english/year-1/interactive/Worksheet_10.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_11.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 11 Be and Can Challenge</a>
+                    <a href="english/year-1/interactive/Worksheet_11.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_12.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 12 Dialogue Mastery</a>
+                    <a href="english/year-1/interactive/Worksheet_12.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_13.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 13 Find the Mistake (HARD)</a>
+                    <a href="english/year-1/interactive/Worksheet_13.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_14.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 14 Sentence Transformation</a>
+                    <a href="english/year-1/interactive/Worksheet_14.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+                <div class="file-item">
+                    <a href="english/year-1/Worksheet_15.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 15 Final Exam Simulator</a>
+                    <a href="english/year-1/interactive/Worksheet_15.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
+                </div>
+        
+            </div>
         </div>
-
-        <!-- ENGLISH YEAR 1 -->
-        <div class="folder-card">
-            <div class="folder-header"><i class="fas fa-folder text-blue-500"></i> English - Year 1 (1. Klasse)</div>
-            <div class="section-title">Grammar & Vocabulary (PDF)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="english/year-1/01_simple_present_basics.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Simple Present Basics</a>
-                <a href="english/year-1/02_simple_present_questions.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Simple Present Questions</a>
-                <a href="english/year-1/03_simple_present_negatives.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03 Simple Present Negatives</a>
-                <a href="english/year-1/04_simple_present_mixed.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04 Simple Present Mixed</a>
-                <a href="english/year-1/05_simple_present_game.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05 Simple Present Game</a>
-                <a href="english/year-1/06_present_progressive_merkblatt.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Present Progressive Merkblatt</a>
-                <a href="english/year-1/07_present_progressive_introduction.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Present Progressive Intro</a>
-                <a href="english/year-1/08_present_progressive_practice.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 08 Present Progressive Practice</a>
-                <a href="english/year-1/09_simple_present_combined.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 09 Simple Present Combined</a>
-                <a href="english/year-1/11_simple_present_quiz.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 11 Simple Present Quiz</a>
-                <a href="english/year-1/12_simple_present_20_sentences.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 12 Simple Present 20 Sentences</a>
-                <a href="english/year-1/13_simple_present_tricky.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 13 Simple Present Tricky</a>
-                <a href="english/year-1/14_present_progressive_quiz.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 14 Present Progressive Quiz</a>
-                <a href="english/year-1/15_present_progressive_combined.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 15 Present Progressive Combined</a>
-                <a href="english/year-1/16_simple_present_signal_words.pdf" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-600 mr-3"></i> 16 Simple Present Signal Words</a>
-                <a href="english/year-1/17_irregular_verbs_training.pdf" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-600 mr-3"></i> 17 Irregular Verbs Training</a>
+    
+    
+            <!-- ENGLISH YEAR 5 -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 5 (5. Klasse)</div>
+                <div class="section-title">Worksheets & Mediation (PDF)</div>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <a href="english/year-5/01_word_formation_nutrition.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Word Formation: Nutrition (20 Tasks)</a>
+                    <a href="english/year-5/02_word_formation_sports.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Word Formation: Sports (20 Tasks)</a>
+                    <a href="english/year-5/06_word_formation_travel_tourism.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Word Formation: Travel</a>
+                    <a href="english/year-5/07_word_formation_environment_nature.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Word Formation: Environment</a>
+                    <a href="english/year-5/03_open_gap_healthy_lifestyle_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 03 Open Gap: Healthy Lifestyle</a>
+                    <a href="english/year-5/04_open_gap_sports_exercise_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 04 Open Gap: Sports & Exercise</a>
+                </div>
             </div>
-            <div class="section-title">Online Practice</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="english/year-1/quiz-signal-words.html" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Signal Words Quiz</a>
-                <a href="english/year-1/quiz-simple-present-tricky.html" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Simple Present Tricky</a>
-                <a href="english/year-1/quiz-simple-present-20.html" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Simple Present (20 Tasks)</a>
-                <a href="english/year-1/quiz-present-progressive.html" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Present Progressive Basics</a>
+    
+            <!-- ENGLISH YEAR 7 -->
+            <div class="folder-card">
+                <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 7 (7. Klasse)</div>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 01 How to Write a Report</a>
+                <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 02 Open Gap: Fast Fashion</a>
+                </div>
             </div>
-            <div class="section-title">More! Unit Archives</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="more-1/unit-8-clothes/01_vocabulary_clothes.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> Unit 8: Vocabulary Clothes</a>
-                <a href="more-1/unit-8-clothes/03_grammar_exercises.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> Unit 8: Grammar Exercises</a>
-                <a href="more-1/unit-8-clothes/05_unit_test.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> Unit 8: Unit Test</a>
-                <a href="more-1/unit-9-unusual-pets/09-unusual-pets-unit9.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> Unit 9: Unusual Pets</a>
-            </div>
+    
+            <footer class="mt-20 text-center text-slate-400 text-sm">
+                <p>© 2026 • Daniel's Digital Classroom • Powered by Digit Assistant ✍️</p>
+            </footer>
         </div>
-
-        <!-- ENGLISH YEAR 5 -->
-        <div class="folder-card">
-            <div class="folder-header"><i class="fas fa-folder text-blue-500"></i> English - Year 5 (5. Klasse)</div>
-            <div class="section-title">Worksheets & Mediation (PDF)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="english/year-5/01_word_formation_nutrition.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Word Formation: Nutrition</a>
-                <a href="english/year-5/02_word_formation_sports.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Word Formation: Sports</a>
-                <a href="english/year-5/03_open_gap_healthy_lifestyle_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03 Open Gap: Healthy Lifestyle</a>
-                <a href="english/year-5/04_open_gap_sports_exercise_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04 Open Gap: Sports & Exercise</a>
-                <a href="english/year-5/05_nutrition_and_health_advanced.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05 Nutrition & Health Advanced</a>
-                <a href="english/year-5/06_word_formation_travel_tourism.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Word Formation: Travel</a>
-                <a href="english/year-5/07_word_formation_environment_nature.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Word Formation: Environment</a>
-                <a href="english/year-5/08_mediation_social_media_year5.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 08 Mediation: Social Media</a>
-                <a href="english/year-5/09_mediation_healthy_living_year5.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 09 Mediation: Healthy Living</a>
-            </div>
-            <div class="section-title">Online Practice</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="english/year-1/01_word_formation_nutrition.html" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Nutrition Quiz</a>
-                <a href="english/year-1/02_word_formation_sports.html" class="file-item quiz-link"><i class="fas fa-link mr-3"></i> Sports Quiz</a>
-            </div>
-        </div>
-
-        <!-- ENGLISH YEAR 7 -->
-        <div class="folder-card">
-            <div class="folder-header"><i class="fas fa-folder text-blue-500"></i> English - Year 7 (7. Klasse)</div>
-            <div class="section-title">Text Types & Grammar (PDF)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-600 mr-3"></i> 01 How to Write a Report</a>
-                <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" class="file-item pdf-link font-bold"><i class="far fa-file-pdf text-red-600 mr-3"></i> 02 Open Gap: Fast Fashion</a>
-                <a href="english/year-7/01_word_formation_fashion_industry.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Word Formation: Fashion</a>
-                <a href="english/year-7/02_word_formation_nutrition_sports.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Word Formation: Nutrition</a>
-                <a href="english/year-7/03_crossword_fashion_industry.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03 Crossword: Fashion</a>
-                <a href="english/year-7/04_open_gap_social_media_b2.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04 Open Gap: Social Media</a>
-                <a href="english/year-7/05_open_gap_climate_change_b2.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05 Open Gap: Climate Change</a>
-                <a href="english/year-7/06_mediation_ai_workplace_year7.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Mediation: AI at Workplace</a>
-                <a href="english/year-7/07_mediation_sustainable_tourism_year7.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Mediation: Sustainable Tourism</a>
-            </div>
-        </div>
-
-        <footer class="mt-20 text-center text-slate-400 text-sm">
-            <p>© 2026 • Digital Assistant</p>
-        </footer>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
+    
