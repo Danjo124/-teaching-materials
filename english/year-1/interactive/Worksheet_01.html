@@ -1,0 +1,82 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Worksheet 01 - Asking Questions</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; line-height: 1.6; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 200px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; }
+            .res-btn { background: #28a745; color: white; display: none; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 Worksheet 01 - Asking Questions</h1>
+            <p class="task-instr">Fill in the blanks with the correct form. Type carefully!</p>
+            <div id="quiz">
+    <div class="question">1. _______ you like pizza? <input type="text" id="q0" data-ans="Do"></div>
+<div class="question">2. _______ Sarah play tennis? <input type="text" id="q1" data-ans="Does"></div>
+<div class="question">3. _______ they live in Berlin? <input type="text" id="q2" data-ans="Do"></div>
+<div class="question">4. What _______ you do? <input type="text" id="q3" data-ans="do"></div>
+<div class="question">5. Where _______ he go? <input type="text" id="q4" data-ans="does"></div>
+<div class="question">6. _______ the dog bark? <input type="text" id="q5" data-ans="Does"></div>
+<div class="question">7. When _______ the bus arrive? <input type="text" id="q6" data-ans="does"></div>
+<div class="question">8. _______ we have milk? <input type="text" id="q7" data-ans="Do"></div>
+<div class="question">9. _______ I know you? <input type="text" id="q8" data-ans="Do"></div>
+<div class="question">10. _______ your friends dance? <input type="text" id="q9" data-ans="Do"></div>
+<div class="question">11. _______ John eat meat? <input type="text" id="q10" data-ans="Does"></div>
+<div class="question">12. _______ it rain often? <input type="text" id="q11" data-ans="does"></div>
+<div class="question">13. _______ you speak English? <input type="text" id="q12" data-ans="Do"></div>
+<div class="question">14. How _______ she feel? <input type="text" id="q13" data-ans="does"></div>
+<div class="question">15. _______ they want water? <input type="text" id="q14" data-ans="Do"></div>
+<div class="question">16. _______ you watch TV? <input type="text" id="q15" data-ans="Do"></div>
+<div class="question">17. Where _______ we sleep? <input type="text" id="q16" data-ans="do"></div>
+<div class="question">18. _______ he help you? <input type="text" id="q17" data-ans="Does"></div>
+<div class="question">19. _______ the cats sleep? <input type="text" id="q18" data-ans="Do"></div>
+<div class="question">20. _______ I need a pen? <input type="text" id="q19" data-ans="Do"></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button class="sol-btn" onclick="show()">Show Solutions</button>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
