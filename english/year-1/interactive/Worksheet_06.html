@@ -1,0 +1,85 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Worksheet 06 - Match Questions and Answers</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 250px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; display: none; }
+            .pdf-btn { background: #dc3545; color: white; text-decoration: none; display: inline-block; padding: 12px 25px; border-radius: 5px; font-size: 0.9em; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+            @media print { .btn-group, .task-instr { display: none; } .container { box-shadow: none; border: none; } }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 Worksheet 06 - Match Questions and Answers</h1>
+            <p class="task-instr">Check the correct answers! You can also print this page or download the PDF below.</p>
+            <div id="quiz">
+    <div class="question">1. What is your name? -> My name is ______. <br><input type="text" id="q0" data-ans="Tom"></div>
+<div class="question">2. Where do you live? -> I live ______. <br><input type="text" id="q1" data-ans="in Berlin"></div>
+<div class="question">3. How old are you? -> I am ______. <br><input type="text" id="q2" data-ans="12 years old"></div>
+<div class="question">4. Do you like pizza? -> Yes, ______. <br><input type="text" id="q3" data-ans="I do"></div>
+<div class="question">5. When does the bus arrive? -> It arrives ______. <br><input type="text" id="q4" data-ans="at 8:00"></div>
+<div class="question">6. Who is your teacher? -> My teacher is ______. <br><input type="text" id="q5" data-ans="Mr. Miller"></div>
+<div class="question">7. Does she speak English? -> No, ______. <br><input type="text" id="q6" data-ans="she doesn't"></div>
+<div class="question">8. What time is it? -> It is ______. <br><input type="text" id="q7" data-ans="10 o'clock"></div>
+<div class="question">9. Where are the cats? -> They are ______. <br><input type="text" id="q8" data-ans="on the sofa"></div>
+<div class="question">10. Are you thirsty? -> Yes, ______. <br><input type="text" id="q9" data-ans="I am"></div>
+<div class="question">11. Can you swim? -> No, ______. <br><input type="text" id="q10" data-ans="I can't"></div>
+<div class="question">12. What is your hobby? -> My hobby is ______. <br><input type="text" id="q11" data-ans="reading"></div>
+<div class="question">13. Do they play football? -> No, ______. <br><input type="text" id="q12" data-ans="they don't"></div>
+<div class="question">14. How do you feel? -> I feel ______. <br><input type="text" id="q13" data-ans="happy"></div>
+<div class="question">15. Where is my pen? -> It is ______. <br><input type="text" id="q14" data-ans="on the table"></div>
+<div class="question">16. Is Tom happy? -> Yes, ______. <br><input type="text" id="q15" data-ans="he is"></div>
+<div class="question">17. What do you eat? -> I eat ______. <br><input type="text" id="q16" data-ans="a sandwich"></div>
+<div class="question">18. When is your birthday? -> My birthday is ______. <br><input type="text" id="q17" data-ans="in May"></div>
+<div class="question">19. Do we have milk? -> No, ______. <br><input type="text" id="q18" data-ans="we don't"></div>
+<div class="question">20. Are the birds singing? -> Yes, ______. <br><input type="text" id="q19" data-ans="they are"></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button id="solBtn" class="sol-btn" onclick="show()">Show Solutions</button>
+                <a href="https://github.com/Danjo124/-teaching-materials/raw/main/english/year-1/Worksheet_06.pdf" class="pdf-btn" target="_blank">📥 Download as PDF</a>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+                document.getElementById('solBtn').style.display = 'inline-block';
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
