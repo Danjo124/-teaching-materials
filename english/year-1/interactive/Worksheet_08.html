@@ -3,214 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worksheet 08 - Signal Words Mastery</title>
+    <title>Worksheet 08 - Tom and Sarah's Day (Simple Present Story)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        :root {
-            --primary: #00519e;
-            --success: #28a745;
-            --error: #dc3545;
-            --bg: #f8fafc;
-            --accent: #e0f2fe;
-        }
-        body { 
-            font-family: 'Inter', system-ui, sans-serif; 
-            background: var(--bg); margin: 0; padding: 20px; color: #1e293b;
-            line-height: 1.6;
-        }
-        .card {
-            max-width: 900px; margin: 0 auto; background: white;
-            border-radius: 20px; shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
-            overflow: hidden; border: 1px solid #e2e8f0;
-        }
-        .header {
-            background: var(--primary); color: white; padding: 30px; text-align: center;
-        }
-        .content { padding: 40px; }
-        .instr-box {
-            background: var(--accent); padding: 15px 20px; border-radius: 12px;
-            border-left: 5px solid var(--primary); margin-bottom: 30px; font-weight: 500;
-        }
-        .sentence-row {
-            margin-bottom: 25px; font-size: 1.2rem; display: flex; flex-wrap: wrap; align-items: center;
-            gap: 8px; padding: 10px; border-radius: 8px; transition: 0.2s;
-        }
-        .sentence-row:hover { background: #f1f5f9; }
-        
-        /* THE BLANK PILL DESIGN */
-        .gap-input {
-            border: none; border-bottom: 2px solid #cbd5e1;
-            background: #f1f5f9; padding: 4px 10px; border-radius: 4px 4px 0 0;
-            font-size: 1.1rem; color: var(--primary); font-weight: 600;
-            min-width: 80px; transition: all 0.3s; text-align: center;
-        }
-        .gap-input:focus {
-            outline: none; border-bottom-color: var(--primary); background: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 81, 158, 0.1);
-        }
+        :root { --primary: #00519e; --success: #28a745; --error: #dc3545; --bg: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1e293b; line-height: 1.8; }
+        .card { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: var(--primary); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px; font-size: 1.2rem; }
+        .instr { background: #e0f2fe; padding: 15px; border-radius: 12px; border-left: 5px solid var(--primary); margin-bottom: 30px; font-weight: 500; }
+        .gap-input { border: none; border-bottom: 2px solid #cbd5e1; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 1.1rem; color: var(--primary); font-weight: 600; min-width: 100px; text-align: center; }
         .correct { background: #dcfce7 !important; border-bottom-color: var(--success) !important; color: #166534; }
         .wrong { background: #fee2e2 !important; border-bottom-color: var(--error) !important; color: #991b1b; }
-        
-        .sol-text { font-size: 0.9rem; color: var(--success); font-weight: bold; margin-left: 5px; display: none; }
-
-        .sticky-bar {
-            position: sticky; bottom: 20px; background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(10px); padding: 15px 30px; border-radius: 50px;
-            display: flex; gap: 15px; justify-content: center; align-items: center;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-top: 40px; border: 1px solid #e2e8f0;
-        }
-        button {
-            padding: 12px 24px; border: none; border-radius: 25px; font-weight: 700;
-            cursor: pointer; transition: 0.2s; font-size: 0.9rem; text-transform: uppercase;
-        }
-        button:disabled { opacity: 0.4; cursor: not-allowed; filter: grayscale(1); }
+        .sol-text { font-size: 0.9rem; color: var(--success); font-weight: bold; display: none; }
+        .sticky-bar { position: sticky; bottom: 20px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); padding: 15px; border-radius: 50px; display: flex; gap: 15px; justify-content: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1); margin-top: 40px; }
+        button { padding: 10px 20px; border-radius: 25px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
         .btn-check { background: var(--primary); color: white; }
-        .btn-sol { background: #64748b; color: white; }
-        .btn-reset { background: #94a3b8; color: white; }
+        .btn-check:disabled { opacity: 0.4; cursor: not-allowed; }
         .btn-pdf { background: var(--error); color: white; }
-
-        #score-msg { font-weight: 800; color: var(--primary); font-size: 1.1rem; }
-
-        /* Modal for Export */
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
-        .modal-content { background: white; padding: 30px; border-radius: 15px; max-width: 400px; text-align: center; }
-        
-        @media print { .sticky-bar, .header, .instr-box { display: none; } }
+        #exportModal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="header">
-            <h1 style="margin:0">🇬🇧 Worksheet 08 - Signal Words Mastery</h1>
-        </div>
+        <div class="header"><h1>🇬🇧 Worksheet 08 - Tom and Sarah's Day (Simple Present Story)</h1></div>
         <div class="content">
-            <div class="instr-box">Fill in all blanks. The "Check" button will activate once you're done!</div>
-            <div id="exercise-list"></div>
+            <div class="instr">Read the story of Tom and Sarah. Fill in the correct Simple Present forms.</div>
+            <div id="text-area"></div>
         </div>
     </div>
-
     <div class="sticky-bar">
-        <div id="score-msg"></div>
-        <button id="check-btn" class="btn-check" onclick="checkWork()" disabled>Check Answers</button>
-        <button id="sol-btn" class="btn-sol" onclick="toggleSolutions()" style="display:none">Show Solutions</button>
-        <button id="reset-btn" class="btn-reset" onclick="resetForm()">Try Again</button>
-        <button id="pdf-btn" class="btn-pdf" onclick="openExport()" disabled>PDF Export</button>
+        <button id="check-btn" class="btn-check" onclick="checkWork()" disabled>Check</button>
+        <button id="pdf-btn" class="btn-pdf" onclick="document.getElementById('exportModal').style.display='flex'" disabled>Export PDF</button>
     </div>
-
-    <div id="exportModal" class="modal">
-        <div class="modal-content">
-            <h3>Export Worksheet</h3>
-            <p>Choose your version:</p>
-            <button class="btn-check" style="width:100%; margin-bottom:10px" onclick="generatePDF(false)">Student Version</button>
-            <button class="btn-sol" style="width:100%" onclick="generatePDF(true)">Teacher Version (Keys)</button>
-            <p><a href="#" onclick="closeModal()" style="color: #64748b; font-size: 0.8rem">Cancel</a></p>
-        </div>
-    </div>
-
+    <div id="exportModal" onclick="this.style.display='none'"><div style="background:white;padding:30px;border-radius:15px;text-align:center" onclick="event.stopPropagation()">
+        <h3>Export PDF</h3>
+        <button class="btn-check" onclick="genPDF(false)">Student</button>
+        <button class="btn-check" style="background:#64748b" onclick="genPDF(true)">Teacher</button>
+    </div></div>
     <script>
-        const tasks = ["I ________ (always) play tennis.", "She is eating ________ (now).", "They ________ (never) go late.", "He watches TV ________ (often).", "We are dancing ________ (today).", "Tom ________ (sometimes) helps.", "Look! The cat is jumping ________.", "________ (First) I wash my hands.", "Then I ________ (eat) my lunch.", "She likes pizza ________ (because) it is good.", "I like apples ________ (but) not pears.", "He is small ________ (and) fast.", "________ (After that) we play.", "They go home ________ (then).", "I am happy ________ (today).", "She ________ (always) smiles.", "We are working ________ (now).", "It ________ (never) rains here.", "You ________ (often) read books.", "The bus is coming ________ (now)."];
-        const solutions = ["always", "now", "never", "often", "today", "sometimes", "now", "First", "eat", "because", "but", "and", "After that", "then", "today", "always", "now", "never", "often", "now"];
-        const listDiv = document.getElementById('exercise-list');
-
-        // Render Tasks
+        const tasks = ["Every morning, Tom ", " (wake up) at 7 o'clock. He ", " (go) to the bathroom and ", " (wash) his face. His sister Sarah ", " (not / like) mornings. She ", " (stay) in bed until 7:30. At 8 o'clock, sie ", " (eat) breakfast together. Tom ", " (drink) orange juice, but Sarah ", " (prefer) milk. Then, they ", " (walk) to school. On the way, they ", " (meet) their friends. Sarah ", " (talk) a lot, but Tom ", " (be) more quiet. At school, the teacher ", " (start) the lesson at 8:30. Tom ", " (listen) carefully. Sarah ", " (not / forget) her books today. In the afternoon, they ", " (come) home. Tom ", " (play) football in the garden, while Sarah ", " (read) a book. They ", " (do) their homework before dinner. It ", " (be) a busy but happy day!"]; const solutions = ["wakes up", "goes", "washes", "doesn't like", "stays", "eat", "drinks", "prefers", "walk", "meet", "talks", "is", "starts", "listens", "doesn't forget", "come", "plays", "reads", "do", "is"];
+        const area = document.getElementById('text-area');
         tasks.forEach((t, i) => {
-            const div = document.createElement('div');
-            div.className = 'sentence-row';
-            
-            // Handle placeholders like ______
-            const parts = t.split(/________|______/);
-            div.appendChild(document.createTextNode((i+1) + ". " + parts[0]));
-            
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.className = 'gap-input';
-            input.id = 'in-' + i;
-            input.oninput = validateProgress;
-            div.appendChild(input);
-            
-            if(parts[1]) div.appendChild(document.createTextNode(parts[1]));
-            
-            const solSpan = document.createElement('span');
-            solSpan.className = 'sol-text';
-            solSpan.id = 'sol-' + i;
-            solSpan.innerText = ' [Key: ' + solutions[i] + ']';
-            div.appendChild(solSpan);
-
-            listDiv.appendChild(div);
+            area.appendChild(document.createTextNode(t));
+            if(i < solutions.length) {
+                const input = document.createElement('input');
+                input.className='gap-input'; input.id='in-'+i; input.oninput=v;
+                area.appendChild(input);
+                const s = document.createElement('span'); s.id='sol-'+i; s.className='sol-text'; s.innerText=' ['+solutions[i]+']';
+                area.appendChild(s);
+            }
         });
-
-        function validateProgress() {
-            const allInputs = document.querySelectorAll('.gap-input');
-            const filled = Array.from(allInputs).filter(i => i.value.trim().length > 0).length;
-            document.getElementById('check-btn').disabled = (filled < allInputs.length);
-        }
-
+        function v() { const all=document.querySelectorAll('input'); const filled=Array.from(all).filter(x=>x.value.trim()).length; document.getElementById('check-btn').disabled=(filled<all.length); }
         function checkWork() {
-            let score = 0;
-            tasks.forEach((_, i) => {
-                const input = document.getElementById('in-' + i);
-                if(input.value.trim().toLowerCase() === solutions[i].toLowerCase()) {
-                    input.classList.add('correct');
-                    input.classList.remove('wrong');
-                    score++;
-                } else {
-                    input.classList.add('wrong');
-                    input.classList.remove('correct');
-                }
+            solutions.forEach((s, i) => {
+                const inp = document.getElementById('in-'+i);
+                if(inp.value.trim().toLowerCase() === s.toLowerCase()) inp.classList.add('correct'); else inp.classList.add('wrong');
             });
-            document.getElementById('score-msg').innerText = `Score: ${score} / ${tasks.length}`;
-            document.getElementById('sol-btn').style.display = 'inline-block';
-            document.getElementById('pdf-btn').disabled = false;
+            document.getElementById('pdf-btn').disabled=false;
         }
-
-        function toggleSolutions() {
-            const show = document.getElementById('sol-btn').innerText.includes('Show');
-            document.querySelectorAll('.sol-text').forEach(s => s.style.display = show ? 'inline' : 'none');
-            document.getElementById('sol-btn').innerText = show ? 'Hide Solutions' : 'Show Solutions';
-        }
-
-        function resetForm() {
-            document.querySelectorAll('.gap-input').forEach(i => {
-                i.value = '';
-                i.className = 'gap-input';
-            });
-            document.querySelectorAll('.sol-text').forEach(s => s.style.display = 'none');
-            document.getElementById('score-msg').innerText = '';
-            document.getElementById('sol-btn').style.display = 'none';
-            document.getElementById('pdf-btn').disabled = true;
-            validateProgress();
-        }
-
-        function openExport() { document.getElementById('exportModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('exportModal').style.display = 'none'; }
-
-        function generatePDF(withSolutions) {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            
-            doc.setFontSize(18);
-            doc.setTextColor(0, 81, 158);
-            doc.text('Worksheet 08 - Signal Words Mastery', 20, 20);
-            
-            doc.setFontSize(10);
-            doc.setTextColor(0, 0, 0);
-            doc.text('Student: ____________________   Date: ' + new Date().toLocaleDateString(), 20, 30);
-            
-            let y = 45;
-            tasks.forEach((t, i) => {
-                const val = document.getElementById('in-' + i).value;
-                const sol = solutions[i];
-                let line = (i+1) + ". " + t.replace(/________|______/, ' [' + val + '] ');
-                if(withSolutions) line += ' (Correct: ' + sol + ')';
-                
-                const splitText = doc.splitTextToSize(line, 170);
-                doc.text(splitText, 20, y);
-                y += (splitText.length * 7);
-                if (y > 270) { doc.addPage(); y = 20; }
-            });
-            
-            doc.save('Worksheet 08 - Signal Words Mastery_Result.pdf');
-            closeModal();
+        function genPDF(s) {
+            const { jsPDF } = window.jspdf; const doc = new jsPDF();
+            doc.text('Worksheet 08 - Tom and Sarah's Day (Simple Present Story)', 20, 20);
+            let out = ""; tasks.forEach((t, i) => { out += t; if(i<solutions.length) out += ' [' + document.getElementById('in-'+i).value + '] ' + (s ? '('+solutions[i]+')' : ''); });
+            doc.setFontSize(10); doc.text(doc.splitTextToSize(out, 170), 20, 40);
+            doc.save('Worksheet_08.pdf');
         }
     </script>
 </body>
