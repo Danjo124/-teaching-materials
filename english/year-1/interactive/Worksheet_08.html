@@ -1,1 +1,217 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Worksheet 08 - Simple Present: Signal Words</title><style>:root { --primary: #00519e; --success: #28a745; --error: #dc3545; --bg: #f4f7f9; } body { font-family: sans-serif; background: var(--bg); margin: 0; padding: 0; } .header { background: var(--primary); color: white; padding: 30px; text-align: center; } .container { max-width: 800px; margin: -20px auto 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); } .q-item { margin-bottom: 20px; padding: 15px; border-bottom: 1px solid #eee; } input { width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; } .correct { border-color: var(--success); background: #f0fff4; } .wrong { border-color: var(--error); background: #fff5f5; } .controls { position: sticky; bottom: 20px; display: flex; gap: 10px; justify-content: center; } button, .btn-pdf { padding: 12px 24px; border-radius: 30px; border: none; font-weight: bold; cursor: pointer; text-decoration: none; } .btn-check { background: var(--primary); color: white; } .btn-sol { background: #4a5568; color: white; display: none; } .btn-pdf { background: var(--error); color: white; }</style></head><body><div class="header"><h1>🇬🇧 Worksheet 08 - Simple Present: Signal Words</h1></div><div class="container"><div id="quiz-area"><div class="q-item"><span>1. I ________ (always / play) football on Mondays.</span><input type="text" id="q0" data-ans="always play" autocomplete="off"></div><div class="q-item"><span>2. She ________ (never / eat) meat.</span><input type="text" id="q1" data-ans="never eats" autocomplete="off"></div><div class="q-item"><span>3. We ________ (often / watch) TV in the evening.</span><input type="text" id="q2" data-ans="often watch" autocomplete="off"></div><div class="q-item"><span>4. He ________ (sometimes / go) to the park.</span><input type="text" id="q3" data-ans="sometimes goes" autocomplete="off"></div><div class="q-item"><span>5. They ________ (usually / arrive) at 8:00.</span><input type="text" id="q4" data-ans="usually arrive" autocomplete="off"></div><div class="q-item"><span>6. The cat ________ (always / sleep) on the sofa.</span><input type="text" id="q5" data-ans="always sleeps" autocomplete="off"></div><div class="q-item"><span>7. You ________ (never / listen) to the teacher.</span><input type="text" id="q6" data-ans="never listen" autocomplete="off"></div><div class="q-item"><span>8. Sarah ________ (often / read) books.</span><input type="text" id="q7" data-ans="often reads" autocomplete="off"></div><div class="q-item"><span>9. Tom and John ________ (sometimes / help) me.</span><input type="text" id="q8" data-ans="sometimes help" autocomplete="off"></div><div class="q-item"><span>10. It ________ (usually / rain) in London.</span><input type="text" id="q9" data-ans="usually rains" autocomplete="off"></div><div class="q-item"><span>11. I ________ (often / drink) milk for breakfast.</span><input type="text" id="q10" data-ans="often drink" autocomplete="off"></div><div class="q-item"><span>12. We ________ (never / forget) our homework.</span><input type="text" id="q11" data-ans="never forget" autocomplete="off"></div><div class="q-item"><span>13. She ________ (sometimes / sing) in the shower.</span><input type="text" id="q12" data-ans="sometimes sings" autocomplete="off"></div><div class="q-item"><span>14. My parents ________ (usually / work) on Fridays.</span><input type="text" id="q13" data-ans="usually work" autocomplete="off"></div><div class="q-item"><span>15. The dog ________ (always / bark) at cats.</span><input type="text" id="q14" data-ans="always barks" autocomplete="off"></div><div class="q-item"><span>16. You ________ (often / clean) your room.</span><input type="text" id="q15" data-ans="often clean" autocomplete="off"></div><div class="q-item"><span>17. He ________ (never / wash) his car.</span><input type="text" id="q16" data-ans="never washes" autocomplete="off"></div><div class="q-item"><span>18. Birds ________ (usually / fly) south in winter.</span><input type="text" id="q17" data-ans="usually fly" autocomplete="off"></div><div class="q-item"><span>19. I ________ (sometimes / wear) a hat.</span><input type="text" id="q18" data-ans="sometimes wear" autocomplete="off"></div><div class="q-item"><span>20. They ________ (often / play) games together.</span><input type="text" id="q19" data-ans="often play" autocomplete="off"></div></div><div class="controls"><button class="btn-check" onclick="checkAll()">Check</button><button id="sol-btn" class="btn-sol" onclick="showSol()">Show Solutions</button><a href="https://github.com/Danjo124/-teaching-materials/raw/main/english/year-1/Worksheet_08.pdf" class="btn-pdf">📥 PDF</a></div></div><script>function checkAll(){let score=0;document.querySelectorAll('input').forEach(i=>{const v=i.value.trim().toLowerCase();const a=i.getAttribute('data-ans').toLowerCase();if(v===a){i.className='correct';score++;}else{i.className='wrong';}});document.getElementById('sol-btn').style.display='block';alert('Score: '+score+'/'+document.querySelectorAll('input').length);}function showSol(){document.querySelectorAll('input').forEach(i=>{i.value=i.getAttribute('data-ans');i.className='correct';});}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksheet 08 - Signal Words Mastery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #00519e;
+            --success: #28a745;
+            --error: #dc3545;
+            --bg: #f8fafc;
+            --accent: #e0f2fe;
+        }
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background: var(--bg); margin: 0; padding: 20px; color: #1e293b;
+            line-height: 1.6;
+        }
+        .card {
+            max-width: 900px; margin: 0 auto; background: white;
+            border-radius: 20px; shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            overflow: hidden; border: 1px solid #e2e8f0;
+        }
+        .header {
+            background: var(--primary); color: white; padding: 30px; text-align: center;
+        }
+        .content { padding: 40px; }
+        .instr-box {
+            background: var(--accent); padding: 15px 20px; border-radius: 12px;
+            border-left: 5px solid var(--primary); margin-bottom: 30px; font-weight: 500;
+        }
+        .sentence-row {
+            margin-bottom: 25px; font-size: 1.2rem; display: flex; flex-wrap: wrap; align-items: center;
+            gap: 8px; padding: 10px; border-radius: 8px; transition: 0.2s;
+        }
+        .sentence-row:hover { background: #f1f5f9; }
+        
+        /* THE BLANK PILL DESIGN */
+        .gap-input {
+            border: none; border-bottom: 2px solid #cbd5e1;
+            background: #f1f5f9; padding: 4px 10px; border-radius: 4px 4px 0 0;
+            font-size: 1.1rem; color: var(--primary); font-weight: 600;
+            min-width: 80px; transition: all 0.3s; text-align: center;
+        }
+        .gap-input:focus {
+            outline: none; border-bottom-color: var(--primary); background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 81, 158, 0.1);
+        }
+        .correct { background: #dcfce7 !important; border-bottom-color: var(--success) !important; color: #166534; }
+        .wrong { background: #fee2e2 !important; border-bottom-color: var(--error) !important; color: #991b1b; }
+        
+        .sol-text { font-size: 0.9rem; color: var(--success); font-weight: bold; margin-left: 5px; display: none; }
+
+        .sticky-bar {
+            position: sticky; bottom: 20px; background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px); padding: 15px 30px; border-radius: 50px;
+            display: flex; gap: 15px; justify-content: center; align-items: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-top: 40px; border: 1px solid #e2e8f0;
+        }
+        button {
+            padding: 12px 24px; border: none; border-radius: 25px; font-weight: 700;
+            cursor: pointer; transition: 0.2s; font-size: 0.9rem; text-transform: uppercase;
+        }
+        button:disabled { opacity: 0.4; cursor: not-allowed; filter: grayscale(1); }
+        .btn-check { background: var(--primary); color: white; }
+        .btn-sol { background: #64748b; color: white; }
+        .btn-reset { background: #94a3b8; color: white; }
+        .btn-pdf { background: var(--error); color: white; }
+
+        #score-msg { font-weight: 800; color: var(--primary); font-size: 1.1rem; }
+
+        /* Modal for Export */
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 15px; max-width: 400px; text-align: center; }
+        
+        @media print { .sticky-bar, .header, .instr-box { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1 style="margin:0">🇬🇧 Worksheet 08 - Signal Words Mastery</h1>
+        </div>
+        <div class="content">
+            <div class="instr-box">Fill in all blanks. The "Check" button will activate once you're done!</div>
+            <div id="exercise-list"></div>
+        </div>
+    </div>
+
+    <div class="sticky-bar">
+        <div id="score-msg"></div>
+        <button id="check-btn" class="btn-check" onclick="checkWork()" disabled>Check Answers</button>
+        <button id="sol-btn" class="btn-sol" onclick="toggleSolutions()" style="display:none">Show Solutions</button>
+        <button id="reset-btn" class="btn-reset" onclick="resetForm()">Try Again</button>
+        <button id="pdf-btn" class="btn-pdf" onclick="openExport()" disabled>PDF Export</button>
+    </div>
+
+    <div id="exportModal" class="modal">
+        <div class="modal-content">
+            <h3>Export Worksheet</h3>
+            <p>Choose your version:</p>
+            <button class="btn-check" style="width:100%; margin-bottom:10px" onclick="generatePDF(false)">Student Version</button>
+            <button class="btn-sol" style="width:100%" onclick="generatePDF(true)">Teacher Version (Keys)</button>
+            <p><a href="#" onclick="closeModal()" style="color: #64748b; font-size: 0.8rem">Cancel</a></p>
+        </div>
+    </div>
+
+    <script>
+        const tasks = ["I ________ (always) play tennis.", "She is eating ________ (now).", "They ________ (never) go late.", "He watches TV ________ (often).", "We are dancing ________ (today).", "Tom ________ (sometimes) helps.", "Look! The cat is jumping ________.", "________ (First) I wash my hands.", "Then I ________ (eat) my lunch.", "She likes pizza ________ (because) it is good.", "I like apples ________ (but) not pears.", "He is small ________ (and) fast.", "________ (After that) we play.", "They go home ________ (then).", "I am happy ________ (today).", "She ________ (always) smiles.", "We are working ________ (now).", "It ________ (never) rains here.", "You ________ (often) read books.", "The bus is coming ________ (now)."];
+        const solutions = ["always", "now", "never", "often", "today", "sometimes", "now", "First", "eat", "because", "but", "and", "After that", "then", "today", "always", "now", "never", "often", "now"];
+        const listDiv = document.getElementById('exercise-list');
+
+        // Render Tasks
+        tasks.forEach((t, i) => {
+            const div = document.createElement('div');
+            div.className = 'sentence-row';
+            
+            // Handle placeholders like ______
+            const parts = t.split(/________|______/);
+            div.appendChild(document.createTextNode((i+1) + ". " + parts[0]));
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'gap-input';
+            input.id = 'in-' + i;
+            input.oninput = validateProgress;
+            div.appendChild(input);
+            
+            if(parts[1]) div.appendChild(document.createTextNode(parts[1]));
+            
+            const solSpan = document.createElement('span');
+            solSpan.className = 'sol-text';
+            solSpan.id = 'sol-' + i;
+            solSpan.innerText = ' [Key: ' + solutions[i] + ']';
+            div.appendChild(solSpan);
+
+            listDiv.appendChild(div);
+        });
+
+        function validateProgress() {
+            const allInputs = document.querySelectorAll('.gap-input');
+            const filled = Array.from(allInputs).filter(i => i.value.trim().length > 0).length;
+            document.getElementById('check-btn').disabled = (filled < allInputs.length);
+        }
+
+        function checkWork() {
+            let score = 0;
+            tasks.forEach((_, i) => {
+                const input = document.getElementById('in-' + i);
+                if(input.value.trim().toLowerCase() === solutions[i].toLowerCase()) {
+                    input.classList.add('correct');
+                    input.classList.remove('wrong');
+                    score++;
+                } else {
+                    input.classList.add('wrong');
+                    input.classList.remove('correct');
+                }
+            });
+            document.getElementById('score-msg').innerText = `Score: ${score} / ${tasks.length}`;
+            document.getElementById('sol-btn').style.display = 'inline-block';
+            document.getElementById('pdf-btn').disabled = false;
+        }
+
+        function toggleSolutions() {
+            const show = document.getElementById('sol-btn').innerText.includes('Show');
+            document.querySelectorAll('.sol-text').forEach(s => s.style.display = show ? 'inline' : 'none');
+            document.getElementById('sol-btn').innerText = show ? 'Hide Solutions' : 'Show Solutions';
+        }
+
+        function resetForm() {
+            document.querySelectorAll('.gap-input').forEach(i => {
+                i.value = '';
+                i.className = 'gap-input';
+            });
+            document.querySelectorAll('.sol-text').forEach(s => s.style.display = 'none');
+            document.getElementById('score-msg').innerText = '';
+            document.getElementById('sol-btn').style.display = 'none';
+            document.getElementById('pdf-btn').disabled = true;
+            validateProgress();
+        }
+
+        function openExport() { document.getElementById('exportModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('exportModal').style.display = 'none'; }
+
+        function generatePDF(withSolutions) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFontSize(18);
+            doc.setTextColor(0, 81, 158);
+            doc.text('Worksheet 08 - Signal Words Mastery', 20, 20);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Student: ____________________   Date: ' + new Date().toLocaleDateString(), 20, 30);
+            
+            let y = 45;
+            tasks.forEach((t, i) => {
+                const val = document.getElementById('in-' + i).value;
+                const sol = solutions[i];
+                let line = (i+1) + ". " + t.replace(/________|______/, ' [' + val + '] ');
+                if(withSolutions) line += ' (Correct: ' + sol + ')';
+                
+                const splitText = doc.splitTextToSize(line, 170);
+                doc.text(splitText, 20, y);
+                y += (splitText.length * 7);
+                if (y > 270) { doc.addPage(); y = 20; }
+            });
+            
+            doc.save('Worksheet 08 - Signal Words Mastery_Result.pdf');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
