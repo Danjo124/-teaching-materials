@@ -1,0 +1,84 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Worksheet 07 - Rewrite Sentences</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 250px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; display: none; }
+            .pdf-btn { background: #dc3545; color: white; text-decoration: none; display: inline-block; padding: 12px 25px; border-radius: 5px; font-size: 0.9em; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 Worksheet 07 - Rewrite Sentences</h1>
+            <p class="task-instr">Interactive Practice: Type your answers below!</p>
+            <div id="quiz">
+    <div class="question">1. I play tennis. (Make it negative) <br><input type="text" id="q0" data-ans="I don't play tennis"></div>
+<div class="question">2. She doesn't like milk. (Make it positive) <br><input type="text" id="q1" data-ans="She likes milk"></div>
+<div class="question">3. They live in Rome. (Make it negative) <br><input type="text" id="q2" data-ans="They don't live in Rome"></div>
+<div class="question">4. He doesn't speak French. (Make it positive) <br><input type="text" id="q3" data-ans="He speaks French"></div>
+<div class="question">5. We eat lunch. (Make it negative) <br><input type="text" id="q4" data-ans="We don't eat lunch"></div>
+<div class="question">6. It doesn't rain. (Make it positive) <br><input type="text" id="q5" data-ans="It rains"></div>
+<div class="question">7. The dog barks. (Make it negative) <br><input type="text" id="q6" data-ans="The dog doesn't bark"></div>
+<div class="question">8. You don't know him. (Make it positive) <br><input type="text" id="q7" data-ans="You know him"></div>
+<div class="question">9. Sarah sings well. (Make it negative) <br><input type="text" id="q8" data-ans="Sarah doesn't sing well"></div>
+<div class="question">10. Tom doesn't help. (Make it positive) <br><input type="text" id="q9" data-ans="Tom helps"></div>
+<div class="question">11. We have a car. (Make it negative) <br><input type="text" id="q10" data-ans="We don't have a car"></div>
+<div class="question">12. They don't dance. (Make it positive) <br><input type="text" id="q11" data-ans="They dance"></div>
+<div class="question">13. I drink tea. (Make it negative) <br><input type="text" id="q12" data-ans="I don't drink tea"></div>
+<div class="question">14. She doesn't go home. (Make it positive) <br><input type="text" id="q13" data-ans="She goes home"></div>
+<div class="question">15. It works well. (Make it negative) <br><input type="text" id="q14" data-ans="It doesn't work well"></div>
+<div class="question">16. He doesn't swim. (Make it positive) <br><input type="text" id="q15" data-ans="He swims"></div>
+<div class="question">17. The cats sleep. (Make it negative) <br><input type="text" id="q16" data-ans="The cats don't sleep"></div>
+<div class="question">18. I don't need a pen. (Make it positive) <br><input type="text" id="q17" data-ans="I need a pen"></div>
+<div class="question">19. You read books. (Make it negative) <br><input type="text" id="q18" data-ans="You don't read books"></div>
+<div class="question">20. We don't play. (Make it positive) <br><input type="text" id="q19" data-ans="We play"></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button id="solBtn" class="sol-btn" onclick="show()">Show Solutions</button>
+                <a href="https://github.com/Danjo124/-teaching-materials/raw/main/english/year-1/Worksheet_07.pdf" class="pdf-btn" target="_blank">📥 Download Worksheet (PDF)</a>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+                document.getElementById('solBtn').style.display = 'inline-block';
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
