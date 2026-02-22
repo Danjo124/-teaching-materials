@@ -1,0 +1,81 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>10 - Simple Past: Sentence Scramble (Negatives & Questions)</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; line-height: 1.6; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 200px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 10 - Simple Past: Sentence Scramble (Negatives & Questions)</h1>
+            <p class="task-instr">Put the words in the correct order.</p>
+            <div id="quiz">
+    <div class="question">1. didn't / I / play / football <br><input type='text' id='q0' data-ans='I didn't play football.' style='width: 90%;'></div>
+<div class="question">2. she / watch / did / the / movie / ? <br><input type='text' id='q1' data-ans='Did she watch the movie?' style='width: 90%;'></div>
+<div class="question">3. they / go / didn't / to / school <br><input type='text' id='q2' data-ans='They didn't go to school.' style='width: 90%;'></div>
+<div class="question">4. you / did / see / the / rainbow / ? <br><input type='text' id='q3' data-ans='Did you see the rainbow?' style='width: 90%;'></div>
+<div class="question">5. he / didn't / eat / his / lunch <br><input type='text' id='q4' data-ans='He didn't eat his lunch.' style='width: 90%;'></div>
+<div class="question">6. we / have / did / a / test / ? <br><input type='text' id='q5' data-ans='Did we have a test?' style='width: 90%;'></div>
+<div class="question">7. cat / the / didn't / jump <br><input type='text' id='q6' data-ans='The cat didn't jump.' style='width: 90%;'></div>
+<div class="question">8. they / did / come / to / the / party / ? <br><input type='text' id='q7' data-ans='Did they come to the party?' style='width: 90%;'></div>
+<div class="question">9. I / didn't / see / him <br><input type='text' id='q8' data-ans='I didn't see him.' style='width: 90%;'></div>
+<div class="question">10. she / did / buy / a / new / dress / ? <br><input type='text' id='q9' data-ans='Did she buy a new dress?' style='width: 90%;'></div>
+<div class="question">11. we / didn't / visit / museum / the <br><input type='text' id='q10' data-ans='We didn't visit the museum.' style='width: 90%;'></div>
+<div class="question">12. he / did / finish / his / work / ? <br><input type='text' id='q11' data-ans='Did he finish his work?' style='width: 90%;'></div>
+<div class="question">13. dog / the / didn't / bark <br><input type='text' id='q12' data-ans='The dog didn't bark.' style='width: 90%;'></div>
+<div class="question">14. did / you / help / your / mother / ? <br><input type='text' id='q13' data-ans='Did you help your mother?' style='width: 90%;'></div>
+<div class="question">15. they / didn't / find / the / keys <br><input type='text' id='q14' data-ans='They didn't find the keys.' style='width: 90%;'></div>
+<div class="question">16. did / she / make / a / mistake / ? <br><input type='text' id='q15' data-ans='Did she make a mistake?' style='width: 90%;'></div>
+<div class="question">17. I / didn't / drink / the / milk <br><input type='text' id='q16' data-ans='I didn't drink the milk.' style='width: 90%;'></div>
+<div class="question">18. did / he / take / a / photo / ? <br><input type='text' id='q17' data-ans='Did he take a photo?' style='width: 90%;'></div>
+<div class="question">19. we / didn't / walk / to / school <br><input type='text' id='q18' data-ans='We didn't walk to school.' style='width: 90%;'></div>
+<div class="question">20. did / they / win / the / game / ? <br><input type='text' id='q19' data-ans='Did they win the game?' style='width: 90%;'></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button class="sol-btn" onclick="show()">Show Solutions</button>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
