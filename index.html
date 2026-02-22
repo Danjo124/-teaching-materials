@@ -1,145 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel's Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .folder-card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 24px; border: 1px solid #e2e8f0; overflow: hidden; }
+        .folder-header { background: #00519e; padding: 16px 24px; color: white; font-weight: 800; display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: 0.1em; }
+        .file-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; transition: all 0.2s; border-bottom: 1px solid #f1f5f9; text-decoration: none; }
+        .file-item:hover { background-color: #f0f7ff; transform: translateX(5px); }
+        .pdf-link { color: #1e293b; font-weight: 600; font-size: 1rem; flex-grow: 1; }
+        .interactive-tag { background: #dcfce7; color: #166534; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; margin-left: 10px; }
+        .section-title { padding: 10px 24px; background: #f8fafc; font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #f1f5f9; }
+        .btn-interactive { color: #00519e; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+        .btn-interactive:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-12 border-l-8 border-blue-700 pl-6">
+            <h1 class="text-6xl font-black text-slate-900 mb-2">Learning Hub</h1>
+            <p class="text-slate-500 text-xl font-medium">Digital English Materials • Year 1 Package Live 🚀</p>
+        </header>
 
-    <!DOCTYPE html>
-    <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daniel's Learning Hub</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <style>
-            body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
-            .folder-card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 24px; border: 1px solid #e2e8f0; overflow: hidden; }
-            .folder-header { background: #00519e; padding: 16px 24px; color: white; font-weight: 800; display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: 0.1em; }
-            .file-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; transition: all 0.2s; border-bottom: 1px solid #f1f5f9; text-decoration: none; }
-            .file-item:hover { background-color: #f0f7ff; transform: translateX(5px); }
-            .pdf-link { color: #1e293b; font-weight: 600; font-size: 1rem; flex-grow: 1; }
-            .interactive-tag { background: #dcfce7; color: #166534; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; margin-left: 10px; }
-            .section-title { padding: 10px 24px; background: #f8fafc; font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #f1f5f9; }
-            .btn-interactive { color: #00519e; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
-            .btn-interactive:hover { text-decoration: underline; }
-        </style>
-    </head>
-    <body class="p-4 md:p-10">
-        <div class="max-w-6xl mx-auto">
-            <header class="mb-12 border-l-8 border-blue-700 pl-6">
-                <h1 class="text-6xl font-black text-slate-900 mb-2">Learning Hub</h1>
-                <p class="text-slate-500 text-xl font-medium">Digital English Materials • Year 1 Package Live 🚀</p>
-            </header>
-    
-            
         <!-- ENGLISH YEAR 1 - NEW PACKAGE -->
         <div class="folder-card border-2 border-blue-600">
             <div class="folder-header"><i class="fas fa-star text-yellow-400"></i> English - Year 1: Complete Practice Package</div>
             <div class="section-title">Worksheets (PDF + Interactive Practice)</div>
             <div class="grid grid-cols-1 md:grid-cols-2">
-    
+                <!-- WS 01 -->
                 <div class="file-item">
                     <a href="english/year-1/Worksheet_01.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Asking Questions</a>
                     <a href="english/year-1/interactive/Worksheet_01.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 02 -->
                 <div class="file-item">
                     <a href="english/year-1/Worksheet_02.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Make it Negative</a>
                     <a href="english/year-1/interactive/Worksheet_02.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 03 -->
                 <div class="file-item">
                     <a href="english/year-1/Worksheet_03.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03 Word Order</a>
                     <a href="english/year-1/interactive/Worksheet_03.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 04 -->
                 <div class="file-item">
                     <a href="english/year-1/Worksheet_04.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04 Multiple Choice</a>
                     <a href="english/year-1/interactive/Worksheet_04.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 05 -->
                 <div class="file-item">
                     <a href="english/year-1/Worksheet_05.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05 Find the Mistake</a>
                     <a href="english/year-1/interactive/Worksheet_05.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 06 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_06_Revised.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Match Q & A</a>
+                    <a href="english/year-1/Worksheet_06.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Match Q & A</a>
                     <a href="english/year-1/interactive/Worksheet_06.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 07 -->
                 <div class="file-item">
                     <a href="english/year-1/Worksheet_07.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Rewrite Sentences</a>
                     <a href="english/year-1/interactive/Worksheet_07.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 08 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_08_Revised.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 08 Signal Words Mastery</a>
+                    <a href="english/year-1/Worksheet_08.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 08 Signal Words (New)</a>
                     <a href="english/year-1/interactive/Worksheet_08.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 09 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_09.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 09 Mixed Challenge</a>
+                    <a href="english/year-1/Worksheet_09.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 09 Mixed Challenge (Hard)</a>
                     <a href="english/year-1/interactive/Worksheet_09.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 10 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_10.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 10 Short Answers</a>
+                    <a href="english/year-1/Worksheet_10.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 10 Short Answers</a>
                     <a href="english/year-1/interactive/Worksheet_10.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 11 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_11.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 11 Be and Can Challenge</a>
+                    <a href="english/year-1/Worksheet_11.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 11 Be and Can Challenge</a>
                     <a href="english/year-1/interactive/Worksheet_11.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 12 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_12.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 12 Dialogue Mastery</a>
+                    <a href="english/year-1/Worksheet_12.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 12 Dialogue Mastery</a>
                     <a href="english/year-1/interactive/Worksheet_12.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 13 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_13.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 13 Find the Mistake (HARD)</a>
+                    <a href="english/year-1/Worksheet_13.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 13 Find the Mistake (Hard)</a>
                     <a href="english/year-1/interactive/Worksheet_13.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 14 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_14.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 14 Sentence Transformation</a>
+                    <a href="english/year-1/Worksheet_14.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 14 Sentence Transformation</a>
                     <a href="english/year-1/interactive/Worksheet_14.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
+                <!-- WS 15 -->
                 <div class="file-item">
-                    <a href="english/year-1/Worksheet_15.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 15 Final Exam Simulator</a>
+                    <a href="english/year-1/Worksheet_15.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 15 Final Exam Simulator</a>
                     <a href="english/year-1/interactive/Worksheet_15.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
                 </div>
-        
             </div>
         </div>
-    
-    
-            <!-- ENGLISH YEAR 5 -->
-            <div class="folder-card">
-                <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 5 (5. Klasse)</div>
-                <div class="section-title">Worksheets & Mediation (PDF)</div>
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <a href="english/year-5/01_word_formation_nutrition.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Word Formation: Nutrition (20 Tasks)</a>
-                    <a href="english/year-5/02_word_formation_sports.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Word Formation: Sports (20 Tasks)</a>
-                    <a href="english/year-5/06_word_formation_travel_tourism.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Word Formation: Travel</a>
-                    <a href="english/year-5/07_word_formation_environment_nature.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Word Formation: Environment</a>
-                    <a href="english/year-5/03_open_gap_healthy_lifestyle_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 03 Open Gap: Healthy Lifestyle</a>
-                    <a href="english/year-5/04_open_gap_sports_exercise_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 04 Open Gap: Sports & Exercise</a>
-                </div>
+
+        <!-- ENGLISH YEAR 5 -->
+        <div class="folder-card">
+            <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 5 (5. Klasse)</div>
+            <div class="section-title">Worksheets & Mediation (PDF)</div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <a href="english/year-5/01_word_formation_nutrition.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Word Formation: Nutrition (20 Tasks)</a>
+                <a href="english/year-5/02_word_formation_sports.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Word Formation: Sports (20 Tasks)</a>
+                <a href="english/year-5/06_word_formation_travel_tourism.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Word Formation: Travel</a>
+                <a href="english/year-5/07_word_formation_environment_nature.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Word Formation: Environment</a>
+                <a href="english/year-5/03_open_gap_healthy_lifestyle_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 03 Open Gap: Healthy Lifestyle</a>
+                <a href="english/year-5/04_open_gap_sports_exercise_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 04 Open Gap: Sports & Exercise</a>
             </div>
-    
-            <!-- ENGLISH YEAR 7 -->
-            <div class="folder-card">
-                <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 7 (7. Klasse)</div>
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 01 How to Write a Report</a>
+        </div>
+
+        <!-- ENGLISH YEAR 7 -->
+        <div class="folder-card">
+            <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 7 (7. Klasse)</div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 01 How to Write a Report</a>
                 <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 02 Open Gap: Fast Fashion</a>
-                </div>
             </div>
-    
-            <footer class="mt-20 text-center text-slate-400 text-sm">
-                <p>© 2026 • Daniel's Digital Classroom • Powered by Digit Assistant ✍️</p>
-            </footer>
         </div>
-    </body>
-    </html>
-    
+
+        <footer class="mt-20 text-center text-slate-400 text-sm">
+            <p>© 2026 • Daniel's Digital Classroom • Powered by Digit Assistant ✍️</p>
+        </footer>
+    </div>
+</body>
+</html>
