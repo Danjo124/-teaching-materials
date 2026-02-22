@@ -19,17 +19,37 @@
         .btn-interactive:hover { text-decoration: underline; }
     </style>
     <!-- REFRESH_TOKEN: 2026-02-22 05:56:39 -->
-</head>
+
+    <script>
+        function toggleFolder(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(90deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+    <style>
+        .folder-header { cursor: pointer; user-select: none; transition: background 0.2s; }
+        .folder-header:hover { background: #003e7a; }
+        .chevron { transition: transform 0.2s; font-size: 0.8rem; }
+        .folder-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+    </head>
 <body class="p-4 md:p-10">
     <div class="max-w-6xl mx-auto">
         <header class="mb-12 border-l-8 border-blue-700 pl-6">
-            <h1 class="text-6xl font-black text-slate-900 mb-2">Learning Hub</h1>
+            <h1 class="text-5xl font-black text-slate-900 mb-2">Learning Hub</h1>
             <p class="text-slate-500 text-xl font-medium">Digital English Materials • Year 1 Package Live 🚀</p>
         </header>
 
         <!-- ENGLISH YEAR 1 - NEW PACKAGE -->
         <div class="folder-card border-2 border-blue-600">
-            <div class="folder-header"><i class="fas fa-star text-yellow-400"></i> English - Year 1: Complete Practice Package</div>
+            <div class="folder-header-target"><i class="fas fa-star text-yellow-400"></i> English - Year 1: Complete Practice Package</div>
             <div class="section-title">Worksheets (PDF + Interactive Practice)</div>
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <!-- WS 01 -->
@@ -112,9 +132,9 @@
 
         <!-- ENGLISH YEAR 5 -->
         
-            <!-- PRESENT PROGRESSIVE PACKAGE -->
+            </div><!-- PRESENT PROGRESSIVE PACKAGE -->
             <div class="folder-card border-2 border-blue-600 mt-8">
-                <div class="folder-header"><i class="fas fa-bolt text-yellow-400"></i> English - Year 1: Present Progressive Mastery</div>
+                <div class="folder-header-target"><i class="fas fa-bolt text-yellow-400"></i> English - Year 1: Present Progressive Mastery</div>
                 <div class="section-title">15 Practice Worksheets (PDF + Solutions)</div>
                 <div class="grid grid-cols-1 md:grid-cols-2">
     
@@ -225,8 +245,8 @@
         
                 </div>
             </div>
-    <div class="folder-card">
-            <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 5 (5. Klasse)</div>
+    </div><div class="folder-card">
+            <div class="folder-header-target"><i class="fas fa-folder text-white"></i> English - Year 5 (5. Klasse)</div>
             <div class="section-title">Worksheets & Mediation (PDF)</div>
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <a href="english/year-5/01_word_formation_nutrition.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Word Formation: Nutrition (20 Tasks)</a>
@@ -239,8 +259,8 @@
         </div>
 
         <!-- ENGLISH YEAR 7 -->
-        <div class="folder-card">
-            <div class="folder-header"><i class="fas fa-folder text-white"></i> English - Year 7 (7. Klasse)</div>
+        </div><div class="folder-card">
+            <div class="folder-header-target"><i class="fas fa-folder text-white"></i> English - Year 7 (7. Klasse)</div>
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 01 How to Write a Report</a>
                 <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 02 Open Gap: Fast Fashion</a>
