@@ -1,1 +1,106 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Online Extension 15</title><style>body{font-family:sans-serif;padding:40px;text-align:center;background:#f0f7ff;} .card{background:white;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1);display:inline-block;} h1{color:#00519e;}</style></head><body><div class='card'><h1>🚀 Online Extension 15</h1><p>Welcome to the digital practice for Present Progressive!</p><p>Interactive Quiz coming soon.</p><a href='../../../index.html'>Back to Hub</a></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 - Simple Present vs. Present Progressive (5) - Interactive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f7ff; font-family: 'Inter', sans-serif; }
+        .card { background: white; border-radius: 1.5rem; box-shadow: 0 10px 25px rgba(0,81,158,0.1); }
+        .correct { background-color: #dcfce7; border-color: #22c55e; }
+        .incorrect { background-color: #fee2e2; border-color: #ef4444; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-3xl mx-auto">
+        <header class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-black text-slate-900 leading-tight">15 - Simple Present vs. Present Progressive (5)</h1>
+                <p class="text-blue-600 font-medium italic">Interactive Practice Session</p>
+            </div>
+            <a href="WS_15_Present_Progressive.pdf" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold flex items-center transition">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Download PDF
+            </a>
+        </header>
+
+        <div class="card p-6 md:p-8 space-y-6">
+            <div id="quiz-container" class="space-y-6">
+                <!-- Tasks will be injected here -->
+            </div>
+
+            <div class="pt-6 border-t border-slate-100 flex justify-between items-center">
+                <button onclick="checkAnswers()" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl font-bold text-lg transition shadow-lg shadow-blue-200">
+                    Check My Answers
+                </button>
+                <div id="score" class="text-2xl font-black text-slate-400"></div>
+            </div>
+        </div>
+        
+        <footer class="mt-8 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 Daniel's Digital Classroom • Powered by Digit</p>
+        </footer>
+    </div>
+
+    <script>
+        const tasks = ['John (live) __________ in London.', 'Currently, he (stay) __________ in Paris.', 'I (usually / drink) __________ tea, but today I (drink) __________ coffee.', 'Look! The baby (try) __________ to walk.', 'The earth (go) __________ around the sun.', 'Listen! Somebody (knock) __________ on the door.', 'How often (you / go) __________ to the cinema?', 'What (you / do) __________ under the table? (now)', 'My sister (not / like) __________ cats.', "She (not / work) __________ today because it's a holiday.", 'Water (boil) __________ at 100 degrees Celsius.', 'The kettle (boil) __________ now. Shall I make tea?', 'I (not / understand) __________ this sentence.', "Why (you / wear) __________ a coat? It's warm.", 'He (always / leave) __________ his keys at home.', 'We (have) __________ a party next Saturday.', 'The train (leave) __________ at 8:00 every morning.', 'They (not / watch) __________ TV very often.', 'I (think) __________ you are right.', 'She (write) __________ a letter to her friend at the moment.'];
+        const solutions = ['lives', 'is staying', 'usually drink | am drinking', 'is trying', 'goes', 'is knocking', 'do you go', 'are you doing', 'does not like', 'is not working', 'boils', 'is boiling', 'do not understand', 'are you wearing', 'always leaves', 'are having', 'leaves', 'do not watch', 'think', 'is writing'];
+        const container = document.getElementById('quiz-container');
+
+        tasks.forEach((task, index) => {
+            const div = document.createElement('div');
+            div.className = 'space-y-2 p-4 rounded-xl border border-transparent transition';
+            div.id = 'q' + index;
+            
+            // Extract the sentence parts around the gap (if any)
+            let displayTask = task.replace('__________', `<input type="text" id="input${index}" class="mx-2 px-3 py-1 border-b-2 border-blue-200 focus:border-blue-500 outline-none transition w-48 text-blue-800 font-bold" placeholder="type here...">`);
+            
+            div.innerHTML = `
+                <div class="flex items-start">
+                    <span class="bg-blue-100 text-blue-700 font-black w-8 h-8 rounded-full flex items-center justify-center mr-3 shrink-0 text-sm">${index + 1}</span>
+                    <p class="text-lg text-slate-700 leading-relaxed font-medium mt-0.5">${displayTask}</p>
+                </div>
+                <div id="feedback${index}" class="ml-11 text-sm font-bold hidden"></div>
+            `;
+            container.appendChild(div);
+        });
+
+        function checkAnswers() {
+            let correctCount = 0;
+            solutions.forEach((sol, index) => {
+                const input = document.getElementById('input' + index);
+                const feedback = document.getElementById('feedback' + index);
+                const parent = document.getElementById('q' + index);
+                
+                // Simple cleanup: lowercase and trim
+                const userVal = input.value.trim().toLowerCase();
+                
+                // The expected solution - we need to extract the word from the full solution sentence
+                // This is a bit complex since some are full sentences. Let's compare the full sentence if needed.
+                // For simplicity, let's check if the core words are present or if it matches exactly.
+                
+                // Let's create a full sentence with user input to compare
+                let taskText = tasks[index];
+                let fullUserSentence = taskText.replace('__________', input.value.trim());
+                
+                if (fullUserSentence.toLowerCase().replace(/[.?!]/g, '') === sol.toLowerCase().replace(/[.?!]/g, '')) {
+                    correctCount++;
+                    parent.className = 'space-y-2 p-4 rounded-xl border correct transition bg-green-50';
+                    feedback.className = 'ml-11 text-sm font-bold text-green-600';
+                    feedback.innerText = '✓ Correct!';
+                    feedback.classList.remove('hidden');
+                } else {
+                    parent.className = 'space-y-2 p-4 rounded-xl border incorrect transition bg-red-50';
+                    feedback.className = 'ml-11 text-sm font-bold text-red-600';
+                    feedback.innerText = '✗ Correct answer: ' + sol;
+                    feedback.classList.remove('hidden');
+                }
+            });
+            
+            document.getElementById('score').innerText = correctCount + ' / ' + solutions.length;
+            document.getElementById('score').className = 'text-2xl font-black ' + (correctCount === solutions.length ? 'text-green-500' : 'text-blue-600');
+        }
+    </script>
+</body>
+</html>
