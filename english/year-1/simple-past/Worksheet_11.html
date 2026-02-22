@@ -1,0 +1,81 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>11 - Simple Past: Transformations (Positive to Negative)</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; line-height: 1.6; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 200px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 11 - Simple Past: Transformations (Positive to Negative)</h1>
+            <p class="task-instr">Change the positive sentences into negative sentences.</p>
+            <div id="quiz">
+    <div class="question">1. I played football. -> I <input type="text" id="q0" data-ans="didn't play football"></div>
+<div class="question">2. She watched a movie. -> She <input type="text" id="q1" data-ans="didn't watch a movie"></div>
+<div class="question">3. We went to the park. -> We <input type="text" id="q2" data-ans="didn't go to the park"></div>
+<div class="question">4. They ate pizza. -> They <input type="text" id="q3" data-ans="didn't eat pizza"></div>
+<div class="question">5. He saw a bird. -> He <input type="text" id="q4" data-ans="didn't see a bird"></div>
+<div class="question">6. I had a bike. -> I <input type="text" id="q5" data-ans="didn't have a bike"></div>
+<div class="question">7. She cleaned her room. -> She <input type="text" id="q6" data-ans="didn't clean her room"></div>
+<div class="question">8. We spoke English. -> We <input type="text" id="q7" data-ans="didn't speak English"></div>
+<div class="question">9. They ran fast. -> They <input type="text" id="q8" data-ans="didn't run fast"></div>
+<div class="question">10. He bought a book. -> He <input type="text" id="q9" data-ans="didn't buy a book"></div>
+<div class="question">11. I made a cake. -> I <input type="text" id="q10" data-ans="didn't make a cake"></div>
+<div class="question">12. She took a photo. -> She <input type="text" id="q11" data-ans="didn't take a photo"></div>
+<div class="question">13. We swam in the pool. -> We <input type="text" id="q12" data-ans="didn't swim in the pool"></div>
+<div class="question">14. They sang a song. -> They <input type="text" id="q13" data-ans="didn't sing a song"></div>
+<div class="question">15. He felt tired. -> He <input type="text" id="q14" data-ans="didn't feel tired"></div>
+<div class="question">16. I wrote a letter. -> I <input type="text" id="q15" data-ans="didn't write a letter"></div>
+<div class="question">17. She read a book. -> She <input type="text" id="q16" data-ans="didn't read a book"></div>
+<div class="question">18. We visited London. -> We <input type="text" id="q17" data-ans="didn't visit London"></div>
+<div class="question">19. They won the match. -> They <input type="text" id="q18" data-ans="didn't win the match"></div>
+<div class="question">20. He came home. -> He <input type="text" id="q19" data-ans="didn't come home"></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button class="sol-btn" onclick="show()">Show Solutions</button>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
