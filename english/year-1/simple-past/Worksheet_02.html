@@ -1,0 +1,81 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>02 - Simple Past: Regular Verbs (Spelling Rules)</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; line-height: 1.6; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 200px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 02 - Simple Past: Regular Verbs (Spelling Rules)</h1>
+            <p class="task-instr">Fill in the gaps. Watch out for spelling (-ied, doubled consonants, etc.).</p>
+            <div id="quiz">
+    <div class="question">1. He (study) <input type="text" id="q0" data-ans="studied"> for the English test.</div>
+<div class="question">2. The baby (cry) <input type="text" id="q1" data-ans="cried"> because he was hungry.</div>
+<div class="question">3. We (stop) <input type="text" id="q2" data-ans="stopped"> at the red light.</div>
+<div class="question">4. The rabbit (hop) <input type="text" id="q3" data-ans="hopped"> across the field.</div>
+<div class="question">5. They (dance) <input type="text" id="q4" data-ans="danced"> at the party.</div>
+<div class="question">6. She (smile) <input type="text" id="q5" data-ans="smiled"> at her teacher.</div>
+<div class="question">7. I (love) <input type="text" id="q6" data-ans="loved"> the chocolate cake.</div>
+<div class="question">8. We (clap) <input type="text" id="q7" data-ans="clapped"> our hands after the song.</div>
+<div class="question">9. The boy (skip) <input type="text" id="q8" data-ans="skipped"> down the street.</div>
+<div class="question">10. The sun (dry) <input type="text" id="q9" data-ans="dried"> the wet clothes.</div>
+<div class="question">11. She (try) <input type="text" id="q10" data-ans="tried"> to climb the tree.</div>
+<div class="question">12. They (plan) <input type="text" id="q11" data-ans="planned"> a big surprise.</div>
+<div class="question">13. I (drop) <input type="text" id="q12" data-ans="dropped"> my ice cream on the floor.</div>
+<div class="question">14. He (like) <input type="text" id="q13" data-ans="liked"> the new video game.</div>
+<div class="question">15. Mom (bake) <input type="text" id="q14" data-ans="baked"> some delicious cookies.</div>
+<div class="question">16. I (tidy) <input type="text" id="q15" data-ans="tidied"> my desk yesterday.</div>
+<div class="question">17. The porter (carry) <input type="text" id="q16" data-ans="carried"> the heavy bags.</div>
+<div class="question">18. She (copy) <input type="text" id="q17" data-ans="copied"> the words from the board.</div>
+<div class="question">19. The thief (grab) <input type="text" id="q18" data-ans="grabbed"> the money and ran.</div>
+<div class="question">20. We (move) <input type="text" id="q19" data-ans="moved"> to a new house last year.</div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button class="sol-btn" onclick="show()">Show Solutions</button>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
