@@ -1,0 +1,81 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>13 - Simple Past: Short Story - The Weekend</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7ff; color: #333; line-height: 1.6; padding: 20px; }
+            .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #00519e; }
+            h1 { color: #00519e; text-align: center; }
+            .task-instr { background: #e6f0ff; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; color: #003d7a; }
+            .question { margin-bottom: 15px; font-size: 1.1em; }
+            input { padding: 8px; border: 2px solid #ccc; border-radius: 5px; width: 200px; font-size: 1em; }
+            .correct { border-color: #28a745; background-color: #d4edda; }
+            .wrong { border-color: #dc3545; background-color: #f8d7da; }
+            .btn-group { margin-top: 30px; display: flex; gap: 10px; justify-content: center; }
+            button { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+            .check-btn { background: #00519e; color: white; }
+            .sol-btn { background: #6c757d; color: white; }
+            #result { text-align: center; margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🇬🇧 13 - Simple Past: Short Story - The Weekend</h1>
+            <p class="task-instr">Fill in the gaps with the Simple Past form of the verbs.</p>
+            <div id="quiz">
+    <div class="question">1. Last Saturday, I (wake) up early. -> (1) <input type="text" id="q0" data-ans="woke"></div>
+<div class="question">2. I (have) breakfast with my family. -> (2) <input type="text" id="q1" data-ans="had"></div>
+<div class="question">3. Then, I (go) to the park with my dog. -> (3) <input type="text" id="q2" data-ans="went"></div>
+<div class="question">4. We (play) with a ball for an hour. -> (4) <input type="text" id="q3" data-ans="played"></div>
+<div class="question">5. Max (be) very happy. -> (5) <input type="text" id="q4" data-ans="was"></div>
+<div class="question">6. After the park, I (meet) my friend, Tim. -> (6) <input type="text" id="q5" data-ans="met"></div>
+<div class="question">7. We (buy) some ice cream at the shop. -> (7) <input type="text" id="q6" data-ans="bought"></div>
+<div class="question">8. I (choose) chocolate. -> (8) <input type="text" id="q7" data-ans="chose"></div>
+<div class="question">9. Tim (choose) vanilla. -> (9) <input type="text" id="q8" data-ans="chose"></div>
+<div class="question">10. We (sit) on a bench. -> (10) <input type="text" id="q9" data-ans="sat"></div>
+<div class="question">11. We (eat) our ice cream. -> (11) <input type="text" id="q10" data-ans="ate"></div>
+<div class="question">12. Later, we (watch) a football match. -> (12) <input type="text" id="q11" data-ans="watched"></div>
+<div class="question">13. Our team (win), so we were excited. -> (13) <input type="text" id="q12" data-ans="won"></div>
+<div class="question">14. We (be) excited. -> (14) <input type="text" id="q13" data-ans="were"></div>
+<div class="question">15. In the evening, mom (cook) dinner. -> (15) <input type="text" id="q14" data-ans="cooked"></div>
+<div class="question">16. We (eat) together. -> (16) <input type="text" id="q15" data-ans="ate"></div>
+<div class="question">17. We (talk) about our day. -> (17) <input type="text" id="q16" data-ans="talked"></div>
+<div class="question">18. After dinner, I (read) a book. -> (18) <input type="text" id="q17" data-ans="read"></div>
+<div class="question">19. I (feel) tired. -> (19) <input type="text" id="q18" data-ans="felt"></div>
+<div class="question">20. I (go) to bed at 9 PM. -> (20) <input type="text" id="q19" data-ans="went"></div>
+
+            </div>
+            <div id="result"></div>
+            <div class="btn-group">
+                <button class="check-btn" onclick="check()">Check Answers</button>
+                <button class="sol-btn" onclick="show()">Show Solutions</button>
+            </div>
+        </div>
+        <script>
+            function check() {
+                let score = 0;
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if(input.value.trim().toLowerCase() === input.getAttribute('data-ans').toLowerCase()) {
+                        input.className = 'correct';
+                        score++;
+                    } else {
+                        input.className = 'wrong';
+                    }
+                });
+                document.getElementById('result').innerHTML = `Your Score: ${score} / ${inputs.length}`;
+            }
+            function show() {
+                let inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = input.getAttribute('data-ans');
+                    input.className = 'correct';
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
