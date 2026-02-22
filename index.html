@@ -6,270 +6,167 @@
     <title>Daniel's Learning Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .folder-card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 24px; border: 1px solid #e2e8f0; overflow: hidden; }
-        .folder-header { background: #00519e; padding: 16px 24px; color: white; font-weight: 800; display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: 0.1em; }
-        .file-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; transition: all 0.2s; border-bottom: 1px solid #f1f5f9; text-decoration: none; }
-        .file-item:hover { background-color: #f0f7ff; transform: translateX(5px); }
-        .pdf-link { color: #1e293b; font-weight: 600; font-size: 1rem; flex-grow: 1; }
-        .interactive-tag { background: #dcfce7; color: #166534; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; margin-left: 10px; }
-        .section-title { padding: 10px 24px; background: #f8fafc; font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #f1f5f9; }
-        .btn-interactive { color: #00519e; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
-        .btn-interactive:hover { text-decoration: underline; }
+        body { background-color: #f4f7fa; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+        .tab-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 12px; }
+        .tab-btn.active { background: #00519e; color: white; shadow: 0 4px 12px rgba(0,81,158,0.2); }
+        .content-card { display: none; animation: slideUp 0.4s ease-out forwards; }
+        .content-card.active { display: block; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .folder-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; margin-bottom: 1.5rem; }
+        .folder-header { background: #f8fafc; padding: 16px 24px; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: all 0.2s; }
+        .folder-header:hover { background: #f1f5f9; }
+        .file-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; border-bottom: 1px solid #f1f5f9; transition: all 0.2s; text-decoration: none; }
+        .file-item:hover { background: #f0f7ff; transform: translateX(4px); }
+        .pdf-link { color: #1e293b; font-weight: 600; flex-grow: 1; }
+        .tag-new { background: #dcfce7; color: #166534; font-size: 0.65rem; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; margin-left: 10px; }
+        .btn-play { color: #00519e; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
     </style>
-    <!-- REFRESH_TOKEN: 2026-02-22 06:16:50 -->
+</head>
+<body class="min-h-screen pb-20">
+    <!-- Header -->
+    <header class="glass-header sticky top-0 z-50 px-4 py-4 mb-8">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <h1 class="text-3xl font-black text-slate-900 tracking-tight">Learning Hub</h1>
+                <p class="text-slate-500 font-medium">Digital English Materials • Daniel's Classroom</p>
+            </div>
+            <!-- Main Tabs -->
+            <nav class="flex bg-slate-100 p-1.5 rounded-2xl gap-1">
+                <button onclick="switchTab('y1')" id="btn-y1" class="tab-btn px-6 py-2.5 font-bold text-slate-600 active">Year 1</button>
+                <button onclick="switchTab('y5')" id="btn-y5" class="tab-btn px-6 py-2.5 font-bold text-slate-600">Year 5</button>
+                <button onclick="switchTab('y7')" id="btn-y7" class="tab-btn px-6 py-2.5 font-bold text-slate-600">Year 7</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4">
+        
+        <!-- YEAR 1 CONTENT -->
+        <div id="tab-y1" class="content-card active">
+            <!-- Simple Present Package -->
+            <div class="folder-card shadow-sm">
+                <div class="folder-header flex items-center gap-3">
+                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Simple Present: Practice Package</h3>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">15 Interactive Worksheets</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <a href="english/year-1/Worksheet_01.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01 Asking Questions</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_02.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 02 Make it Negative</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_03.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 03 Word Order</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_04.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 04 Multiple Choice</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_05.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 05 Find the Mistake</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_06_Revised.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 06 Match Q & A</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_07.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 07 Rewrite Sentences</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_08_Revised.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 08 Signal Words Mastery</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_09.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 09 Mixed Challenge</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_10.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 10 Short Answers</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_11.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 11 Be and Can</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_12.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 12 Dialogue Mastery</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_13.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 13 Find Mistakes (Hard)</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_14.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 14 Sentence Transform</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                    <a href="english/year-1/Worksheet_15.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 15 Exam Simulator</span><span class="btn-play"><i class="fas fa-play"></i> Play</span></a>
+                </div>
+            </div>
+
+            <!-- Present Progressive Package -->
+            <div class="folder-card shadow-sm border-blue-200">
+                <div class="folder-header flex items-center gap-3">
+                    <div class="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Present Progressive: Mastery</h3>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">15 New Interactive Worksheets</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <a href="english/year-1/present-progressive/WS_01_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01 Basics & Formation</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_02_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 02 Negatives</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_03_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 03 Yes/No Questions</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_04_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 04 W-Questions</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_05_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 05 Spelling Rules</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_06_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 06 Mixed Practice</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_07_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 07 Picture Description</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_08_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 08 Dialogues</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_09_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 09 Sentence Transform</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_10_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 10 Sentence Scramble</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_11_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 11 Simple vs Prog (1)</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_12_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 12 Simple vs Prog (2)</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_13_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 13 Error Correction</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_14_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 14 Signal Words</span><span class="tag-new">New</span></a>
+                    <a href="english/year-1/present-progressive/WS_15_Present_Progressive.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 15 Final Challenge</span><span class="tag-new">New</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- YEAR 5 CONTENT -->
+        <div id="tab-y5" class="content-card">
+            <div class="folder-card shadow-sm">
+                <div class="folder-header flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-slate-600">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">English - Year 5</h3>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Vocab & Open Gap</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <a href="english/year-5/01_word_formation_nutrition.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01 Word Formation: Nutrition</span></a>
+                    <a href="english/year-5/02_word_formation_sports.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 02 Word Formation: Sports</span></a>
+                    <a href="english/year-5/06_word_formation_travel_tourism.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 06 Word Formation: Travel</span></a>
+                    <a href="english/year-5/07_word_formation_environment_nature.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 07 Word Formation: Environment</span></a>
+                    <a href="english/year-5/03_open_gap_healthy_lifestyle_b1.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 03 Open Gap: Healthy Lifestyle</span></a>
+                    <a href="english/year-5/04_open_gap_sports_exercise_b1.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 04 Open Gap: Sports & Exercise</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- YEAR 7 CONTENT -->
+        <div id="tab-y7" class="content-card">
+            <div class="folder-card shadow-sm">
+                <div class="folder-header flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-slate-600">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">English - Year 7</h3>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Reports & Grammar</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 01 How to Write a Report</span></a>
+                    <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" class="file-item"><span class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-2"></i> 02 Open Gap: Fast Fashion</span></a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-20 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 Daniel's Digital Classroom • Powered by Digit Assistant</p>
+        <p class="mt-1 opacity-50">Last Update: 2026-02-22 06:18</p>
+    </footer>
 
     <script>
-        function toggleFolder(id) {
-            const content = document.getElementById(id);
-            const icon = document.getElementById('icon-' + id);
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(90deg)';
-            } else {
-                content.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
+        function switchTab(yearId) {
+            // Hide all content
+            document.querySelectorAll('.content-card').forEach(card => card.classList.remove('active'));
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Show target
+            document.getElementById('tab-' + yearId).classList.add('active');
+            document.getElementById('btn-' + yearId).classList.add('active');
         }
     </script>
-    <style>
-        .folder-header { cursor: pointer; user-select: none; transition: background 0.2s; }
-        .folder-header:hover { background: #003e7a; }
-        .chevron { transition: transform 0.2s; font-size: 0.8rem; }
-        .folder-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    </style>
-    </head>
-<body class="p-4 md:p-10">
-    <div class="max-w-6xl mx-auto">
-        <header class="mb-12 border-l-8 border-blue-700 pl-6">
-            <h1 class="text-5xl font-black text-slate-900 mb-2">Learning Hub</h1>
-            <p class="text-slate-500 text-xl font-medium">Digital English Materials • Year 1 Package Live 🚀</p>
-        </header>
-
-        <!-- ENGLISH YEAR 1 - NEW PACKAGE -->
-        <div class="folder-card border-2 border-blue-600">
-            <div class="folder-header-target"><i class="fas fa-star text-yellow-400"></i> English - Year 1: Complete Practice Package</div>
-            <div class="section-title">Worksheets (PDF + Interactive Practice)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <!-- WS 01 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_01.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Asking Questions</a>
-                    <a href="english/year-1/interactive/Worksheet_01.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 02 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_02.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Make it Negative</a>
-                    <a href="english/year-1/interactive/Worksheet_02.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 03 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_03.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 03 Word Order</a>
-                    <a href="english/year-1/interactive/Worksheet_03.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 04 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_04.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 04 Multiple Choice</a>
-                    <a href="english/year-1/interactive/Worksheet_04.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 05 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_05.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 05 Find the Mistake</a>
-                    <a href="english/year-1/interactive/Worksheet_05.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 06 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_06.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Match Q & A</a>
-                    <a href="english/year-1/interactive/Worksheet_06.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 07 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_07.pdf" class="pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Rewrite Sentences</a>
-                    <a href="english/year-1/interactive/Worksheet_07.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 08 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_08.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 08 Signal Words (New)</a>
-                    <a href="english/year-1/interactive/Worksheet_08.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 09 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_09.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 09 Mixed Challenge (Hard)</a>
-                    <a href="english/year-1/interactive/Worksheet_09.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 10 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_10.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 10 Short Answers</a>
-                    <a href="english/year-1/interactive/Worksheet_10.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 11 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_11.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 11 Be and Can Challenge</a>
-                    <a href="english/year-1/interactive/Worksheet_11.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 12 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_12.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 12 Dialogue Mastery</a>
-                    <a href="english/year-1/interactive/Worksheet_12.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 13 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_13.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 13 Find the Mistake (Hard)</a>
-                    <a href="english/year-1/interactive/Worksheet_13.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 14 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_14.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 14 Sentence Transformation</a>
-                    <a href="english/year-1/interactive/Worksheet_14.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-                <!-- WS 15 -->
-                <div class="file-item">
-                    <a href="english/year-1/Worksheet_15.pdf" class="pdf-link font-bold text-blue-700"><i class="far fa-file-pdf text-red-600 mr-3"></i> 15 Final Exam Simulator</a>
-                    <a href="english/year-1/interactive/Worksheet_15.html" class="btn-interactive"><i class="fas fa-laptop-code"></i> Play</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ENGLISH YEAR 5 -->
-        
-            </div><!-- PRESENT PROGRESSIVE PACKAGE -->
-            <div class="folder-card border-2 border-blue-600 mt-8">
-                <div class="folder-header-target"><i class="fas fa-bolt text-yellow-400"></i> English - Year 1: Present Progressive Mastery</div>
-                <div class="section-title">15 Practice Worksheets (PDF + Solutions)</div>
-                <div class="grid grid-cols-1 md:grid-cols-2">
-    
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_01_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Basics & Formation
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_02_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Negatives
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_03_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 03 Yes/No Questions
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_04_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 04 W-Questions
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_05_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 05 Spelling Rules
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_06_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Mixed Practice
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_07_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Picture Description
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_08_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 08 Dialogues
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_09_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 09 Sentence Transformation
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_10_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 10 Sentence Scramble
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_11_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 11 Simple vs Progressive (1)
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_12_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 12 Simple vs Progressive (2)
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_13_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 13 Error Correction
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_14_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 14 Signal Words Matching
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                    <div class="file-item">
-                        <a href="english/year-1/present-progressive/WS_15_Present_Progressive.pdf" class="pdf-link">
-                            <i class="far fa-file-pdf text-red-500 mr-3"></i> 15 Final Challenge
-                        </a>
-                        <span class="interactive-tag">New</span>
-                    </div>
-        
-                </div>
-            </div>
-    </div><div class="folder-card">
-            <div class="folder-header-target"><i class="fas fa-folder text-white"></i> English - Year 5 (5. Klasse)</div>
-            <div class="section-title">Worksheets & Mediation (PDF)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="english/year-5/01_word_formation_nutrition.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 01 Word Formation: Nutrition (20 Tasks)</a>
-                <a href="english/year-5/02_word_formation_sports.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 02 Word Formation: Sports (20 Tasks)</a>
-                <a href="english/year-5/06_word_formation_travel_tourism.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 06 Word Formation: Travel</a>
-                <a href="english/year-5/07_word_formation_environment_nature.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-500 mr-3"></i> 07 Word Formation: Environment</a>
-                <a href="english/year-5/03_open_gap_healthy_lifestyle_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 03 Open Gap: Healthy Lifestyle</a>
-                <a href="english/year-5/04_open_gap_sports_exercise_b1.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-slate-400 mr-3"></i> 04 Open Gap: Sports & Exercise</a>
-            </div>
-        </div>
-
-        <!-- ENGLISH YEAR 7 -->
-        </div><div class="folder-card">
-            <div class="folder-header-target"><i class="fas fa-folder text-white"></i> English - Year 7 (7. Klasse)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <a href="english/year-7/text-types/01_how_to_write_a_report.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 01 How to Write a Report</a>
-                <a href="english/year-7/grammar/02_open_gap_fill_fast_fashion.pdf" class="file-item pdf-link"><i class="far fa-file-pdf text-red-600 mr-3"></i> 02 Open Gap: Fast Fashion</a>
-            </div>
-        </div>
-
-        <footer class="mt-20 text-center text-slate-400 text-sm">
-            <p>© 2026 • Daniel's Digital Classroom • Powered by Digit Assistant • Last Update: 2026-02-22 06:16:50</p>
-        </footer>
-    </div>
 </body>
 </html>
