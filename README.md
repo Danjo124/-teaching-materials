@@ -78,7 +78,7 @@ February 12, 2026
 ---
 
 ## 👤 Author
-Daniel Tekula  
+Teaching Assistant  
 Teacher | Educational Content Creator
 
 ---
