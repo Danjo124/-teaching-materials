@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel's Course Management System - FIXED</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e67e22;
+            --bg: #f0f2f5;
+            --card-bg: #ffffff;
+            --text: #333;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        nav {
+            width: 280px;
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            position: fixed;
+            height: 100vh;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        .nav-item {
+            padding: 15px;
+            margin: 5px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: block; /* Make sure it's clickable */
+            text-decoration: none;
+            color: white;
+            border: 1px solid transparent;
+        }
+
+        .nav-item:hover { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); }
+        .nav-item.active { background: var(--secondary); font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+
+        /* Main Content Area */
+        main {
+            flex-grow: 1;
+            padding: 40px;
+            margin-left: 280px; /* Offset for fixed sidebar */
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .class-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active { display: block; }
+
+        /* Cards & Content */
+        .lesson-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--secondary);
+        }
+
+        .lesson-card.priority { border-left-color: var(--accent); }
+
+        h2 { margin-top: 0; color: var(--primary); }
+        
+        .objective-list {
+            margin: 20px 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .objective-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.1rem;
+        }
+
+        .objective-list li::before {
+            content: "✓";
+            color: var(--success);
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .task-box {
+            background: #fff8f0;
+            border: 1px dashed var(--accent);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Daniel's CMS</h1>
+        <div id="btn-dashboard" class="nav-item active" onclick="showSection('dashboard', this)">🏠 Dashboard</div>
+        <div id="btn-class-7b" class="nav-item" onclick="showSection('class-7b', this)">📘 Class 7B (BNW)</div>
+        <div id="btn-class-5c" class="nav-item" onclick="showSection('class-5c', this)">📙 Class 5C (Giver)</div>
+        <div id="btn-class-1c" class="nav-item" onclick="showSection('class-1c', this)">📗 Class 1C (Oral)</div>
+    </nav>
+
+    <main>
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="header-bar">
+                <h1>Daily Overview</h1>
+                <div class="date-display">Friday, Feb 27, 2026</div>
+            </div>
+            
+            <div class="lesson-card priority">
+                <h2>Today's Schedule</h2>
+                <p>1. Stunde: <strong>7B</strong> - Brave New World Ch. 2</p>
+                <p>2. Stunde: <strong>5C</strong> - The Giver Ch. 3</p>
+                <p>4. Stunde: <strong>1C</strong> - Presentation Feedback</p>
+            </div>
+        </section>
+
+        <!-- Class 7B Section -->
+        <section id="class-7b" class="content-section">
+            <div class="header-bar">
+                <h1>Class 7B - English</h1>
+                <span class="class-badge">AHS Upper</span>
+            </div>
+            
+            <div class="lesson-card">
+                <h2>Topic: Brave New World (Ch. 2)</h2>
+                <ul class="objective-list">
+                    <li>Understand Neo-Pavlovian Conditioning techniques.</li>
+                    <li>Analyze the economic reasons for nature-hatred.</li>
+                    <li>Define the limits of Hypnopaedia.</li>
+                </ul>
+                <div class="task-box">
+                    <strong>Flash Task:</strong> "If you had a factory, why would you want your workers to hate flowers?" (3 Minutes Discussion)
+                </div>
+            </div>
+        </section>
+
+        <!-- Class 5C Section -->
+        <section id="class-5c" class="content-section">
+            <div class="header-bar">
+                <h1>Class 5C - English</h1>
+                <span class="class-badge">AHS Lower</span>
+            </div>
+            
+            <div class="lesson-card">
+                <h2>Topic: The Giver (Ch. 3)</h2>
+                <ul class="objective-list">
+                    <li>Identify physical similarities between Jonas and Gabe.</li>
+                    <li>Analyze the significance of the "changing" apple.</li>
+                    <li>Discuss why "Sameness" prohibits mirrors and personal differences.</li>
+                </ul>
+                <div class="task-box">
+                    <strong>Observation Check:</strong> Can you find something in this room that would not exist in Jonas's community?
+                </div>
+            </div>
+        </section>
+
+        <!-- Class 1C Section -->
+        <section id="class-1c" class="content-section">
+            <div class="header-bar">
+                <h1>Class 1C - English</h1>
+                <span class="class-badge">Lower Secondary</span>
+            </div>
+            
+            <div class="lesson-card">
+                <h2>Topic: Presentation & Performance</h2>
+                <ul class="objective-list">
+                    <li>Practice pronunciation and volume.</li>
+                    <li>Active listening: Give peer feedback.</li>
+                    <li>Collect written assignments.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="footer">
+            Digital Teaching Assistant System | Built for Daniel Tekula
+        </div>
+    </main>
+
+    <script>
+        function showSection(sectionId, element) {
+            // 1. Hide all content sections
+            const sections = document.getElementsByClassName('content-section');
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+                sections[i].classList.remove('active');
+            }
+            
+            // 2. Remove active state from all nav buttons
+            const navItems = document.getElementsByClassName('nav-item');
+            for (let i = 0; i < navItems.length; i++) {
+                navItems[i].classList.remove('active');
+            }
+
+            // 3. Show the target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                targetSection.classList.add('active');
+            }
+            
+            // 4. Set clicked button to active
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
