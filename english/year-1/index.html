@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Worksheets – 1. Klasse</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #F8FAFC;
+      color: #1E293B;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+      color: white;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; margin-bottom: .5rem; }
+    header p  { font-size: 1.05rem; opacity: .85; }
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+    h2 { font-size: 1.3rem; color: #475569; margin-bottom: 1.5rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,.08);
+      border-top: 4px solid var(--accent);
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .card-icon { font-size: 2rem; }
+    .card-title { font-size: 1.15rem; font-weight: 700; color: #1E293B; }
+    .card-sub   { font-size: .85rem; color: #64748B; }
+    .card a {
+      display: inline-block;
+      margin-top: auto;
+      padding: .55rem 1.1rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      text-align: center;
+      transition: opacity .15s;
+    }
+    .card a:hover { opacity: .85; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: .85rem;
+      color: #94A3B8;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🇬🇧 English Worksheets</h1>
+  <p>1. Klasse &nbsp;·&nbsp; Druckfertige Arbeitsblätter</p>
+</header>
+
+<main>
+  <h2>Alle Themen – 1. Klasse</h2>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>Erstellt für den Englischunterricht · 1. Klasse</footer>
+
+<script>
+const topics = [
+  {
+    icon: "👋",
+    title: "Greetings &amp; Farewells",
+    sub: "Begrüßungen &amp; Verabschiedungen",
+    file: "01_Greetings.pdf",
+    accent: "#2563EB"
+  },
+  {
+    icon: "🔢",
+    title: "Numbers 1–20",
+    sub: "Zahlen auf Englisch",
+    file: "02_Numbers.pdf",
+    accent: "#16A34A"
+  },
+  {
+    icon: "🎨",
+    title: "Colors",
+    sub: "Farben auf Englisch",
+    file: "03_Colors.pdf",
+    accent: "#EA580C"
+  },
+  {
+    icon: "🐘",
+    title: "Animals",
+    sub: "Tiere auf Englisch",
+    file: "04_Animals.pdf",
+    accent: "#7C3AED"
+  },
+  {
+    icon: "🎒",
+    title: "School Objects",
+    sub: "Schulsachen auf Englisch",
+    file: "05_School_Objects.pdf",
+    accent: "#DB2777"
+  },
+  {
+    icon: "👨‍👩‍👧‍👦",
+    title: "My Family",
+    sub: "Familie auf Englisch",
+    file: "06_Family.pdf",
+    accent: "#0891B2"
+  }
+];
+
+const grid = document.getElementById("grid");
+topics.forEach(t => {
+  grid.innerHTML += `
+    <div class="card" style="--accent:${t.accent}">
+      <div class="card-icon">${t.icon}</div>
+      <div class="card-title">${t.title}</div>
+      <div class="card-sub">${t.sub}</div>
+      <a href="${t.file}" target="_blank">📄 PDF öffnen</a>
+    </div>`;
+});
+</script>
+</body>
+</html>
