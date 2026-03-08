@@ -1,0 +1,47 @@
+{
+  "klasse": 1,
+  "themen": [
+    {
+      "id": 1,
+      "titel": "Greetings & Farewells",
+      "deutsch": "Begrüßungen & Verabschiedungen",
+      "datei": "01_Greetings.pdf",
+      "vokabeln": ["hello", "goodbye", "good morning", "good afternoon", "good evening", "please", "thank you", "see you"]
+    },
+    {
+      "id": 2,
+      "titel": "Numbers 1–20",
+      "deutsch": "Zahlen auf Englisch",
+      "datei": "02_Numbers.pdf",
+      "vokabeln": ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "fifteen", "twenty"]
+    },
+    {
+      "id": 3,
+      "titel": "Colors",
+      "deutsch": "Farben auf Englisch",
+      "datei": "03_Colors.pdf",
+      "vokabeln": ["red", "blue", "green", "yellow", "orange", "purple", "pink", "white", "black", "brown"]
+    },
+    {
+      "id": 4,
+      "titel": "Animals",
+      "deutsch": "Tiere auf Englisch",
+      "datei": "04_Animals.pdf",
+      "vokabeln": ["cat", "dog", "bird", "fish", "horse", "cow", "pig", "lion", "elephant", "rabbit"]
+    },
+    {
+      "id": 5,
+      "titel": "School Objects",
+      "deutsch": "Schulsachen auf Englisch",
+      "datei": "05_School_Objects.pdf",
+      "vokabeln": ["pencil", "pen", "book", "ruler", "eraser", "scissors", "backpack", "notebook", "glue", "desk"]
+    },
+    {
+      "id": 6,
+      "titel": "My Family",
+      "deutsch": "Familie auf Englisch",
+      "datei": "06_Family.pdf",
+      "vokabeln": ["mother", "father", "sister", "brother", "grandmother", "grandfather", "aunt", "uncle", "baby", "family"]
+    }
+  ]
+}
